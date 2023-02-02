@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class ProceduralIvy : MonoBehaviour
 {
@@ -28,6 +29,9 @@ public class ProceduralIvy : MonoBehaviour
     private Vector3 startPos;
     private Vector3 startNormal;
 
+    public Transform spike;
+    public VisualEffect bloodSplatter;
+
     void Start()
     {
         startPos = startPoint.position;
@@ -51,10 +55,25 @@ public class ProceduralIvy : MonoBehaviour
         //     }
         // }
 
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            combineAndClear();
+            StartCoroutine(PlayVFX());
+            
+        }
+
         if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D))
         {
             createIvy(startPos, startNormal, (Input.GetAxis("Vertical") * Vector3.forward + Input.GetAxis("Horizontal") * Vector3.right).normalized);
+            // combineAndClear();
         }
+    }
+
+    IEnumerator PlayVFX() 
+    { 
+        spike.gameObject.SetActive(true);
+        yield return new WaitForSeconds(0.5f);
+        bloodSplatter.Play();
     }
 
     Vector3 findTangentFromArbitraryNormal(Vector3 normal)
@@ -91,7 +110,6 @@ public class ProceduralIvy : MonoBehaviour
 
     public void createIvy(Vector3 point, Vector3 normal, Vector3 inputDir)
     {
-        Debug.Log(inputDir);
         Vector3 tangent = findTangentFromArbitraryNormal(normal);
         GameObject ivy = new GameObject("Ivy " + ivyCount);
         ivy.transform.SetParent(transform);
