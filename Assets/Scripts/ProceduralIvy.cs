@@ -28,9 +28,8 @@ public class ProceduralIvy : MonoBehaviour
     int ivyCount = 0;
     private Vector3 startPos;
     private Vector3 startNormal;
-
-    public Transform spike;
-    public VisualEffect bloodSplatter;
+    public Transform effect;
+    public Animator animator;
 
     void Start()
     {
@@ -41,11 +40,11 @@ public class ProceduralIvy : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-            // call this method when you are ready to group your meshes
-            combineAndClear();
-        }
+        // if (Input.GetKeyUp(KeyCode.Space))
+        // {
+        //     // call this method when you are ready to group your meshes
+        //     combineAndClear();
+        // }
 
         // if (Input.GetMouseButtonDown(0)) {
         //     Ray ray = cam.ScreenPointToRay(Input.mousePosition);
@@ -57,9 +56,12 @@ public class ProceduralIvy : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            combineAndClear();
+
+            createBranchedIvy(effect.transform.position, effect.transform.up);
+            effect.gameObject.SetActive(true);
+            // combineAndClear();
             StartCoroutine(PlayVFX());
-            
+
         }
 
         if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D))
@@ -69,11 +71,10 @@ public class ProceduralIvy : MonoBehaviour
         }
     }
 
-    IEnumerator PlayVFX() 
-    { 
-        spike.gameObject.SetActive(true);
-        yield return new WaitForSeconds(0.5f);
-        bloodSplatter.Play();
+    IEnumerator PlayVFX()
+    {
+        yield return new WaitForSeconds(1f);
+        animator.SetTrigger("death");
     }
 
     Vector3 findTangentFromArbitraryNormal(Vector3 normal)
@@ -132,6 +133,33 @@ public class ProceduralIvy : MonoBehaviour
         IvyNode last = previousNodes[previousNodes.Count - 1];
         startPos = last.getPosition();
         startNormal = last.getNormal();
+    }
+
+
+    public void createBranchedIvy(Vector3 point, Vector3 normal)
+    {
+        int branches = 8;
+        Vector3 tangent = findTangentFromArbitraryNormal(normal);
+        GameObject ivy = new GameObject("Ivy " + ivyCount);
+        ivy.transform.SetParent(transform);
+        for (int i = 0; i < branches; i++)
+        {
+            Vector3 dir = Quaternion.AngleAxis(360 / branches * i + Random.Range(0, 360 / branches), normal) * tangent;
+            List<IvyNode> nodes = createBranch(maxPointsForBranch, point, normal, dir);
+            GameObject branch = new GameObject("Branch " + i);
+            Branch b = branch.AddComponent<Branch>();
+            if (!wantBlossoms)
+            {
+                b.init(nodes, branchRadius, branchMaterial);
+            }
+            else
+            {
+                b.init(nodes, branchRadius, branchMaterial, leafMaterial, leafPrefab, flowerMaterial, flowerPrefab, i == 0);
+            }
+            branch.transform.SetParent(ivy.transform);
+        }
+
+        ivyCount++;
     }
 
     Vector3 calculateTangent(Vector3 p0, Vector3 p1, Vector3 normal)
