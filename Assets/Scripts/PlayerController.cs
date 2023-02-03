@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     {
         startPlayerPosition = transform.position;
         startCameraPosition = cameraRef.position;
+        Cursor.visible = false;
     }
 
     // Update is called once per frame
