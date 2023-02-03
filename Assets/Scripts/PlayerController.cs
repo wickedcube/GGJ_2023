@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
         verticalInput = Input.GetAxis("Vertical");
         horizontalInput = Input.GetAxis("Horizontal");
         transform.rotation = Quaternion.Euler(0, -Input.mousePosition.x, 0);
-        transform.Translate(verticalInput * 0.1f * Vector3.forward + horizontalInput * 0.1f * Vector3.right);
+        transform.Translate(verticalInput * Time.deltaTime * 20f * Vector3.forward + horizontalInput * Time.deltaTime* 20f * Vector3.right);
         cameraRef.position = startCameraPosition + transform.position - startPlayerPosition;
         animatorRef.SetFloat("moveSpeedX", horizontalInput);
         animatorRef.SetFloat("moveSpeedZ", verticalInput);
