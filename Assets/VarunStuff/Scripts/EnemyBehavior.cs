@@ -3,12 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-
 namespace Enemy
 {
+    public static class IntExtensions
+    {
+        public static int SquareRoot(this int value) => (int)Mathf.Sqrt(value);
+        public static int CubeRoot(this int value) => (int)Mathf.Pow(value, (1 / 3f));
+    }
+
+    
+
+    public enum PlaceHolderAttackType
+    {
+        SqrtBullet = 0,
+        CubeRootBullet = 1,
+        ReducerBomb = 2
+    }
+
     public class EnemyBehavior : MonoBehaviour
     {
-
         [SerializeField]
         private NavMeshAgent Agent;
 
@@ -22,24 +35,17 @@ namespace Enemy
         private float DetectPlayerRadius;
 
         [SerializeField]
-        private float RoamingSpeed;
+        private float RegularSpeed;
 
         [SerializeField]
-        private float AttackSpeed;
+        private float AgitatedSpeedIncrease;
 
         [SerializeField]
+        [Tooltip("Tunable radius. When the player is inside this radius, it'll attack it")]
         private float AttackRadius;
 
-        [SerializeField]
-
-
-        //[SerializeField]
-        // For testing purposes!!.
-        //[SerializeField]
-        //private Camera Camera;
-
-        //[SerializeField]
-        //private Transform ClickLocationIndicator;
+        // this number is what the number of the object is.
+        public int Number { set; get; } = 1;
 
 
         /// <summary>
@@ -52,6 +58,7 @@ namespace Enemy
         void Start()
         {
             WalkPoint = this.transform.position;
+
         }
 
         // Update is called once per frame
@@ -60,50 +67,24 @@ namespace Enemy
             Patrol();
         }
 
-        private List<float> accumulatedError = new List<float>();
-
-
-        /*
-        private void SetRayCastPosition()
-        {
-            if (Input.GetMouseButtonDown(0))
-            {
-                var ray = Camera.ScreenPointToRay(Input.mousePosition);
-                var rayCastHits = Physics.RaycastAll(ray, float.MaxValue, groundMask);
-                foreach(var hit in rayCastHits)
-                {
-
-                    Agent.SetDestination(hit.point);
-                    ClickLocationIndicator.position = hit.point + new Vector3(0 , hit.transform.localScale.y / 2, 0);
-
-                    return;
-                }
-            }
-        }
-        */
-        
 
 
         private void Patrol()
         {
             var distanceToWalkPoint = Vector3.Distance(WalkPoint, this.transform.position);
-            if (!Agent.hasPath || distanceToWalkPoint < 2f )
+            if (!Agent.hasPath || distanceToWalkPoint < 2f)
             {
-                var newPoint = GetNewPatrollingWalkPoint();
-                var error = Vector3.Distance(newPoint, WalkPoint);
-                accumulatedError.Add(error);
-                WalkPoint = newPoint;
+                WalkPoint = GetNewPatrollingWalkPoint();
                 Agent.ResetPath();
                 Agent.SetDestination(WalkPoint);
             }
-            
 
-            if(Agent.pathStatus== NavMeshPathStatus.PathInvalid)
+
+            if (Agent.pathStatus == NavMeshPathStatus.PathInvalid)
             {
-                Debug.Log($" Path is invalid for {this.gameObject.name}");
                 Agent.ResetPath();
             }
-            
+
         }
 
         private Vector3 GetNewPatrollingWalkPoint()
@@ -125,13 +106,68 @@ namespace Enemy
 
         private void OnDestroy()
         {
-            string s = "";
-            foreach(var error in accumulatedError)
-            {
-                s += $"{error} \t";
-            }
-            Debug.Log($"{this.gameObject.name} , has errors {s}");
+
         }
+
+        private bool IsPerfectSquare()
+        {
+            if(Number > 0)
+            {
+                int sqrt = Number.SquareRoot();
+                return sqrt * sqrt == Number;
+            }
+            return false;
+        }
+
+        private bool IsPerfectCube()
+        {
+            if(Number > 0)
+            {
+                int cbrt = Number.CubeRoot();
+
+                return cbrt * cbrt * cbrt == Number;
+            }
+
+            return false;
+        }
+
+        private bool IsPrime()
+        {
+            if(Number == 0 || Number == 1 || Number == 2)
+            {
+                return true; //this should only happen on 2.. 
+            }
+
+
+            for (int i = 2; i <= Number / 2 + 1; ++i)
+            {
+
+                if (Number % i == 0)
+                {
+
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+
+        public bool IsAttackValid(PlaceHolderAttackType bulletType)
+        {
+
+            switch (bulletType)
+            {
+                case PlaceHolderAttackType.SqrtBullet: return IsPerfectSquare();
+                case PlaceHolderAttackType.CubeRootBullet: return IsPerfectCube();
+                case PlaceHolderAttackType.ReducerBomb: return !IsPrime();
+            }
+           
+            return false;
+        }
+
+        public int GetCubeRoot() => this.Number.CubeRoot();
+        public int GetSquareRoot() => this.Number.SquareRoot();
     }
 
 }
