@@ -3,11 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletTime : MonoBehaviour
+public class ChronoStasis : MonoBehaviour
 {
     [Range(0.1f,1f)]
     [SerializeField] private float slowdownTimePerc = 1;
     [SerializeField] private bool defaultActivation = true;
+    
+    private bool activated = false;
     
     public System.Func<bool> CanActivate;
 
@@ -21,9 +23,13 @@ public class BulletTime : MonoBehaviour
     {
         if (KeyMappings.GetChronoKey() && CanActivate())
         {
-            Time.timeScale = slowdownTimePerc;
+            activated = true;
+            ChronoHelper.OnChronoEffectStarted?.Invoke(slowdownTimePerc);
         }
-        else
-            Time.timeScale = 1;
+        else if (activated)
+        {
+            activated = false;
+            ChronoHelper.OnChronoEffectEnded?.Invoke();
+        }
     }
 }
