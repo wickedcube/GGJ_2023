@@ -6,6 +6,7 @@ TagManager:
   tags:
   - CinemachineTarget
   - FxTemporaire
+  - Ground
   layers:
   - Default
   - TransparentFX

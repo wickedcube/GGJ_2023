@@ -24,13 +24,16 @@ public class PlayerController : MonoBehaviour
     float lastLeftShot;
     float lastRightShot;
 
+    Ray cameraRay;                // The ray that is cast from the camera to the mouse position
+    RaycastHit cameraRayHit; 
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         startPlayerPosition = transform.position;
         startCameraPosition = cameraRef.position;
-        Cursor.visible = false;
+        // Cursor.visible = false;
     }
 
     // Update is called once per frame
@@ -38,10 +41,10 @@ public class PlayerController : MonoBehaviour
     {
         verticalInput = Input.GetAxis("Vertical");
         horizontalInput = Input.GetAxis("Horizontal");
-        indicatorTransform.rotation = Quaternion.Euler(0, Input.mousePosition.x* rotationSpeed, 0);
+        // transform.rotation = Quaternion.Euler(0, Input.mousePosition.x * rotationSpeed, 0);
         // rb.MovePosition(transform.position + verticalInput * Time.deltaTime * movementSpeed * Vector3.forward + horizontalInput * Time.deltaTime * movementSpeed * Vector3.right);
         // transform.Translate(verticalInput * Time.deltaTime * movementSpeed * Vector3.forward + horizontalInput * Time.deltaTime * movementSpeed * Vector3.right);
-        rb.velocity = verticalInput  * movementSpeed * Vector3.forward + horizontalInput  * movementSpeed * Vector3.right;
+        rb.velocity = verticalInput * movementSpeed * transform.forward + horizontalInput * movementSpeed * transform.right;
         // var t = rb.velocity.y;
         //var vec = verticalInput  * movementSpeed * Vector3.forward + horizontalInput * movementSpeed * Vector3.right;
         // vec.y = t;
@@ -58,23 +61,33 @@ public class PlayerController : MonoBehaviour
             b.transform.forward = indicatorTransform.forward;
             animatorRef.SetBool("isShooting", true);
         }
-        else if(KeyMappings.GetCubeRootFire() && Time.time > lastRightShot + timeBetweenShots)
-        { 
+        else if (KeyMappings.GetCubeRootFire() && Time.time > lastRightShot + timeBetweenShots)
+        {
             lastRightShot = Time.time;
             var b = Instantiate(bullet2[Random.Range(0, bullet1.Count)], indicatorTransform.position, Quaternion.identity);
             b.transform.forward = indicatorTransform.forward;
             animatorRef.SetBool("isShooting", true);
         }
         else
-        { 
+        {
             animatorRef.SetBool("isShooting", false);
+        }
+    }
+
+    void Update()
+    {
+        cameraRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(cameraRay, out cameraRayHit, 1<<7))
+        {
+            Vector3 targetPosition = new Vector3(cameraRayHit.point.x, transform.position.y, cameraRayHit.point.z);
+            transform.LookAt(targetPosition);
         }
     }
 
     public void TakeDamage(INumberEnemy enemy)
     {
 
-        if(enemy is EnemyBehavior eb)
+        if (enemy is EnemyBehavior eb)
         {
             Debug.Log($" Damage Taken !! {eb.gameObject.name}");
 
