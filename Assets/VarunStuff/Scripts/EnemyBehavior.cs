@@ -50,8 +50,8 @@ namespace Enemy
         private Transform NumberHolder;
 
         private bool IsPrime => NumberAlgorithms.IsPrime(this.Value);
-        private bool IsPerfectSquare => NumberAlgorithms.IsPerfectSquare(this.Value);
-        private bool IsPerfectCube => NumberAlgorithms.IsPerfectCube(this.Value);
+        public bool IsPerfectSquare => NumberAlgorithms.IsPerfectSquare(this.Value);
+        public bool IsPerfectCube => NumberAlgorithms.IsPerfectCube(this.Value);
 
         List<IndependentNumber> NumberComponents = new List<IndependentNumber>();
 
