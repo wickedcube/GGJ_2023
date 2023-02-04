@@ -18,7 +18,9 @@ public class WaveSpawner : MonoBehaviour
     public DummyEnemy enemyPrefab;
 
     // private Dictionary<TargetMarker, Transform> spawnPositionsDict = new();
-
+    public Action OnWaveFinished;
+    private int activeWaveIdx = 0;
+    private int activeEnemiesInWave = 0;
     private void Start()
     {
         // var temp = FindObjectsOfType<WavePointTagger>();
@@ -36,7 +38,7 @@ public class WaveSpawner : MonoBehaviour
         //     spawnPositionsDict.Add(VARIABLE.targetMarker, VARIABLE.transform);
         // }
 
-        StartWave(0);
+        StartWave(activeWaveIdx);
     }
 
 
@@ -63,14 +65,25 @@ public class WaveSpawner : MonoBehaviour
             {
                 for (int i = 0; i < VARIABLE.Value.Count; i++)
                 {
+                    activeEnemiesInWave++;
                     var customVec = VARIABLE.Value[i];
                     var pos = new Vector3(customVec.x, customVec.y, customVec.z) * 2;
                     var enemy = Instantiate(enemyPrefab, pos, Quaternion.identity);
                     enemy.Init(VARIABLE.Key);
-
                 }
             }
             yield return new WaitForSeconds(internalWave.timeTillNextInternalWave);
         }
+    }
+
+    public void EnemyDied()
+    {
+        activeEnemiesInWave--;
+        if (activeEnemiesInWave == 0)
+        {
+            OnWaveFinished?.Invoke();
+        }
+        
+        StartWave(++activeWaveIdx);
     }
 }

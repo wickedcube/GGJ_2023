@@ -29,6 +29,7 @@ public class BulletMover : MonoBehaviour
         {
             if ((isCubeRootBullet && enemy.IsPerfectCube)  || (isSquareRootBullet && enemy.IsPerfectSquare))
             { 
+                FindObjectOfType<WaveSpawner>().EnemyDied();
                 enemy.ReturnToPool();
             }
         }
