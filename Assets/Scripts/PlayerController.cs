@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     public List<GameObject> bullet2;
     public Transform bulletSpawn1;
     public Transform bulletSpawn2;
+    public Transform indicatorTransform;
     public float movementSpeed;
     public float rotationSpeed;
     public float timeBetweenShots;
@@ -37,10 +38,10 @@ public class PlayerController : MonoBehaviour
     {
         verticalInput = Input.GetAxis("Vertical");
         horizontalInput = Input.GetAxis("Horizontal");
-        transform.rotation = Quaternion.Euler(0, Input.mousePosition.x* rotationSpeed, 0);
+        indicatorTransform.rotation = Quaternion.Euler(0, Input.mousePosition.x* rotationSpeed, 0);
         // rb.MovePosition(transform.position + verticalInput * Time.deltaTime * movementSpeed * Vector3.forward + horizontalInput * Time.deltaTime * movementSpeed * Vector3.right);
         // transform.Translate(verticalInput * Time.deltaTime * movementSpeed * Vector3.forward + horizontalInput * Time.deltaTime * movementSpeed * Vector3.right);
-        rb.velocity = verticalInput  * movementSpeed * transform.forward + horizontalInput  * movementSpeed * transform.right;
+        rb.velocity = verticalInput  * movementSpeed * Vector3.forward + horizontalInput  * movementSpeed * Vector3.right;
         // var t = rb.velocity.y;
         //var vec = verticalInput  * movementSpeed * Vector3.forward + horizontalInput * movementSpeed * Vector3.right;
         // vec.y = t;
@@ -53,13 +54,15 @@ public class PlayerController : MonoBehaviour
         if (KeyMappings.GetSquareRootFire() && Time.time > lastLeftShot + timeBetweenShots)
         {
             lastLeftShot = Time.time;
-            Instantiate(bullet1[Random.Range(0, bullet1.Count)], bulletSpawn1.position, bulletSpawn1.rotation);
+            var b = Instantiate(bullet1[Random.Range(0, bullet1.Count)], indicatorTransform.position, Quaternion.identity);
+            b.transform.forward = indicatorTransform.forward;
             animatorRef.SetBool("isShooting", true);
         }
         else if(KeyMappings.GetCubeRootFire() && Time.time > lastRightShot + timeBetweenShots)
         { 
             lastRightShot = Time.time;
-            Instantiate(bullet2[Random.Range(0, bullet1.Count)], bulletSpawn2.position, bulletSpawn2.rotation);
+            var b = Instantiate(bullet2[Random.Range(0, bullet1.Count)], indicatorTransform.position, Quaternion.identity);
+            b.transform.forward = indicatorTransform.forward;
             animatorRef.SetBool("isShooting", true);
         }
         else

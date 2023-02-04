@@ -16,5 +16,5 @@ MonoBehaviour:
   InputYAxis: 1
   MouseShootSqrt: 0
   MouseShootCbqrt: 1
-  Grenade: 103
+  Grenade: 101
   ChronoTrigger: 113
