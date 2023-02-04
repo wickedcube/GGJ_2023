@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: new WaveFormation
   m_EditorClassIdentifier: 
   InternalWaves:
-  - fileName: circle3
+  - fileName: circle1
     timeTillNextInternalWave: 0

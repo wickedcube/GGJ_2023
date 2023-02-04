@@ -51,7 +51,7 @@ public class EnemySpawner : MonoBehaviour
         {
             ebh.SetParameters(walkableArea, PlayerTransform);
 
-            ebh.SetValue(counter++, enemyNumberCreator);
+            ebh.SetValue(value, enemyNumberCreator);
         }
         poolable.transform.position = position + new Vector3(0, poolable.transform.localScale.y / 2, 0);
     }

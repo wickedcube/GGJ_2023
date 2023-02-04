@@ -64,7 +64,7 @@ public class WaveSpawner : MonoBehaviour
                 for (int i = 0; i < VARIABLE.Value.Count; i++)
                 {
                     var customVec = VARIABLE.Value[i];
-                    var pos = new Vector3(customVec.x, customVec.y, customVec.z);
+                    var pos = new Vector3(customVec.x, customVec.y, customVec.z) * 2;
                     var enemy = Instantiate(enemyPrefab, pos, Quaternion.identity);
                     enemy.Init(VARIABLE.Key);
 

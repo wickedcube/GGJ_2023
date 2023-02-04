@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
     {
         verticalInput = Input.GetAxis("Vertical");
         horizontalInput = Input.GetAxis("Horizontal");
-        transform.rotation = Quaternion.Euler(0, -Input.mousePosition.x* rotationSpeed, 0);
+        transform.rotation = Quaternion.Euler(0, Input.mousePosition.x* rotationSpeed, 0);
         // rb.MovePosition(transform.position + verticalInput * Time.deltaTime * movementSpeed * Vector3.forward + horizontalInput * Time.deltaTime * movementSpeed * Vector3.right);
         // transform.Translate(verticalInput * Time.deltaTime * movementSpeed * Vector3.forward + horizontalInput * Time.deltaTime * movementSpeed * Vector3.right);
         rb.velocity = verticalInput  * movementSpeed * transform.forward + horizontalInput  * movementSpeed * transform.right;
