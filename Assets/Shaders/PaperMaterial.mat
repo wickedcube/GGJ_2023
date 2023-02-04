@@ -59,8 +59,9 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
+    - _BgColor: {r: 1, g: 0.25943398, b: 0.25943398, a: 0}
     - _CellSize: {r: 1, g: 1, b: 0, a: 0}
-    - _LineColor: {r: 0, g: 0.97285247, b: 1, a: 0}
-    - _LineColor2: {r: 0.9056604, g: 0.4259853, b: 0.11534355, a: 0}
-    - _Offset: {r: 5.5, g: -2.33, b: 0, a: 0}
+    - _LineColor: {r: 0.25588226, g: 0.25, b: 1, a: 0}
+    - _LineColor2: {r: 0.509434, g: 0.509434, b: 0.509434, a: 0}
+    - _Offset: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
