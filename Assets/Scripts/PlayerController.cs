@@ -40,13 +40,13 @@ public class PlayerController : MonoBehaviour
         animatorRef.SetFloat("moveSpeedZ", verticalInput);
 
 
-        if (Input.GetMouseButton(0) && Time.time > lastLeftShot + timeBetweenShots)
+        if (KeyMappings.GetSquareRootFire() && Time.time > lastLeftShot + timeBetweenShots)
         {
             lastLeftShot = Time.time;
             Instantiate(bullet1[Random.Range(0, bullet1.Count)], bulletSpawn1.position, bulletSpawn1.rotation);
         }
 
-        if (Input.GetMouseButton(1) && Time.time > lastRightShot + timeBetweenShots)
+        if (KeyMappings.GetCubeRootFire() && Time.time > lastRightShot + timeBetweenShots)
         {
             lastRightShot = Time.time;
             Instantiate(bullet2[Random.Range(0, bullet1.Count)], bulletSpawn2.position, bulletSpawn2.rotation);

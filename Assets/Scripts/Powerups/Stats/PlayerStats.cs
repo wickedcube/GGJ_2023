@@ -5,9 +5,6 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    
-    
-    
     [SerializeField]
     private int health;
     
@@ -18,6 +15,12 @@ public class PlayerStats : MonoBehaviour
     [Header("Measured in seconds")]
     [SerializeField] private int maxChronosTime = 5;
     [SerializeField] private float chronoStatisLeft;
+
+    [SerializeField] private List<int> comboKillThresholds;
+    [SerializeField] private List<int> comboMulitplierVals;
+    private int currentComboIndex;
+    private int killCount;
+    private int currentMeter;
 
     public System.Action HealthDepleted;
 
@@ -33,6 +36,7 @@ public class PlayerStats : MonoBehaviour
     public void TakeDamage(int dmg)
     {
         health -= dmg;
+        ResetKillCounter();
         if(health <= 0)
             HealthDepleted?.Invoke();
     }
@@ -55,5 +59,25 @@ public class PlayerStats : MonoBehaviour
     public void ConsumeChronoMeter(float amt)
     {
         chronoStatisLeft = Mathf.Clamp(chronoStatisLeft - amt, 0, maxChronosTime);
+    }
+
+    public void IncrementKillValue()
+    {
+        killCount++;
+        if (currentComboIndex < comboKillThresholds.Count)
+        {
+            if (killCount > comboKillThresholds[currentComboIndex + 1])
+            {
+                currentComboIndex++;
+            }
+        }
+
+        currentMeter += comboMulitplierVals[currentComboIndex];
+    }
+
+    public void ResetKillCounter() {
+
+        killCount = 0;
+        currentComboIndex = 0;
     }
 }
