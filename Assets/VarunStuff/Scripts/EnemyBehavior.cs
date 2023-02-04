@@ -70,6 +70,12 @@ namespace Enemy
         }
 
 
+
+        protected override void OnReturnedToPool()
+        {
+            parametersSet = false;
+        }
+
         // Start is called before the first frame update
         void Start()
         {
@@ -177,10 +183,6 @@ namespace Enemy
             }
         }
 
-        protected override void OnReturnedToPool()
-        {
-            parametersSet = false;
-        }
     }
 
 }
