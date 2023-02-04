@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Enemy;
 
 public class TempPlayerPosition : MonoBehaviour
 {
@@ -33,6 +34,12 @@ public class TempPlayerPosition : MonoBehaviour
 
             }
         }
+    }
+
+
+    public void TakeDamage(EnemyBehavior eb)
+    {
+        Debug.Log($"Took Damage from this bitch MotherFucker {eb.gameObject.name}");
     }
 
 

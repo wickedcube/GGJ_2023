@@ -1,3 +1,5 @@
+using Enemy;
+using Interfaces;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -51,5 +53,17 @@ public class PlayerController : MonoBehaviour
             lastRightShot = Time.time;
             Instantiate(bullet2[Random.Range(0, bullet1.Count)], bulletSpawn2.position, bulletSpawn2.rotation);
         }
+    }
+
+    public void TakeDamage(INumberEnemy enemy)
+    {
+
+        if(enemy is EnemyBehavior eb)
+        {
+            Debug.Log($" Damage Taken !! {eb.gameObject.name}");
+
+        }
+
+
     }
 }

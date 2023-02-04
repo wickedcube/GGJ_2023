@@ -152,6 +152,18 @@ namespace Enemy
 
             return false;
         }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            Debug.Log(" Entering the fucking enemy!");
+
+            var enteredGameObject = other.gameObject;
+            var player = enteredGameObject.GetComponent<PlayerController>();
+            if(player != default)
+            {
+                player.TakeDamage(this);
+            }
+        }
     }
 
 }
