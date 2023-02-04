@@ -189,10 +189,10 @@ namespace Enemy
             return false;
         }
 
-        private void OnTriggerEnter(Collider other)
+        private void OnCollisionEnter(Collision other)
         {
 
-            var enteredGameObject = other.gameObject;
+            var enteredGameObject = other.collider.gameObject;
             var player = enteredGameObject.GetComponent<PlayerController>();
             if(player != default)
             {
