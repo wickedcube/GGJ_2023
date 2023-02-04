@@ -1,21 +1,57 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Enemy;
+using ObjectPooling;
 
-
-// this function takes the map, the level and the player locaiton and spawns
-// the players in the appropriate places from the outside.
 public class EnemySpawner : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+
+    [SerializeField]
+    private Camera camera;
+
+
+    [SerializeField]
+    private ObjectPool pool;
+
+    [SerializeField]
+    private LayerMask ArenaMask;
+
+    [SerializeField]
+    private Transform PlayerTransform;
+
+    [SerializeField]
+    private MeshRenderer walkableArea;
+
+    [SerializeField]
+    private EnemyNumberCreator enemyNumberCreator;
+
+    int counter = 0;
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetMouseButtonDown(0))
+        {
+            var ray = camera.ScreenPointToRay(Input.mousePosition);
+            var results = Physics.RaycastAll(ray, float.MaxValue, ArenaMask);
+            foreach(var result in results)
+            {
+                CreateEnemyAt(result.point, counter);
+            }
+            
+        }
+    }
+
+    public void CreateEnemyAt(Vector3 position, int value)
+    {
+        var poolable = pool.GetObject();
+        if (poolable is EnemyBehavior ebh)
+        {
+            ebh.SetParameters(walkableArea, PlayerTransform);
+
+            ebh.SetValue(counter++, enemyNumberCreator);
+        }
+        poolable.transform.position = position + new Vector3(0, poolable.transform.localScale.y / 2, 0);
     }
 }

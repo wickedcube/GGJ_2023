@@ -1,3 +1,5 @@
+using Enemy;
+using Interfaces;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -64,5 +66,17 @@ public class PlayerController : MonoBehaviour
         { 
             animatorRef.SetBool("isShooting", false);
         }
+    }
+
+    public void TakeDamage(INumberEnemy enemy)
+    {
+
+        if(enemy is EnemyBehavior eb)
+        {
+            Debug.Log($" Damage Taken !! {eb.gameObject.name}");
+
+        }
+
+
     }
 }

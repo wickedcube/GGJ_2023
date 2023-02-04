@@ -12,9 +12,9 @@ public class ElTestEnemy : MonoBehaviour, INumberEnemy
         throw new System.NotImplementedException();
     }
 
-    public void SetValue(int val)
+    public void SetValue(int val, EnemyNumberCreator creator)
     {
-        Debug.Log("Oh Crap!!");
+        throw new System.NotImplementedException();
     }
 
     public bool TakeDamage(object obj)
