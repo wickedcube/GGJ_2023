@@ -6,8 +6,19 @@ using UnityEngine;
 public class ElTestEnemy : MonoBehaviour, INumberEnemy
 {
     public int Value => 10;
+
+    public bool CanTakeDamage(object obj)
+    {
+        throw new System.NotImplementedException();
+    }
+
     public void SetValue(int val)
     {
         Debug.Log("Oh Crap!!");
+    }
+
+    public bool TakeDamage(object obj)
+    {
+        throw new System.NotImplementedException();
     }
 }
