@@ -34,7 +34,13 @@ namespace Powerups.Grenade
       private IEnumerator StartTimer()
       {
          timerActive = true;
-         yield return new WaitForSeconds(defaultFuseTime);
+         float timeStep = 0;
+         while (timeStep <= 1)
+         {
+            timeStep += Time.deltaTime / (defaultFuseTime * Time.timeScale);
+            yield return new WaitForEndOfFrame();   
+         }
+         
          Detonate();
       }
 

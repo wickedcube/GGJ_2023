@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class ElTestEnemy : MonoBehaviour, INumberEnemy
 {
-
     public int Value => 10;
     public void SetValue(int val)
     {
