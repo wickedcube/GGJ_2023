@@ -8,5 +8,9 @@ namespace Interfaces
     {
         int Value { get; }
         void SetValue(int val);
+
+        bool CanTakeDamage(object obj);
+
+        bool TakeDamage(object obj);
     }
 }

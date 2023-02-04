@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-
+using Interfaces;
+using Powerups.Grenade;
 namespace Enemy
 {
     public static class IntExtensions
@@ -20,7 +21,7 @@ namespace Enemy
         ReducerBomb = 2
     }
 
-    public class EnemyBehavior : MonoBehaviour
+    public class EnemyBehavior : MonoBehaviour, INumberEnemy
     {
         [SerializeField]
         private NavMeshAgent Agent;
@@ -31,8 +32,6 @@ namespace Enemy
         [SerializeField]
         private MeshRenderer WalkableArea;
 
-        [SerializeField]
-        private float DetectPlayerRadius;
 
         [SerializeField]
         private float RegularSpeed;
@@ -44,29 +43,58 @@ namespace Enemy
         [Tooltip("Tunable radius. When the player is inside this radius, it'll attack it")]
         private float AttackRadius;
 
-        // this number is what the number of the object is.
-        public int Number { set; get; } = 1;
-
-
+        private bool IsPrime => NumberAlgorithms.IsPrime(this.Value);
+        private bool IsPerfectSquare => NumberAlgorithms.IsPerfectSquare(this.Value);
+        private bool IsPerfectCube => NumberAlgorithms.IsPerfectCube(this.Value);
         /// <summary>
         /// this is the point that the enemy is usually walking towards.
         /// </summary>
         private Vector3 WalkPoint { set; get; }
+
+        public int Value { private set; get; }
+
+
+        public void SetValue(int val)
+        {
+            // TODO : use the enemy creation script to create the number.
+            throw new System.NotImplementedException();
+        }
 
 
         // Start is called before the first frame update
         void Start()
         {
             WalkPoint = this.transform.position;
-
+            ChronoHelper.OnChronoEffectStarted += OnChronoEffectStarted;
+            ChronoHelper.OnChronoEffectEnded += OnChronoEffectEnded;
         }
+        private void OnChronoEffectStarted(float slowDownPercentage)
+        {
+            // TODO : Implement the Chrono slowdown
+        }
+
+        private void OnChronoEffectEnded()
+        {
+            // TODO : Implement the Chrono slowdown.
+        }
+
 
         // Update is called once per frame
         void Update()
         {
             Patrol();
+            TryAttackPlayer();
         }
+        public bool CanTakeDamage(object enemyObject)
+        {
+            if (this.IsPrime) return false; // prime numbers are healths. Can't take damage.
 
+            if (enemyObject is Grenade) return true;
+            // TODO : Can Take Damage for bullets.
+
+
+            return false;
+        }
 
 
         private void Patrol()
@@ -84,7 +112,15 @@ namespace Enemy
             {
                 Agent.ResetPath();
             }
+        }
 
+        private void TryAttackPlayer()
+        {
+            var distanceToEnemy = Vector3.Distance(this.transform.position, PlayerTransform.position);
+            if(distanceToEnemy < AttackRadius)
+            {
+                Agent.SetDestination(PlayerTransform.position);
+            }
         }
 
         private Vector3 GetNewPatrollingWalkPoint()
@@ -103,71 +139,10 @@ namespace Enemy
             return position;
         }
 
-
-        private void OnDestroy()
+        public bool TakeDamage(object obj)
         {
-
+            throw new System.NotImplementedException();
         }
-
-        private bool IsPerfectSquare()
-        {
-            if(Number > 0)
-            {
-                int sqrt = Number.SquareRoot();
-                return sqrt * sqrt == Number;
-            }
-            return false;
-        }
-
-        private bool IsPerfectCube()
-        {
-            if(Number > 0)
-            {
-                int cbrt = Number.CubeRoot();
-
-                return cbrt * cbrt * cbrt == Number;
-            }
-
-            return false;
-        }
-
-        private bool IsPrime()
-        {
-            if(Number == 0 || Number == 1 || Number == 2)
-            {
-                return true; //this should only happen on 2.. 
-            }
-
-
-            for (int i = 2; i <= Number / 2 + 1; ++i)
-            {
-
-                if (Number % i == 0)
-                {
-
-                    return false;
-                }
-            }
-
-            return true;
-        }
-
-
-        public bool IsAttackValid(PlaceHolderAttackType bulletType)
-        {
-
-            switch (bulletType)
-            {
-                case PlaceHolderAttackType.SqrtBullet: return IsPerfectSquare();
-                case PlaceHolderAttackType.CubeRootBullet: return IsPerfectCube();
-                case PlaceHolderAttackType.ReducerBomb: return !IsPrime();
-            }
-           
-            return false;
-        }
-
-        public int GetCubeRoot() => this.Number.CubeRoot();
-        public int GetSquareRoot() => this.Number.SquareRoot();
     }
 
 }

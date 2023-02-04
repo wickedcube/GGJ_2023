@@ -141,7 +141,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &63029235
 Transform:
@@ -169,7 +169,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.5, y: 4, z: 1.5}
+  m_Size: {x: 1, y: 4, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &63029237
 MeshRenderer:
@@ -228,7 +228,7 @@ NavMeshObstacle:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 63029234}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
   m_Extents: {x: 0.5, y: 1, z: 0.5}
@@ -249,12 +249,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 138384161}
     - target: {fileID: 1406311878995283421, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
+      propertyPath: AttackRadius
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 1406311878995283421, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: WalkableArea
       value: 
       objectReference: {fileID: 1205620956}
     - target: {fileID: 1406311878995283421, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
+      propertyPath: PlayerTransform
+      value: 
+      objectReference: {fileID: 1281003376}
+    - target: {fileID: 1406311878995283421, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: groundMask.m_Bits
       value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 1406311878995283421, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
+      propertyPath: DetectPlayerRadius
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 1406311878995283421, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: ClickLocationIndicator
@@ -266,7 +278,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1857606670815689778, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -21.53
       objectReference: {fileID: 0}
     - target: {fileID: 1857606670815689778, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -274,7 +286,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1857606670815689778, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -5.039999
       objectReference: {fileID: 0}
     - target: {fileID: 1857606670815689778, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -315,6 +327,10 @@ PrefabInstance:
     - target: {fileID: 3167279736693277068, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: m_Radius
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3167279736693277068, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
+      propertyPath: m_AutoBraking
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3167279736693277068, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: m_Acceleration
@@ -513,7 +529,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &332108261
 Transform:
@@ -541,7 +557,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.5, y: 4, z: 1.5}
+  m_Size: {x: 1, y: 4, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &332108263
 MeshRenderer:
@@ -600,7 +616,7 @@ NavMeshObstacle:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 332108260}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
   m_Extents: {x: 0.5, y: 1, z: 0.5}
@@ -736,12 +752,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 138384161}
     - target: {fileID: 1406311878995283421, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
+      propertyPath: AttackRadius
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 1406311878995283421, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: WalkableArea
       value: 
       objectReference: {fileID: 1205620956}
     - target: {fileID: 1406311878995283421, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
+      propertyPath: PlayerTransform
+      value: 
+      objectReference: {fileID: 1281003376}
+    - target: {fileID: 1406311878995283421, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: groundMask.m_Bits
       value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 1406311878995283421, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
+      propertyPath: DetectPlayerRadius
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 1406311878995283421, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: ClickLocationIndicator
@@ -753,7 +781,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1857606670815689778, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -21.53
       objectReference: {fileID: 0}
     - target: {fileID: 1857606670815689778, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -761,7 +789,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1857606670815689778, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -5.039999
       objectReference: {fileID: 0}
     - target: {fileID: 1857606670815689778, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -804,6 +832,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3167279736693277068, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
+      propertyPath: m_AutoBraking
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3167279736693277068, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: m_Acceleration
       value: 20
       objectReference: {fileID: 0}
@@ -839,7 +871,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &611598890
 Transform:
@@ -867,7 +899,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.5, y: 4, z: 1.5}
+  m_Size: {x: 1, y: 4, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &611598892
 MeshRenderer:
@@ -926,7 +958,7 @@ NavMeshObstacle:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 611598889}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
   m_Extents: {x: 0.5, y: 1, z: 0.5}
@@ -953,7 +985,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &689754220
 Transform:
@@ -981,7 +1013,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.5, y: 4, z: 1.5}
+  m_Size: {x: 1, y: 4, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &689754222
 MeshRenderer:
@@ -1040,7 +1072,7 @@ NavMeshObstacle:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 689754219}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
   m_Extents: {x: 0.5, y: 1, z: 0.5}
@@ -1067,7 +1099,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &730515095
 Transform:
@@ -1095,7 +1127,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.5, y: 4, z: 1.5}
+  m_Size: {x: 1, y: 4, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &730515097
 MeshRenderer:
@@ -1154,7 +1186,7 @@ NavMeshObstacle:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 730515094}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
   m_Extents: {x: 0.5, y: 1, z: 0.5}
@@ -1175,12 +1207,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 138384161}
     - target: {fileID: 1406311878995283421, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
+      propertyPath: AttackRadius
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 1406311878995283421, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: WalkableArea
       value: 
       objectReference: {fileID: 1205620956}
     - target: {fileID: 1406311878995283421, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
+      propertyPath: PlayerTransform
+      value: 
+      objectReference: {fileID: 1281003376}
+    - target: {fileID: 1406311878995283421, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: groundMask.m_Bits
       value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 1406311878995283421, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
+      propertyPath: DetectPlayerRadius
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 1406311878995283421, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: ClickLocationIndicator
@@ -1192,7 +1236,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1857606670815689778, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -21.53
       objectReference: {fileID: 0}
     - target: {fileID: 1857606670815689778, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1200,7 +1244,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1857606670815689778, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -5.039999
       objectReference: {fileID: 0}
     - target: {fileID: 1857606670815689778, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1243,6 +1287,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3167279736693277068, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
+      propertyPath: m_AutoBraking
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3167279736693277068, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: m_Acceleration
       value: 20
       objectReference: {fileID: 0}
@@ -1278,7 +1326,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &823262121
 Transform:
@@ -1306,7 +1354,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.5, y: 4, z: 1.5}
+  m_Size: {x: 1, y: 4, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &823262123
 MeshRenderer:
@@ -1365,7 +1413,7 @@ NavMeshObstacle:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 823262120}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
   m_Extents: {x: 0.5, y: 1, z: 0.5}
@@ -1386,12 +1434,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 138384161}
     - target: {fileID: 1406311878995283421, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
+      propertyPath: AttackRadius
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 1406311878995283421, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: WalkableArea
       value: 
       objectReference: {fileID: 1205620956}
     - target: {fileID: 1406311878995283421, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
+      propertyPath: PlayerTransform
+      value: 
+      objectReference: {fileID: 1281003376}
+    - target: {fileID: 1406311878995283421, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: groundMask.m_Bits
       value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 1406311878995283421, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
+      propertyPath: DetectPlayerRadius
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 1406311878995283421, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: ClickLocationIndicator
@@ -1403,7 +1463,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1857606670815689778, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -21.53
       objectReference: {fileID: 0}
     - target: {fileID: 1857606670815689778, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1411,7 +1471,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1857606670815689778, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -5.039999
       objectReference: {fileID: 0}
     - target: {fileID: 1857606670815689778, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1452,6 +1512,10 @@ PrefabInstance:
     - target: {fileID: 3167279736693277068, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: m_Radius
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3167279736693277068, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
+      propertyPath: m_AutoBraking
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3167279736693277068, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: m_Acceleration
@@ -1483,12 +1547,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 138384161}
     - target: {fileID: 1406311878995283421, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
+      propertyPath: AttackRadius
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 1406311878995283421, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: WalkableArea
       value: 
       objectReference: {fileID: 1205620956}
     - target: {fileID: 1406311878995283421, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
+      propertyPath: PlayerTransform
+      value: 
+      objectReference: {fileID: 1281003376}
+    - target: {fileID: 1406311878995283421, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: groundMask.m_Bits
       value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 1406311878995283421, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
+      propertyPath: DetectPlayerRadius
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 1406311878995283421, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: ClickLocationIndicator
@@ -1500,7 +1576,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1857606670815689778, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -21.53
       objectReference: {fileID: 0}
     - target: {fileID: 1857606670815689778, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1508,7 +1584,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1857606670815689778, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -5.039999
       objectReference: {fileID: 0}
     - target: {fileID: 1857606670815689778, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1549,6 +1625,10 @@ PrefabInstance:
     - target: {fileID: 3167279736693277068, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: m_Radius
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3167279736693277068, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
+      propertyPath: m_AutoBraking
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3167279736693277068, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: m_Acceleration
@@ -1586,7 +1666,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1091389981
 Transform:
@@ -1614,7 +1694,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.5, y: 4, z: 1.5}
+  m_Size: {x: 1, y: 4, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1091389983
 MeshRenderer:
@@ -1673,10 +1753,10 @@ NavMeshObstacle:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1091389980}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_Extents: {x: 0.5, y: 1, z: 0.5}
   m_MoveThreshold: 0.1
   m_Carve: 0
   m_CarveOnlyStationary: 1
@@ -1892,8 +1972,9 @@ GameObject:
   - component: {fileID: 1281003375}
   - component: {fileID: 1281003374}
   - component: {fileID: 1281003373}
+  - component: {fileID: 1281003377}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: PlayerTemp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1970,13 +2051,29 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1281003372}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.4194984, y: 5.891056, z: 2.448204}
+  m_LocalPosition: {x: 0, y: 0.5, z: 3.87}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1281003377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1281003372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b6b27b9287432f42b68cddcbd180734, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camera: {fileID: 138384161}
+  ArenaMask:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1001 &1432948796
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1989,12 +2086,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 138384161}
     - target: {fileID: 1406311878995283421, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
+      propertyPath: AttackRadius
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 1406311878995283421, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: WalkableArea
       value: 
       objectReference: {fileID: 1205620956}
     - target: {fileID: 1406311878995283421, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
+      propertyPath: PlayerTransform
+      value: 
+      objectReference: {fileID: 1281003376}
+    - target: {fileID: 1406311878995283421, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: groundMask.m_Bits
       value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 1406311878995283421, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
+      propertyPath: DetectPlayerRadius
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 1406311878995283421, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: ClickLocationIndicator
@@ -2006,7 +2115,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1857606670815689778, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -21.53
       objectReference: {fileID: 0}
     - target: {fileID: 1857606670815689778, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2014,7 +2123,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1857606670815689778, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -5.039999
       objectReference: {fileID: 0}
     - target: {fileID: 1857606670815689778, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2055,6 +2164,10 @@ PrefabInstance:
     - target: {fileID: 3167279736693277068, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: m_Radius
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3167279736693277068, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
+      propertyPath: m_AutoBraking
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3167279736693277068, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: m_Acceleration
@@ -2086,12 +2199,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 138384161}
     - target: {fileID: 1406311878995283421, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
+      propertyPath: AttackRadius
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 1406311878995283421, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: WalkableArea
       value: 
       objectReference: {fileID: 1205620956}
     - target: {fileID: 1406311878995283421, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
+      propertyPath: PlayerTransform
+      value: 
+      objectReference: {fileID: 1281003376}
+    - target: {fileID: 1406311878995283421, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: groundMask.m_Bits
       value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 1406311878995283421, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
+      propertyPath: DetectPlayerRadius
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 1406311878995283421, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: ClickLocationIndicator
@@ -2103,7 +2228,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1857606670815689778, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -21.53
       objectReference: {fileID: 0}
     - target: {fileID: 1857606670815689778, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2111,7 +2236,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1857606670815689778, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -5.039999
       objectReference: {fileID: 0}
     - target: {fileID: 1857606670815689778, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2152,6 +2277,10 @@ PrefabInstance:
     - target: {fileID: 3167279736693277068, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: m_Radius
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3167279736693277068, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
+      propertyPath: m_AutoBraking
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3167279736693277068, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: m_Acceleration
@@ -2183,12 +2312,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 138384161}
     - target: {fileID: 1406311878995283421, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
+      propertyPath: AttackRadius
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 1406311878995283421, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: WalkableArea
       value: 
       objectReference: {fileID: 1205620956}
     - target: {fileID: 1406311878995283421, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
+      propertyPath: PlayerTransform
+      value: 
+      objectReference: {fileID: 1281003376}
+    - target: {fileID: 1406311878995283421, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: groundMask.m_Bits
       value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 1406311878995283421, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
+      propertyPath: DetectPlayerRadius
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 1406311878995283421, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: ClickLocationIndicator
@@ -2200,7 +2341,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1857606670815689778, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -21.53
       objectReference: {fileID: 0}
     - target: {fileID: 1857606670815689778, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2208,7 +2349,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1857606670815689778, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -5.039999
       objectReference: {fileID: 0}
     - target: {fileID: 1857606670815689778, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2249,6 +2390,10 @@ PrefabInstance:
     - target: {fileID: 3167279736693277068, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: m_Radius
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3167279736693277068, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
+      propertyPath: m_AutoBraking
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3167279736693277068, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: m_Acceleration
@@ -2354,7 +2499,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1765633142
 Transform:
@@ -2382,7 +2527,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.5, y: 4, z: 1.5}
+  m_Size: {x: 1, y: 4, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1765633144
 MeshRenderer:
@@ -2441,7 +2586,7 @@ NavMeshObstacle:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1765633141}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
   m_Extents: {x: 0.5, y: 1, z: 0.5}
@@ -2500,7 +2645,7 @@ MonoBehaviour:
   m_Center: {x: 0, y: 2, z: 0}
   m_LayerMask:
     serializedVersion: 2
-    m_Bits: 384
+    m_Bits: 128
   m_UseGeometry: 1
   m_DefaultArea: 0
   m_IgnoreNavMeshAgent: 1
@@ -2573,7 +2718,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1849218717
 Transform:
@@ -2601,7 +2746,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.5, y: 4, z: 1.5}
+  m_Size: {x: 1, y: 4, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1849218719
 MeshRenderer:
@@ -2660,7 +2805,7 @@ NavMeshObstacle:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1849218716}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
   m_Extents: {x: 0.5, y: 1, z: 0.5}
@@ -2681,12 +2826,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 138384161}
     - target: {fileID: 1406311878995283421, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
+      propertyPath: AttackRadius
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 1406311878995283421, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: WalkableArea
       value: 
       objectReference: {fileID: 1205620956}
     - target: {fileID: 1406311878995283421, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
+      propertyPath: PlayerTransform
+      value: 
+      objectReference: {fileID: 1281003376}
+    - target: {fileID: 1406311878995283421, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: groundMask.m_Bits
       value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 1406311878995283421, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
+      propertyPath: DetectPlayerRadius
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 1406311878995283421, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: ClickLocationIndicator
@@ -2698,7 +2855,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1857606670815689778, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -21.53
       objectReference: {fileID: 0}
     - target: {fileID: 1857606670815689778, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2706,7 +2863,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1857606670815689778, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -5.04
       objectReference: {fileID: 0}
     - target: {fileID: 1857606670815689778, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2749,6 +2906,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3167279736693277068, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
+      propertyPath: m_AutoBraking
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3167279736693277068, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: m_Acceleration
       value: 20
       objectReference: {fileID: 0}
@@ -2784,7 +2945,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1936255027
 Transform:
@@ -2812,7 +2973,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.5, y: 4, z: 1.5}
+  m_Size: {x: 1, y: 4, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1936255029
 MeshRenderer:
@@ -2871,7 +3032,7 @@ NavMeshObstacle:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1936255026}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
   m_Extents: {x: 0.5, y: 1, z: 0.5}
@@ -2898,7 +3059,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &2114087123
 Transform:
@@ -2926,7 +3087,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.5, y: 4, z: 1.5}
+  m_Size: {x: 1, y: 4, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &2114087125
 MeshRenderer:
@@ -2985,7 +3146,7 @@ NavMeshObstacle:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2114087122}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
   m_Extents: {x: 0.5, y: 1, z: 0.5}
@@ -3006,12 +3167,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 138384161}
     - target: {fileID: 1406311878995283421, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
+      propertyPath: AttackRadius
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 1406311878995283421, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: WalkableArea
       value: 
       objectReference: {fileID: 1205620956}
     - target: {fileID: 1406311878995283421, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
+      propertyPath: PlayerTransform
+      value: 
+      objectReference: {fileID: 1281003376}
+    - target: {fileID: 1406311878995283421, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: groundMask.m_Bits
       value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 1406311878995283421, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
+      propertyPath: DetectPlayerRadius
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 1406311878995283421, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: ClickLocationIndicator
@@ -3023,7 +3196,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1857606670815689778, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -21.53
       objectReference: {fileID: 0}
     - target: {fileID: 1857606670815689778, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3031,7 +3204,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1857606670815689778, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -5.039999
       objectReference: {fileID: 0}
     - target: {fileID: 1857606670815689778, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3072,6 +3245,10 @@ PrefabInstance:
     - target: {fileID: 3167279736693277068, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: m_Radius
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3167279736693277068, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
+      propertyPath: m_AutoBraking
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3167279736693277068, guid: a112f92c18af08a4cb206e6b4611b41f, type: 3}
       propertyPath: m_Acceleration

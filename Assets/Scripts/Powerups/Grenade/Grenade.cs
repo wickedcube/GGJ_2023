@@ -58,7 +58,10 @@ namespace Powerups.Grenade
          foreach (var collider in colliders)
          {
             var enemy = collider.GetComponentInChildren<INumberEnemy>();
-            enemy.SetValue(SuperDuperNumberAlgo.TransformNumber(enemy.Value));
+                if (enemy.CanTakeDamage(this))
+                {
+                    enemy.TakeDamage(this);
+                }
          }
       }
 
