@@ -6,8 +6,10 @@ public class PlayerController : MonoBehaviour
 {
     public Transform cameraRef;
     public Animator animatorRef;
-    public List<GameObject> bullet;
-    public Transform bulletSpawn;
+    public List<GameObject> bullet1;
+    public List<GameObject> bullet2;
+    public Transform bulletSpawn1;
+    public Transform bulletSpawn2;
     private Vector3 startPlayerPosition;
     private Vector3 startCameraPosition;
     float verticalInput;
@@ -35,7 +37,12 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetMouseButton(0))
         {
-            Instantiate(bullet[Random.Range(0, 3)], bulletSpawn.position, bulletSpawn.rotation);
+            Instantiate(bullet1[Random.Range(0, bullet1.Count)], bulletSpawn1.position, bulletSpawn1.rotation);
+        }
+
+        if (Input.GetMouseButton(1))
+        {
+            Instantiate(bullet2[Random.Range(0, bullet1.Count)], bulletSpawn2.position, bulletSpawn2.rotation);
         }
     }
 }
