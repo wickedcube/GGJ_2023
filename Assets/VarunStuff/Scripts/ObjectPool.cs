@@ -47,8 +47,8 @@ namespace ObjectPooling
 
             if (poolables.Contains(p))
             {
-                p.gameObject.SetActive(false);
                 p.gameObject.transform.parent = this.transform;
+                p.gameObject.SetActive(false);
             }
 
         }

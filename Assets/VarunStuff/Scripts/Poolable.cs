@@ -15,6 +15,8 @@ namespace ObjectPooling
                 Debug.LogError($" No Poolable assigned {this.gameObject.name}");
                 return;
             }
+            OnReturnedToPool();
+
             Pool.ReturnPoolable(this);
         }
 

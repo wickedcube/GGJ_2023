@@ -2377,6 +2377,7 @@ GameObject:
   m_Component:
   - component: {fileID: 830064836}
   - component: {fileID: 830064837}
+  - component: {fileID: 830064838}
   m_Layer: 0
   m_Name: EnemySpawner
   m_TagString: Untagged
@@ -2429,6 +2430,30 @@ MonoBehaviour:
     m_Bits: 128
   PlayerTransform: {fileID: 569470706}
   walkableArea: {fileID: 1748938702}
+  enemyNumberCreator: {fileID: 830064838}
+--- !u!114 &830064838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 830064835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48b20d0b86420c34abd7d0c04d755463, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numberPools:
+  - {fileID: 212712173}
+  - {fileID: 1415646736}
+  - {fileID: 1979400285}
+  - {fileID: 642507953}
+  - {fileID: 222791419}
+  - {fileID: 1050927875}
+  - {fileID: 318251888}
+  - {fileID: 989988012}
+  - {fileID: 1287650587}
+  - {fileID: 1352633623}
 --- !u!1 &834947757
 GameObject:
   m_ObjectHideFlags: 0
@@ -5374,7 +5399,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 12
+  field of view: 35.3
   orthographic: 0
   orthographic size: 5
   m_Depth: -1

@@ -45,9 +45,17 @@ namespace Enemy
         [Tooltip("Tunable radius. When the player is inside this radius, it'll attack it")]
         private float AttackRadius;
 
+
+        [SerializeField]
+        private Transform NumberHolder;
+
         private bool IsPrime => NumberAlgorithms.IsPrime(this.Value);
         private bool IsPerfectSquare => NumberAlgorithms.IsPerfectSquare(this.Value);
         private bool IsPerfectCube => NumberAlgorithms.IsPerfectCube(this.Value);
+
+        List<IndependentNumber> NumberComponents = new List<IndependentNumber>();
+
+
         /// <summary>
         /// this is the point that the enemy is usually walking towards.
         /// </summary>
@@ -57,7 +65,8 @@ namespace Enemy
 
         bool parametersSet { set; get; } = false;
 
-        public void SetParameters(MeshRenderer meshRenderer, Transform playerTransform)
+        public void SetParameters(MeshRenderer meshRenderer,
+                                  Transform playerTransform)
         {
             this.WalkableArea = meshRenderer;
             this.PlayerTransform = playerTransform;
@@ -65,16 +74,25 @@ namespace Enemy
         }
 
 
-        public void SetValue(int val)
+        public void SetValue(int val, EnemyNumberCreator creator)
         {
             this.Value = val;
-            // TODO : use the enemy creation script to create the number value.
+            NumberComponents = creator.CreateNumber(this.Value, NumberHolder);
         }
 
 
 
         protected override void OnReturnedToPool()
         {
+            NumberHolder.localPosition = Vector3.zero;
+            NumberHolder.localEulerAngles = Vector3.zero;
+            NumberHolder.localScale = Vector3.one;
+
+            foreach (var number in NumberComponents)
+            {
+                number.ReturnToPool();
+            }
+            NumberComponents.Clear();
             parametersSet = false;
         }
 
@@ -181,7 +199,6 @@ namespace Enemy
                 player.TakeDamage(this);
 
                 this.ReturnToPool();
-                // kamikaze this shit.. return to pool!!
             }
         }
 

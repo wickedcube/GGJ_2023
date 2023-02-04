@@ -23,24 +23,35 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField]
     private MeshRenderer walkableArea;
 
+    [SerializeField]
+    private EnemyNumberCreator enemyNumberCreator;
+
+    int counter = 0;
+
     // Update is called once per frame
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            var poolable = pool.GetObject();
-            if(poolable is EnemyBehavior ebh)
-            {
-                ebh.SetParameters(walkableArea, PlayerTransform);
-            }
-
             var ray = camera.ScreenPointToRay(Input.mousePosition);
             var results = Physics.RaycastAll(ray, float.MaxValue, ArenaMask);
-            foreach (var result in results)
+            foreach(var result in results)
             {
-                poolable.transform.position = result.point + new Vector3(0, poolable.transform.localScale.y / 2, 0);
-                return;
+                CreateEnemyAt(result.point, counter);
             }
+            
         }
+    }
+
+    public void CreateEnemyAt(Vector3 position, int value)
+    {
+        var poolable = pool.GetObject();
+        if (poolable is EnemyBehavior ebh)
+        {
+            ebh.SetParameters(walkableArea, PlayerTransform);
+
+            ebh.SetValue(counter++, enemyNumberCreator);
+        }
+        poolable.transform.position = position + new Vector3(0, poolable.transform.localScale.y / 2, 0);
     }
 }
