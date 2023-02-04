@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using DG.Tweening;
+using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    [SerializeField] private LeaderboardHandler leaderboardHandler;
-
-
     [SerializeField] private GameObject menu;
     [SerializeField] private GameObject firstFlowMenu;
     [SerializeField] private Button playButton;
@@ -28,10 +27,15 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private Transform leaderboardHolder;
     [SerializeField] private GameObject leaderboardEntryPrefab;
 
+    [Space(20)]
+    [SerializeField] private GameObject leaderboardPanel;
+    [SerializeField] private GameObject creditsPanel;
+    [SerializeField] private GameObject controlsPanel;
 
 
     void Start()
     {
+        DOTween.Init();
         if (!PlayerPrefs.HasKey(LeaderboardHandler.USERNAME_PREF))
         {
             // first time flow
@@ -46,7 +50,7 @@ public class MainMenu : MonoBehaviour
 
     public void UpdateUsername()
     {
-        leaderboardHandler.UpdateUsername(usernameField.text, () =>
+        LeaderboardHandler.Instance.UpdateUsername(usernameField.text, () =>
         {
             usernameLog.text = "Username added";
             SetupGame();
@@ -84,7 +88,7 @@ public class MainMenu : MonoBehaviour
             }
         }
 
-        leaderboardHandler.UpdateLeaderboardUI(() =>
+        LeaderboardHandler.Instance.UpdateLeaderboardUI(() =>
         {
             GameObject lbObj = null;
 
@@ -107,5 +111,47 @@ public class MainMenu : MonoBehaviour
                 lbObj.transform.Find("highscore").GetComponent<TMP_Text>().text = item.highscore.ToString();
             }
         });
+    }
+
+
+    public void ShowControls(bool show)
+    {
+        if (show)
+        {
+            controlsPanel.transform.DOShakePosition(1f, 3);
+        }
+        else
+        {
+            leaderboardPanel.transform.DOShakePosition(1f, 3);
+        }
+        leaderboardPanel.SetActive(!show);
+        creditsPanel.SetActive(false);
+        controlsPanel.SetActive(show);
+    }
+
+    public void ShowCredits(bool show)
+    {
+        if (show)
+        {
+            creditsPanel.transform.DOShakePosition(1f, 3);
+        }
+        else
+        {
+            leaderboardPanel.transform.DOShakePosition(1f, 3);
+        }
+        leaderboardPanel.SetActive(!show);
+        controlsPanel.SetActive(false);
+        creditsPanel.SetActive(show);
+    }
+
+    public void Shake(GameObject gameObject)
+    {
+        gameObject.transform.DOPunchScale(new Vector3(-0.1f, -0.1f, -0.1f), 0.5f,5,0.2f);
+    }
+
+
+    public void StartGame()
+    {
+        SceneManager.LoadScene(1);
     }
 }
