@@ -31,6 +31,7 @@ public class EnemySpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        return;
         if (Input.GetMouseButtonDown(0))
         {
             var ray = camera.ScreenPointToRay(Input.mousePosition);

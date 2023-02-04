@@ -7,11 +7,7 @@ public class DummyEnemy : MonoBehaviour
 {
     public void Init(int num)
     {
-        
-    }
-    private IEnumerator Start()
-    {
-        yield return new WaitForSeconds(1.5f);
-        
+        var t = FindObjectOfType<EnemySpawner>();
+        t.CreateEnemyAt(transform.position, num);
     }
 }
