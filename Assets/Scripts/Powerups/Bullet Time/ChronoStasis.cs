@@ -5,10 +5,12 @@ using UnityEngine;
 
 public class ChronoStasis : MonoBehaviour
 {
+    [Range(1, PlayerStats.MAX_COMBO_METER)] 
+    [SerializeField] private int minComboToActivate = 4;
+    
     [Range(0.1f,1f)]
     [SerializeField] private float slowdownTimePerc = 1;
-
-
+    
     private PlayerStats stats;
     private bool activated = false;
     
@@ -18,21 +20,36 @@ public class ChronoStasis : MonoBehaviour
     {
         stats = GetComponent<PlayerStats>();
         //default
-        CanActivate = () => stats.ChronoStatisLeft > 0;
+        CanActivate = () => stats.ComboMeterValue >= minComboToActivate;
     }
 
     private void Update()
     {
-        if (KeyMappings.GetChronoKey() && CanActivate())
+        if (KeyMappings.GetChronoKeyDown() && CanActivate())
         {
-            activated = true;
+            Debug.Log("Here we go");
             ChronoHelper.OnChronoEffectStarted?.Invoke(slowdownTimePerc);
-            stats.ConsumeChronoMeter(Time.deltaTime);
+            RunChronoStasis();
         }
-        else if (activated)
+    }
+
+    private void RunChronoStasis()
+    {
+        StartCoroutine(ChronoStatis());
+    }
+
+    IEnumerator ChronoStatis()
+    {
+        stats.ComboMeterLocked = true;
+        float timeStep = 0;
+        while (timeStep <= 1)
         {
-            activated = false;
-            ChronoHelper.OnChronoEffectEnded?.Invoke();
+            timeStep += Time.deltaTime / minComboToActivate;
+            stats.ConsumeCombo(Time.deltaTime * PlayerStats.COMBO_STEP);
+            yield return new WaitForEndOfFrame();
         }
+
+        yield return new WaitForEndOfFrame();
+        stats.ComboMeterLocked = false;
     }
 }

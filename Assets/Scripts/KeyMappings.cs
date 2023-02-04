@@ -53,5 +53,5 @@ public class KeyMappings : ScriptableObject
     public static bool GetCubeRootFire() => Input.GetMouseButtonDown((int)Mappings.MouseShootCbqrt);
     
     public static bool GetGrenadeKeyDown() => Input.GetKeyDown(Mappings.Grenade);
-    public static bool GetChronoKey() => Input.GetKey(Mappings.ChronoTrigger);
+    public static bool GetChronoKeyDown() => Input.GetKeyDown(Mappings.ChronoTrigger);
 }
