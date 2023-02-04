@@ -48,6 +48,8 @@ namespace Enemy
 
         [SerializeField]
         private Transform NumberHolder;
+         [SerializeField]
+        private GameObject DestroyFX;
 
         private bool IsPrime => NumberAlgorithms.IsPrime(this.Value);
         public bool IsPerfectSquare => NumberAlgorithms.IsPerfectSquare(this.Value);
@@ -91,6 +93,7 @@ namespace Enemy
             foreach (var number in NumberComponents)
             {
                 number.ReturnToPool();
+                Instantiate(DestroyFX, transform.position, Quaternion.identity);
             }
             NumberComponents.Clear();
             parametersSet = false;
@@ -182,6 +185,7 @@ namespace Enemy
                 if(obj is Grenade)
                 {
                     // return the enemy to enemy pool.
+                    ReturnToPool();
                     return true;
                 }
             }

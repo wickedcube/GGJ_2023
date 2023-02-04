@@ -46,7 +46,7 @@ public class WaveSpawner : MonoBehaviour
     {
         if (waveSos.Count <= idx)
         {
-            Debug.LogError($"Count is too much");
+            // Debug.LogError($"Count is too much");
             return;
         }
 

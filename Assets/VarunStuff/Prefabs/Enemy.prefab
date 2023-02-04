@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6206021730962932142}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: NumberHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 4552554504222942862}
   - component: {fileID: 3167279736693277068}
   - component: {fileID: 1406311878995283421}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61,7 +61,7 @@ Transform:
   m_GameObject: {fileID: 6881099460478092192}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6206021730962932142}
@@ -172,3 +172,4 @@ MonoBehaviour:
   AgitatedSpeedIncrease: 1
   AttackRadius: 200
   NumberHolder: {fileID: 6206021730962932142}
+  DestroyFX: {fileID: 1583133410359590, guid: a81d2452d20861642ba66c165065e7ef, type: 3}

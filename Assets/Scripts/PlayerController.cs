@@ -36,21 +36,20 @@ public class PlayerController : MonoBehaviour
         // Cursor.visible = false;
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
+        cameraRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(cameraRay, out cameraRayHit, 1<<7))
+        {
+            Vector3 targetPosition = new Vector3(cameraRayHit.point.x, transform.position.y, cameraRayHit.point.z);
+            transform.LookAt(targetPosition);
+        }
+
         verticalInput = Input.GetAxis("Vertical");
         horizontalInput = Input.GetAxis("Horizontal");
-        // transform.rotation = Quaternion.Euler(0, Input.mousePosition.x * rotationSpeed, 0);
-        // rb.MovePosition(transform.position + verticalInput * Time.deltaTime * movementSpeed * Vector3.forward + horizontalInput * Time.deltaTime * movementSpeed * Vector3.right);
-        // transform.Translate(verticalInput * Time.deltaTime * movementSpeed * Vector3.forward + horizontalInput * Time.deltaTime * movementSpeed * Vector3.right);
-        rb.velocity = verticalInput * movementSpeed * transform.forward + horizontalInput * movementSpeed * transform.right;
-        // var t = rb.velocity.y;
-        //var vec = verticalInput  * movementSpeed * Vector3.forward + horizontalInput * movementSpeed * Vector3.right;
-        // vec.y = t;
-        // rb.velocity = vec;
+        rb.velocity = verticalInput * movementSpeed * transform.forward + horizontalInput*movementSpeed * transform.right;
         cameraRef.position = startCameraPosition + transform.position - startPlayerPosition;
-        animatorRef.SetFloat("moveSpeedX", horizontalInput);
+        // animatorRef.SetFloat("moveSpeedX", horizontalInput);
         animatorRef.SetFloat("moveSpeedZ", verticalInput);
 
 
@@ -71,16 +70,6 @@ public class PlayerController : MonoBehaviour
         else
         {
             animatorRef.SetBool("isShooting", false);
-        }
-    }
-
-    void Update()
-    {
-        cameraRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(cameraRay, out cameraRayHit, 1<<7))
-        {
-            Vector3 targetPosition = new Vector3(cameraRayHit.point.x, transform.position.y, cameraRayHit.point.z);
-            transform.LookAt(targetPosition);
         }
     }
 

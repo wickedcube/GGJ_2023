@@ -103,7 +103,7 @@ MonoBehaviour:
   detectionLayer:
     serializedVersion: 2
     m_Bits: 64
-  explosionRef: {fileID: 7618812902749017273, guid: a3a73c1dfb653fe49a6cc7ca32f4850f, type: 3}
+  explosionRef: {fileID: 7618812902749017273, guid: 98a9c4f61105fca4da3b91de5c3ce267, type: 3}
   defaultFuseTime: 1
   aoe: 10
   explosionScale: 0.328
