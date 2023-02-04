@@ -7,16 +7,18 @@ public class ChronoStasis : MonoBehaviour
 {
     [Range(0.1f,1f)]
     [SerializeField] private float slowdownTimePerc = 1;
-    [SerializeField] private bool defaultActivation = true;
-    
+
+
+    private PlayerStats stats;
     private bool activated = false;
     
     public System.Func<bool> CanActivate;
 
     private void Start()
     {
+        stats = GetComponent<PlayerStats>();
         //default
-        CanActivate = () => defaultActivation;
+        CanActivate = () => stats.ChronoStatisLeft > 0;
     }
 
     private void Update()
@@ -25,6 +27,7 @@ public class ChronoStasis : MonoBehaviour
         {
             activated = true;
             ChronoHelper.OnChronoEffectStarted?.Invoke(slowdownTimePerc);
+            stats.ConsumeChronoMeter(Time.deltaTime);
         }
         else if (activated)
         {
