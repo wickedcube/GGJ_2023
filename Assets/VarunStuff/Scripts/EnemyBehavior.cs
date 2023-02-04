@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.AI;
 using Interfaces;
 using Powerups.Grenade;
+using ObjectPooling;
+
 namespace Enemy
 {
     public static class IntExtensions
@@ -65,8 +67,8 @@ namespace Enemy
 
         public void SetValue(int val)
         {
+            this.Value = val;
             // TODO : use the enemy creation script to create the number value.
-            throw new System.NotImplementedException();
         }
 
 
