@@ -56,7 +56,7 @@ namespace Enemy
 
         public void SetValue(int val)
         {
-            // TODO : use the enemy creation script to create the number.
+            // TODO : use the enemy creation script to create the number value.
             throw new System.NotImplementedException();
         }
 
@@ -77,7 +77,7 @@ namespace Enemy
         {
             // TODO : Implement the Chrono slowdown.
         }
-
+        
 
         // Update is called once per frame
         void Update()
@@ -85,7 +85,7 @@ namespace Enemy
             Patrol();
             TryAttackPlayer();
         }
-        public bool CanTakeDamage(object enemyObject)
+        public bool CanTakeDamage(object enemyObject) // MAKE THIS FULLY PRIVATE BITCH!! 
         {
             if (this.IsPrime) return false; // prime numbers are healths. Can't take damage.
 
@@ -141,7 +141,16 @@ namespace Enemy
 
         public bool TakeDamage(object obj)
         {
-            throw new System.NotImplementedException();
+            if (this.CanTakeDamage(obj))
+            {
+                if(obj is Grenade)
+                {
+                    // return the enemy to enemy pool.
+                    return true;
+                }
+            }
+
+            return false;
         }
     }
 
