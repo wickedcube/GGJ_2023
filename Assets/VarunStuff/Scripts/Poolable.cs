@@ -2,17 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Poolable : MonoBehaviour
+public abstract class Poolable : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private ObjectPool Pool { set; get; }
+
+    public void ReturnToPool()
     {
-        
+        if (this.Pool == default)
+        {
+            Debug.LogError($" No Poolable assigned {this.gameObject.name}");
+            return;
+        }
+        Pool.ReturnPoolable(this);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public void SetPoolable(ObjectPool p) => this.Pool = p;
+
+    protected abstract void OnReturnedToPool();
 }

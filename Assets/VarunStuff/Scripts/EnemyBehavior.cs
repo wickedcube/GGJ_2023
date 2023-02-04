@@ -21,7 +21,7 @@ namespace Enemy
         ReducerBomb = 2
     }
 
-    public class EnemyBehavior : MonoBehaviour, INumberEnemy
+    public class EnemyBehavior : Poolable, INumberEnemy
     {
         [SerializeField]
         private NavMeshAgent Agent;
@@ -53,6 +53,15 @@ namespace Enemy
 
         public int Value { private set; get; }
 
+        bool parametersSet { set; get; } = false;
+
+        public void SetParameters(MeshRenderer meshRenderer, Transform playerTransform)
+        {
+            this.WalkableArea = meshRenderer;
+            this.PlayerTransform = playerTransform;
+            parametersSet = true;
+        }
+
 
         public void SetValue(int val)
         {
@@ -82,6 +91,7 @@ namespace Enemy
         // Update is called once per frame
         void Update()
         {
+            if(!parametersSet) return;
             Patrol();
             TryAttackPlayer();
         }
@@ -155,14 +165,21 @@ namespace Enemy
 
         private void OnTriggerEnter(Collider other)
         {
-            Debug.Log(" Entering the fucking enemy!");
 
             var enteredGameObject = other.gameObject;
             var player = enteredGameObject.GetComponent<PlayerController>();
             if(player != default)
             {
                 player.TakeDamage(this);
+
+                this.ReturnToPool();
+                // kamikaze this shit.. return to pool!!
             }
+        }
+
+        protected override void OnReturnedToPool()
+        {
+            parametersSet = false;
         }
     }
 
