@@ -6,12 +6,19 @@ public class PlayerController : MonoBehaviour
 {
     public Transform cameraRef;
     public Animator animatorRef;
-    public List<GameObject> bullet;
-    public Transform bulletSpawn;
+    public List<GameObject> bullet1;
+    public List<GameObject> bullet2;
+    public Transform bulletSpawn1;
+    public Transform bulletSpawn2;
+    public float movementSpeed;
+    public float rotationSpeed;
+    public float timeBetweenShots;
     private Vector3 startPlayerPosition;
     private Vector3 startCameraPosition;
     float verticalInput;
     float horizontalInput;
+    float lastLeftShot;
+    float lastRightShot;
 
     // Start is called before the first frame update
     void Start()
@@ -26,16 +33,23 @@ public class PlayerController : MonoBehaviour
     {
         verticalInput = Input.GetAxis("Vertical");
         horizontalInput = Input.GetAxis("Horizontal");
-        transform.rotation = Quaternion.Euler(0, -Input.mousePosition.x, 0);
-        transform.Translate(verticalInput * Time.deltaTime * 20f * Vector3.forward + horizontalInput * Time.deltaTime* 20f * Vector3.right);
+        transform.rotation = Quaternion.Euler(0, -Input.mousePosition.x* rotationSpeed, 0);
+        transform.Translate(verticalInput * Time.deltaTime * movementSpeed * Vector3.forward + horizontalInput * Time.deltaTime* movementSpeed * Vector3.right);
         cameraRef.position = startCameraPosition + transform.position - startPlayerPosition;
         animatorRef.SetFloat("moveSpeedX", horizontalInput);
         animatorRef.SetFloat("moveSpeedZ", verticalInput);
 
 
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && Time.time > lastLeftShot + timeBetweenShots)
         {
-            Instantiate(bullet[Random.Range(0, 3)], bulletSpawn.position, bulletSpawn.rotation);
+            lastLeftShot = Time.time;
+            Instantiate(bullet1[Random.Range(0, bullet1.Count)], bulletSpawn1.position, bulletSpawn1.rotation);
+        }
+
+        if (Input.GetMouseButton(1) && Time.time > lastRightShot + timeBetweenShots)
+        {
+            lastRightShot = Time.time;
+            Instantiate(bullet2[Random.Range(0, bullet1.Count)], bulletSpawn2.position, bulletSpawn2.rotation);
         }
     }
 }
