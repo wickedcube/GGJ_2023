@@ -49,8 +49,8 @@ public class KeyMappings : ScriptableObject
     public static float GetAxis(AxisInput axisInput) => Input.GetAxis(axisInput.ToString());
     
     public static bool GetMouseButton(MouseInput input) => Input.GetMouseButton((int)input);
-    public static bool GetSquareRootFire() => Input.GetMouseButtonDown((int)Mappings.MouseShootSqrt);
-    public static bool GetCubeRootFire() => Input.GetMouseButtonDown((int)Mappings.MouseShootCbqrt);
+    public static bool GetSquareRootFire() => Input.GetMouseButton((int)Mappings.MouseShootSqrt);
+    public static bool GetCubeRootFire() => Input.GetMouseButton((int)Mappings.MouseShootCbqrt);
     
     public static bool GetGrenadeKeyDown() => Input.GetKeyDown(Mappings.Grenade);
     public static bool GetChronoKeyDown() => Input.GetKeyDown(Mappings.ChronoTrigger);

@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, -Input.mousePosition.x* rotationSpeed, 0);
         // rb.MovePosition(transform.position + verticalInput * Time.deltaTime * movementSpeed * Vector3.forward + horizontalInput * Time.deltaTime * movementSpeed * Vector3.right);
         // transform.Translate(verticalInput * Time.deltaTime * movementSpeed * Vector3.forward + horizontalInput * Time.deltaTime * movementSpeed * Vector3.right);
-        rb.velocity = new Vector3(horizontalInput * movementSpeed, 0, verticalInput * movementSpeed);
+        rb.velocity = verticalInput  * movementSpeed * transform.forward + horizontalInput  * movementSpeed * transform.right;
         // var t = rb.velocity.y;
         //var vec = verticalInput  * movementSpeed * Vector3.forward + horizontalInput * movementSpeed * Vector3.right;
         // vec.y = t;
