@@ -4,7 +4,7 @@ using UnityEngine;
 using Enemy;
 using ObjectPooling;
 
-public class TempPoolCreator : MonoBehaviour
+public class EnemySpawner : MonoBehaviour
 {
 
     [SerializeField]
