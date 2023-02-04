@@ -2,82 +2,66 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class PlayerStats : MonoBehaviour
 {
-    [SerializeField]
-    private int health;
+    public const int MAX_COMBO_METER = 4000;
+    public const int COMBO_STEP = 1000;
     
-    [Header("Measured in Count")]
-    [SerializeField] private int maxGrenades = 4;
-    [SerializeField] private int grenadesLeft;
+    [SerializeField] private int maxHealth = 100;
     
-    [Header("Measured in seconds")]
-    [SerializeField] private int maxChronosTime = 5;
-    [SerializeField] private float chronoStatisLeft;
-
-    [SerializeField] private List<int> comboKillThresholds;
-    [SerializeField] private List<int> comboMulitplierVals;
-    private int currentComboIndex;
-    private int killCount;
-    private int currentMeter;
-
+    [SerializeField] private int health;
+    [SerializeField] private float comboMeter;
+    
+    public float ComboMeterValue => comboMeter;
+    
+    /// <summary>
+    /// returns true is Locked by some entity.
+    /// </summary>
+    public bool ComboMeterLocked = false;
+    
+    /// <summary>
+    /// Subscribe to get death events
+    /// </summary>
     public System.Action HealthDepleted;
-
-    public int GrenadesLeft => grenadesLeft;
-    public float ChronoStatisLeft => chronoStatisLeft;
 
     private void Start()
     {
-        chronoStatisLeft = 0;
-        grenadesLeft = 0;
+        health = maxHealth;
+        comboMeter = 0;
+        
+        PlayerHealthUI.Instance.SetHealthPerc((float)health/maxHealth);
+        PlayerHealthUI.Instance.SetComboMeterF((float)comboMeter/MAX_COMBO_METER);
+    }
+
+    private void Update()
+    {
+        if(Input.GetButtonDown("Jump"))
+            AddToCombo(100f);
     }
 
     public void TakeDamage(int dmg)
     {
         health -= dmg;
-        ResetKillCounter();
         if(health <= 0)
             HealthDepleted?.Invoke();
+        
+        PlayerHealthUI.Instance.SetHealthPerc((float)health/maxHealth);
     }
 
-    public void GrantGrenade(int qty)
+    public void ConsumeCombo(float amt)
     {
-        grenadesLeft = Mathf.Clamp(grenadesLeft + qty, 0, maxGrenades);
+        comboMeter = Mathf.Clamp(comboMeter - amt, 0, MAX_COMBO_METER);
+        PlayerHealthUI.Instance.SetComboMeterF(comboMeter/MAX_COMBO_METER);
     }
     
-    public void ConsumeGrenade()
+    public void AddToCombo(float amt)
     {
-        grenadesLeft = Mathf.Clamp(grenadesLeft - 1, 0, maxGrenades);
-    }
-
-    public void TopupChronoMeter(float topUpValue)
-    {
-        chronoStatisLeft = Mathf.Clamp(chronoStatisLeft + topUpValue, 0, maxChronosTime);
-    }
-    
-    public void ConsumeChronoMeter(float amt)
-    {
-        chronoStatisLeft = Mathf.Clamp(chronoStatisLeft - amt, 0, maxChronosTime);
-    }
-
-    public void IncrementKillValue()
-    {
-        killCount++;
-        if (currentComboIndex < comboKillThresholds.Count)
-        {
-            if (killCount > comboKillThresholds[currentComboIndex + 1])
-            {
-                currentComboIndex++;
-            }
-        }
-
-        currentMeter += comboMulitplierVals[currentComboIndex];
-    }
-
-    public void ResetKillCounter() {
-
-        killCount = 0;
-        currentComboIndex = 0;
+        if (ComboMeterLocked)
+            return;
+        
+        comboMeter = Mathf.Clamp(comboMeter + amt, 0, MAX_COMBO_METER);
+        PlayerHealthUI.Instance.SetComboMeterF(comboMeter/MAX_COMBO_METER);
     }
 }

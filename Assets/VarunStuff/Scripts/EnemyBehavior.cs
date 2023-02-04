@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.AI;
 using Interfaces;
 using Powerups.Grenade;
+using ObjectPooling;
+
 namespace Enemy
 {
     public static class IntExtensions
@@ -21,7 +23,7 @@ namespace Enemy
         ReducerBomb = 2
     }
 
-    public class EnemyBehavior : MonoBehaviour, INumberEnemy
+    public class EnemyBehavior : Poolable, INumberEnemy
     {
         [SerializeField]
         private NavMeshAgent Agent;
@@ -43,9 +45,17 @@ namespace Enemy
         [Tooltip("Tunable radius. When the player is inside this radius, it'll attack it")]
         private float AttackRadius;
 
+
+        [SerializeField]
+        private Transform NumberHolder;
+
         private bool IsPrime => NumberAlgorithms.IsPrime(this.Value);
-        private bool IsPerfectSquare => NumberAlgorithms.IsPerfectSquare(this.Value);
-        private bool IsPerfectCube => NumberAlgorithms.IsPerfectCube(this.Value);
+        public bool IsPerfectSquare => NumberAlgorithms.IsPerfectSquare(this.Value);
+        public bool IsPerfectCube => NumberAlgorithms.IsPerfectCube(this.Value);
+
+        List<IndependentNumber> NumberComponents = new List<IndependentNumber>();
+
+
         /// <summary>
         /// this is the point that the enemy is usually walking towards.
         /// </summary>
@@ -53,13 +63,38 @@ namespace Enemy
 
         public int Value { private set; get; }
 
+        bool parametersSet { set; get; } = false;
 
-        public void SetValue(int val)
+        public void SetParameters(MeshRenderer meshRenderer,
+                                  Transform playerTransform)
         {
-            // TODO : use the enemy creation script to create the number.
-            throw new System.NotImplementedException();
+            this.WalkableArea = meshRenderer;
+            this.PlayerTransform = playerTransform;
+            parametersSet = true;
         }
 
+
+        public void SetValue(int val, EnemyNumberCreator creator)
+        {
+            this.Value = val;
+            NumberComponents = creator.CreateNumber(this.Value, NumberHolder);
+        }
+
+
+
+        protected override void OnReturnedToPool()
+        {
+            NumberHolder.localPosition = Vector3.zero;
+            NumberHolder.localEulerAngles = Vector3.zero;
+            NumberHolder.localScale = Vector3.one;
+
+            foreach (var number in NumberComponents)
+            {
+                number.ReturnToPool();
+            }
+            NumberComponents.Clear();
+            parametersSet = false;
+        }
 
         // Start is called before the first frame update
         void Start()
@@ -77,15 +112,16 @@ namespace Enemy
         {
             // TODO : Implement the Chrono slowdown.
         }
-
+        
 
         // Update is called once per frame
         void Update()
         {
+            if(!parametersSet) return;
             Patrol();
             TryAttackPlayer();
         }
-        public bool CanTakeDamage(object enemyObject)
+        public bool CanTakeDamage(object enemyObject) // MAKE THIS FULLY PRIVATE BITCH!! 
         {
             if (this.IsPrime) return false; // prime numbers are healths. Can't take damage.
 
@@ -141,8 +177,31 @@ namespace Enemy
 
         public bool TakeDamage(object obj)
         {
-            throw new System.NotImplementedException();
+            if (this.CanTakeDamage(obj))
+            {
+                if(obj is Grenade)
+                {
+                    // return the enemy to enemy pool.
+                    return true;
+                }
+            }
+
+            return false;
         }
+
+        private void OnCollisionEnter(Collision other)
+        {
+
+            var enteredGameObject = other.collider.gameObject;
+            var player = enteredGameObject.GetComponent<PlayerController>();
+            if(player != default)
+            {
+                player.TakeDamage(this);
+                FindObjectOfType<WaveSpawner>().EnemyDied();
+                this.ReturnToPool();
+            }
+        }
+
     }
 
 }

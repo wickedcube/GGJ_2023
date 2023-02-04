@@ -19,22 +19,25 @@ public class LeaderboardHandler : MonoBehaviour
     [SerializeField] private LeaderboardData playerData;
     [SerializeField] private List<LeaderboardData> leaderboard;
 
-    [Space(20)]
-
-    [SerializeField] private TMP_Text playerUsernameText;
-    [SerializeField] private TMP_Text playerScoreText;
-
-    [Space(20)]
-
-    [SerializeField] private TMP_Text usernameLog;
-    [SerializeField] private Button updateUsername;
-    [SerializeField] private TMP_InputField usernameField;
-
-    [Space(20)]
-
-    [SerializeField] private Transform leaderboardHolder;
-    [SerializeField] private GameObject leaderboardEntryPrefab;
+    public LeaderboardData PlayerData => playerData;
+    public List<LeaderboardData> Leaderboard => leaderboard;
+    public static LeaderboardHandler Instance;
     // Start is called before the first frame update
+
+
+    private void Awake()
+    {
+        if(Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
     void Start()
     {
         leaderboard = new List<LeaderboardData>();
@@ -52,19 +55,12 @@ public class LeaderboardHandler : MonoBehaviour
         StartCoroutine(UpdateDataToLeaderboard());
     }
 
-    public void UpdateLeaderboardUI()
+    public void UpdateLeaderboardUI(System.Action onComplete)
     {
-
-        if (PlayerPrefs.HasKey(USERNAME_PREF))
-        {
-            playerData.username = PlayerPrefs.GetString(USERNAME_PREF);
-            playerScoreText.text = playerData.highscore.ToString();
-            playerUsernameText.text = playerData.username;
-        }
-        StartCoroutine(GetLeaderboardData());
+        StartCoroutine(GetLeaderboardData(onComplete));
     }
 
-    private IEnumerator GetLeaderboardData()
+    private IEnumerator GetLeaderboardData(System.Action onComplete)
     {
         using (UnityWebRequest request = UnityWebRequest.Get(GET_LEADERBOARD_DATA))
         {
@@ -79,27 +75,8 @@ public class LeaderboardHandler : MonoBehaviour
                 string json = request.downloadHandler.text;
                 Debug.Log("Received leaderboard JSON: " + json);
                 leaderboard = Newtonsoft.Json.JsonConvert.DeserializeObject<List<LeaderboardData>>(json);
-                GameObject lbObj = null;
                 leaderboard = leaderboard.OrderByDescending(entry => entry.highscore).ToList();
-                
-                for (int i = 0; i < leaderboard.Count; i++)
-                {
-                    LeaderboardData item = leaderboard[i];
-                    if(item.username == playerData.username)
-                    {
-                        playerScoreText.text = item.highscore.ToString();
-                        playerUsernameText.text = item.username;
-                    }
-                    if (item.highscore <= 0) continue;
-                    lbObj = Instantiate(leaderboardEntryPrefab, leaderboardHolder);
-                    if (item.username == playerData.username)
-                    {
-                        lbObj.transform.Find("myScore").gameObject.SetActive(true);
-                    }
-                    lbObj.transform.Find("rank").GetComponent<TMP_Text>().text = $"{i + 1}";
-                    lbObj.transform.Find("username").GetComponent<TMP_Text>().text = item.username;
-                    lbObj.transform.Find("highscore").GetComponent<TMP_Text>().text = item.highscore.ToString();
-                }
+                onComplete?.Invoke();
 
             }
         }
@@ -129,22 +106,21 @@ public class LeaderboardHandler : MonoBehaviour
             else
             {
                 Debug.Log($"Record added successfully {request.downloadHandler.text}");
-                StartCoroutine(GetLeaderboardData());
             }
         }
     }
 
 
-    public void UpdateUsername()
+    public void UpdateUsername(string username, System.Action onComplete, System.Action onFailed)
     {
-        playerData.username = usernameField.text;
+        playerData.username = username;
         PlayerPrefs.SetString(USERNAME_PREF, playerData.username);
         PlayerPrefs.SetInt(SCORE_PREF, 0);
         PlayerPrefs.Save();
-        StartCoroutine(UpdateUsernameRoutine());
+        StartCoroutine(UpdateUsernameRoutine(onComplete,onFailed));
     }
 
-    private IEnumerator UpdateUsernameRoutine()
+    private IEnumerator UpdateUsernameRoutine(System.Action onComplete, System.Action onFailed)
     {
         string userData = JsonUtility.ToJson(playerData);
         byte[] postData = System.Text.Encoding.UTF8.GetBytes(userData);
@@ -161,15 +137,15 @@ public class LeaderboardHandler : MonoBehaviour
             }
             else
             {
+                Debug.Log($"leaerboard update {request.downloadHandler.text}");
                 if(request.downloadHandler.text == "success")
                 {
-                    usernameLog.text = "Username added";
+                    onComplete?.Invoke();
                 }
                 else
                 {
-                    usernameLog.text = "Username unavailable";
+                    onFailed?.Invoke();
                 }
-                Debug.Log($"leaerboard update {request.downloadHandler.text}");
 
 
             }

@@ -13,5 +13,9 @@ MonoBehaviour:
   m_Name: new WaveFormation
   m_EditorClassIdentifier: 
   InternalWaves:
-  - fileName: joe
-    timeTillNextInternalWave: 0
+  - fileName: test_1
+    timeTillNextInternalWave: 3
+  - fileName: test_2
+    timeTillNextInternalWave: 3
+  - fileName: test_3
+    timeTillNextInternalWave: 3

@@ -6,12 +6,9 @@ using UnityEngine;
 public class DummyEnemy : MonoBehaviour
 {
     public void Init(int num)
-    {
-        
-    }
-    private IEnumerator Start()
-    {
-        yield return new WaitForSeconds(1.5f);
-        
+    { 
+        Debug.LogError($"Spawning enemy for number {num}");
+        var t = FindObjectOfType<EnemySpawner>();
+        t.CreateEnemyAt(transform.position, num);
     }
 }
