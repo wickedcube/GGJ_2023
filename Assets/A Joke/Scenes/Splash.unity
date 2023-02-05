@@ -858,7 +858,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 313567e2e17c45442b4481a1782a03fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxPanelImages: 10
+  maxPanelImages: 13
   flipbook: {fileID: 1087375032}
   flipbookPageRef: {fileID: 396304945}
   sourceToPlay: {fileID: 0}
@@ -1160,7 +1160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 313567e2e17c45442b4481a1782a03fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxPanelImages: 10
+  maxPanelImages: 13
   flipbook: {fileID: 1456885929}
   flipbookPageRef: {fileID: 1803548168}
   sourceToPlay: {fileID: 1456885935}
