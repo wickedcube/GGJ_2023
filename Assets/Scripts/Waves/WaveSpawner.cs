@@ -58,6 +58,7 @@ public class WaveSpawner : MonoBehaviour
         var player = FindObjectOfType<PlayerController>();
         yield return new WaitForSeconds(delay);
 
+        var enemInWave = 0;
         foreach (var internalWave in waveFormation.InternalWaves)
         {
             var temp = internalWave.fileName;
@@ -66,12 +67,14 @@ public class WaveSpawner : MonoBehaviour
             {
                 for (int i = 0; i < VARIABLE.Value.Count; i++)
                 {
-                    activeEnemiesInWave++;
+                    enemInWave++;
                     var customVec = VARIABLE.Value[i];
                     var pos = new Vector3(customVec.x, customVec.y, customVec.z) * 2;
                     var enemy = Instantiate(enemyPrefab, player.transform.position + pos, Quaternion.identity);
                     enemy.Init(VARIABLE.Key);
                 }
+
+                activeEnemiesInWave += enemInWave;
             }
             yield return new WaitForSeconds(internalWave.timeTillNextInternalWave);
         }
@@ -80,8 +83,10 @@ public class WaveSpawner : MonoBehaviour
     public void EnemyDied()
     {
         activeEnemiesInWave--;
+        Debug.Log($"remaining enemies = {activeEnemiesInWave}");
         if (activeEnemiesInWave == 0)
         {
+            Debug.LogError($"Starting a new wave!");
             OnWaveFinished?.Invoke();
         }
         else
