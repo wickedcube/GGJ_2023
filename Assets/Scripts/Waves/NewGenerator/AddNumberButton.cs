@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using Newtonsoft.Json;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
@@ -64,6 +65,7 @@ namespace Waves
                 }
             }
             File.WriteAllText($"{Application.dataPath}/Jsons/Resources/{fileName}.json", JsonConvert.SerializeObject(temp));
+            AssetDatabase.Refresh();
         }
         public void OnAddButtonClicked()
         {

@@ -114,14 +114,20 @@ namespace Enemy
         {
             
         }
-        
 
-        // Update is called once per frame
+
+        private void Look()
+        {
+            var t = (Camera.main.transform.position - transform.position);
+            transform.LookAt(Vector3.ProjectOnPlane(t,Vector3.up ) * t.magnitude,Vector3.up);
+        }
         void Update()
         {
             if(!parametersSet) return;
+            
             Patrol();
             TryAttackPlayer();
+            Look();
         }
         public bool CanTakeDamage(object enemyObject) // MAKE THIS FULLY PRIVATE BITCH!! 
         {
@@ -209,4 +215,5 @@ namespace Enemy
 
     }
 
+    
 }

@@ -21,7 +21,7 @@ namespace Waves
             Camera.main.transform.position = vecPos;
             
             var og = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-            og.transform.position = new Vector3(camPos, 0, camPos);
+            og.transform.position = new Vector3(camPos, 1, camPos);
             og.transform.localScale = Vector3.one * 0.1f;
             Destroy(og.GetComponentInChildren<Collider>());
             

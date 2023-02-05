@@ -42,7 +42,7 @@ public class WaveSpawner : MonoBehaviour
     }
 
 
-    public void StartWave(int idx)
+    public void StartWave(int idx, float delay = 0f)
     {
         if (waveSos.Count <= idx)
         {
@@ -50,12 +50,12 @@ public class WaveSpawner : MonoBehaviour
             return;
         }
 
-        StartCoroutine(SpawnWave(waveSos[idx]));
+        StartCoroutine(SpawnWave(waveSos[idx], delay));
     }
 
-    private IEnumerator SpawnWave(WaveFormation waveFormation)
+    private IEnumerator SpawnWave(WaveFormation waveFormation, float delay)
     {
-        yield return null;
+        yield return new WaitForSeconds(delay);
 
         foreach (var internalWave in waveFormation.InternalWaves)
         {
@@ -84,6 +84,6 @@ public class WaveSpawner : MonoBehaviour
             OnWaveFinished?.Invoke();
         }
         
-        StartWave(++activeWaveIdx);
+        StartWave(++activeWaveIdx, 5);
     }
 }
