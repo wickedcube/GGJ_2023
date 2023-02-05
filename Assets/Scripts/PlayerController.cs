@@ -1,6 +1,5 @@
 using Enemy;
 using Interfaces;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -26,7 +25,10 @@ public class PlayerController : MonoBehaviour
     float lastRightShot;
 
     Ray cameraRay;                // The ray that is cast from the camera to the mouse position
-    RaycastHit cameraRayHit; 
+    RaycastHit cameraRayHit;
+
+    private Vector3 verticalVec;
+    private Vector3 horizontalVec;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +37,8 @@ public class PlayerController : MonoBehaviour
         playerStats = GetComponent<PlayerStats>();
         startPlayerPosition = transform.position;
         startCameraPosition = cameraRef.position;
+        verticalVec = -(Vector3.right + Vector3.back).normalized;
+        horizontalVec = (Vector3.forward + Vector3.right).normalized;
     }
 
     void Update()
@@ -48,7 +52,7 @@ public class PlayerController : MonoBehaviour
 
         verticalInput = Input.GetAxis("Vertical");
         horizontalInput = Input.GetAxis("Horizontal");
-        rb.velocity = verticalInput * movementSpeed * transform.forward + horizontalInput*movementSpeed * transform.right;
+        rb.velocity = verticalInput * movementSpeed * verticalVec + horizontalInput * movementSpeed * horizontalVec;
         cameraRef.position = startCameraPosition + transform.position - startPlayerPosition;
         // animatorRef.SetFloat("moveSpeedX", horizontalInput);
         animatorRef.SetFloat("moveSpeedZ", verticalInput);
