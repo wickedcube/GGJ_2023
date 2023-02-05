@@ -35,17 +35,10 @@ public class PlayerController : MonoBehaviour
         playerStats = GetComponent<PlayerStats>();
         startPlayerPosition = transform.position;
         startCameraPosition = cameraRef.position;
-        playerStats.HealthDepleted = OnGameComplete;
-        // Cursor.visible = false;
-    }
-
-    void OnGameComplete() {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
     }
 
     void Update()
     {
-
         cameraRay = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(cameraRay, out cameraRayHit, 1<<7))
         {

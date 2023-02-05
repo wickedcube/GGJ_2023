@@ -63,7 +63,7 @@ public class GameHUD : MonoBehaviour
         pauseMenu.SetActive(false);
         playerUI.SetActive(false);
 
-        LeaderboardHandler.Instance.UpdateLeaderboardUI(() =>
+        LeaderboardHandler.Instance?.UpdateLeaderboardUI(() =>
         {
             playerScoreText.text = $"{score}";
             playerRankText.text = "-";

@@ -45,7 +45,8 @@ public class BulletMover : MonoBehaviour
         {
             if ((isCubeRootBullet && enemy.IsPerfectCube)  || (isSquareRootBullet && enemy.IsPerfectSquare))
             {
-                enemy.HandleEnemyDeath();
+                // enemy.HandleEnemyDeath();
+                enemy.TakeDamage(this);
                 Instantiate(correctBulletHit, transform.position, quaternion.identity);
             }
             else
