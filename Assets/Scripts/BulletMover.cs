@@ -36,6 +36,9 @@ public class BulletMover : MonoBehaviour
         if (other.collider.gameObject.GetComponent<PlayerController>() != null)
             return;
         
+        if (other.collider.gameObject.GetComponent<BulletMover>() != null)
+            return;
+        
         var enteredGameObject = other.collider.gameObject;
         var enemy = enteredGameObject.GetComponent<EnemyBehavior>();
         if(enemy != default)
