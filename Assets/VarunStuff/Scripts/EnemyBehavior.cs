@@ -168,14 +168,16 @@ namespace Enemy
             TryAttackPlayer();
             Look();
         }
-        public bool CanTakeDamage(object enemyObject) // MAKE THIS FULLY PRIVATE BITCH!! 
+        private bool CanTakeDamage(object enemyObject)
         {
             if (this.IsPrime) return false; // prime numbers are healths. Can't take damage.
 
-            if (enemyObject is Grenade || enemyObject is BulletMover) return true;
-            // TODO : Can Take Damage for bullets.
+            if (enemyObject is Grenade)return true;
 
-
+            if(enemyObject is BulletMover bm)
+            {
+                return (this.IsPerfectCube && bm.isCubeRootBullet) || (this.IsPerfectSquare && bm.isSquareRootBullet);
+            }
             return false;
         }
 
@@ -226,13 +228,9 @@ namespace Enemy
         {
             if (this.CanTakeDamage(obj))
             {
-                if(obj is Grenade || obj is BulletMover)
-                {
-                    // return the enemy to enemy pool.
-                    ReturnToPool();
-                    playerStats.IncrementKillValue();
-                    return true;
-                }
+                ReturnToPool();
+                playerStats.IncrementKillValue();
+                return true;
             }
 
             return false;
