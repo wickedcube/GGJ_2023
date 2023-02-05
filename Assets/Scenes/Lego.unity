@@ -2680,7 +2680,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 65dec80ecae09444ca92c613c205268c, type: 2}
     - target: {fileID: 3063364185856722048, guid: 0965159253ec9e3429357a3d7625b08f, type: 3}
       propertyPath: slowdownTimePerc
-      value: 0.15
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 3063364185856722050, guid: 0965159253ec9e3429357a3d7625b08f, type: 3}
       propertyPath: comboKillThresholds.Array.size
