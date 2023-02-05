@@ -32,16 +32,16 @@ public class EnemySpawner : MonoBehaviour
     void Update()
     {
         return;
-        if (Input.GetMouseButtonDown(0))
-        {
-            var ray = camera.ScreenPointToRay(Input.mousePosition);
-            var results = Physics.RaycastAll(ray, float.MaxValue, ArenaMask);
-            foreach(var result in results)
-            {
-                CreateEnemyAt(result.point, counter);
-            }
+        //if (Input.GetMouseButtonDown(0))
+        //{
+        //    var ray = camera.ScreenPointToRay(Input.mousePosition);
+        //    var results = Physics.RaycastAll(ray, float.MaxValue, ArenaMask);
+        //    foreach(var result in results)
+        //    {
+        //        CreateEnemyAt(result.point, counter);
+        //    }
             
-        }
+        //}
     }
 
     public void CreateEnemyAt(Vector3 position, int value)

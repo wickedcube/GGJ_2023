@@ -7,6 +7,8 @@ public class EnemyNumberCreator : MonoBehaviour
     [SerializeField]
     private List<ObjectPool> numberPools;
 
+    private Dictionary<int, float> BoundsCache = new Dictionary<int, float>(); 
+
     List<int> GetIndividualNumbers(int value)
     {
         int temp = value;
@@ -17,9 +19,27 @@ public class EnemyNumberCreator : MonoBehaviour
             individualNumbers.Add(num);
             temp = temp / 10;
         }
-
-        individualNumbers.Reverse();
         return individualNumbers;
+    }
+
+
+    private float GetBoundsValues(int i, IndependentNumber number)
+    {
+        float boundsSizeX = 0;
+
+        if (i < 10)
+        {
+            if (BoundsCache.ContainsKey(i))
+            {
+                boundsSizeX = BoundsCache[i];
+            }
+            else
+            {
+                boundsSizeX = number.GetBoundsX();
+                BoundsCache[i] = boundsSizeX;
+            }
+        }
+        return boundsSizeX;
     }
     public List<IndependentNumber> CreateNumber(int value, Transform parent)
     {
@@ -30,9 +50,12 @@ public class EnemyNumberCreator : MonoBehaviour
         foreach (int i in individualNumbers)
         {
             var newNumber = numberPools[i].GetObject() as IndependentNumber;
+            var boundsSizeX = GetBoundsValues(i, newNumber);
+
+            cumulativeX += boundsSizeX / 2;
             newNumber.transform.parent = parent;
-            newNumber.transform.localPosition = new Vector3(cumulativeX + newNumber.transform.localScale.x / 2, 0, 0);
-            cumulativeX = newNumber.transform.localPosition.x + newNumber.transform.localScale.x / 2;
+            newNumber.transform.localPosition = new Vector3(cumulativeX, 0, 0);
+            cumulativeX += boundsSizeX / 2;
             newNumber.transform.localRotation = Quaternion.identity;
             numberHolders.Add(newNumber);
         }

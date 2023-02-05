@@ -5,6 +5,7 @@ using UnityEngine.AI;
 using Interfaces;
 using Powerups.Grenade;
 using ObjectPooling;
+using System.Linq;
 
 namespace Enemy
 {
@@ -50,6 +51,9 @@ namespace Enemy
         [SerializeField]
         private GameObject DestroyFX;
 
+        [SerializeField]
+        private BoxCollider BoxCollider;
+
         private bool IsPrime => NumberAlgorithms.IsPrime(this.Value);
         public bool IsPerfectSquare => NumberAlgorithms.IsPerfectSquare(this.Value);
         public bool IsPerfectCube => NumberAlgorithms.IsPerfectCube(this.Value);
@@ -73,15 +77,32 @@ namespace Enemy
         {
             this.WalkableArea = meshRenderer;
             this.PlayerTransform = playerTransform;
-            parametersSet = true;
         }
 
+
+        private void RecalculateBounds()
+        {
+            Bounds b = new Bounds();
+            foreach(var number in this.NumberComponents)
+            {
+                var meshRenderBounds = number.GetMeshRendererBounds;
+                b.Encapsulate(new Bounds(meshRenderBounds.center, meshRenderBounds.size));
+            }
+            b.center = Vector3.zero + new Vector3(0, this.NumberComponents.First().HeightOffset, 0);
+            BoxCollider.center = b.center;
+            BoxCollider.size = b.size;
+            if (BoxCollider.size.x < BoxCollider.size.z) this.Agent.radius = BoxCollider.size.z/2;
+            else this.Agent.radius = BoxCollider.size.x/2;
+        }
 
         public void SetValue(int val, EnemyNumberCreator creator)
         {
             this.Value = val;
             NumberComponents = creator.CreateNumber(this.Value, NumberHolder);
             playerStats = FindObjectOfType<PlayerStats>();
+            RecalculateBounds();
+            
+            parametersSet = true;
         }
 
 
@@ -128,6 +149,8 @@ namespace Enemy
         void Update()
         {
             if(!parametersSet) return;
+
+            if (this.WalkableArea == default) return;
             
             Patrol();
             TryAttackPlayer();
