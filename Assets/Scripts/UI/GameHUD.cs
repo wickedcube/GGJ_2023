@@ -53,7 +53,7 @@ public class GameHUD : MonoBehaviour
     public void LoadMainMenu()
     {
         //Time.timeScale = 1.0f;
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 
 

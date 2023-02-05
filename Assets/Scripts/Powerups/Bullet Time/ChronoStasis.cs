@@ -32,11 +32,14 @@ public class ChronoStasis : MonoBehaviour
 
     private void Update()
     {
+        PlayerHealthUI.Instance.ShowChronoStatisKey(CanActivate());
+        
         if (KeyMappings.GetChronoKeyDown())
         {
             Debug.Log("Here we go");
             RunChronoStasis();
         }
+
     }
 
     private void RunChronoStasis()

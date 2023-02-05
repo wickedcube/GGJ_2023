@@ -105,10 +105,12 @@ namespace Enemy
             parametersSet = true;
         }
 
-
-
+        
         protected override void OnReturnedToPool()
         {
+            ChronoHelper.OnChronoEffectEnded -= OnChronoEffectEnded;
+            ChronoHelper.OnChronoEffectStarted -= OnChronoEffectStarted;
+            
             NumberHolder.localPosition = Vector3.zero;
             NumberHolder.localEulerAngles = Vector3.zero;
             NumberHolder.localScale = Vector3.one;
@@ -144,15 +146,14 @@ namespace Enemy
 
         private void OnChronoEffectStarted(float slowDownPercentage)
         {
-            
+            Agent.speed = RegularSpeed * slowDownPercentage;
         }
 
         private void OnChronoEffectEnded()
         {
-            
+            Agent.speed = RegularSpeed;
         }
-
-
+        
         private void Look()
         {
             var t = (Camera.main.transform.position - transform.position);
