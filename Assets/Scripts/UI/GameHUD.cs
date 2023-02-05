@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -7,8 +8,26 @@ using UnityEngine.UI;
 public class GameHUD : MonoBehaviour
 {
     [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private GameObject gameOverMenu;
     [SerializeField] private Button back;
     [SerializeField] private GameObject playerUI;
+
+
+    [SerializeField] private TMP_Text highScoreText;
+    [SerializeField] private TMP_Text playerScoreText;
+
+    private static GameHUD instance;
+    public static GameHUD Instance
+    {
+        get
+        {
+            if (instance == null)
+                instance = FindObjectOfType<GameHUD>();
+
+            return instance;
+        }
+    }
+
 
     // Start is called before the first frame update
     void Start()
@@ -35,5 +54,16 @@ public class GameHUD : MonoBehaviour
     {
         //Time.timeScale = 1.0f;
         SceneManager.LoadScene(0);
+    }
+
+
+    public void ShowGameOverMenu(int score)
+    {
+        gameOverMenu.SetActive(true);
+        pauseMenu.SetActive(false);
+        playerUI.SetActive(false);
+
+        playerScoreText.text = $"{score}";
+        highScoreText.text = $"{PlayerPrefs.GetInt(LeaderboardHandler.SCORE_PREF)}";
     }
 }

@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class PlayerHealthUI : MonoBehaviour
 {
-
     [SerializeField] private Image healthBar;
     [SerializeField] private Image comboBar;
     [SerializeField] private List<TMPro.TMP_Text> comboText;

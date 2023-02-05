@@ -40,6 +40,8 @@ public class LeaderboardHandler : MonoBehaviour
 
     void Start()
     {
+        LeaderboardHandler.Instance.PlayerData.username = PlayerPrefs.GetString(LeaderboardHandler.USERNAME_PREF);
+        LeaderboardHandler.Instance.PlayerData.highscore = PlayerPrefs.GetInt(LeaderboardHandler.SCORE_PREF);
         leaderboard = new List<LeaderboardData>();
         //UpdateLeaderboardUI();
     }
@@ -52,7 +54,10 @@ public class LeaderboardHandler : MonoBehaviour
             PlayerPrefs.SetInt(SCORE_PREF, score);
             PlayerPrefs.Save();
         }
-        StartCoroutine(UpdateDataToLeaderboard());
+        if (PlayerPrefs.HasKey(LeaderboardHandler.USERNAME_PREF) && !string.IsNullOrWhiteSpace(playerData.username))
+        {
+            StartCoroutine(UpdateDataToLeaderboard());
+        }
     }
 
     public void UpdateLeaderboardUI(System.Action onComplete)

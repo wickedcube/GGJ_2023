@@ -36,13 +36,17 @@ public class BulletMover : MonoBehaviour
         if (other.collider.gameObject.GetComponent<PlayerController>() != null)
             return;
         
+        if (other.collider.gameObject.GetComponent<BulletMover>() != null)
+            return;
+        
         var enteredGameObject = other.collider.gameObject;
         var enemy = enteredGameObject.GetComponent<EnemyBehavior>();
         if(enemy != default)
         {
             if ((isCubeRootBullet && enemy.IsPerfectCube)  || (isSquareRootBullet && enemy.IsPerfectSquare))
             {
-                enemy.HandleEnemyDeath();
+                // enemy.HandleEnemyDeath();
+                enemy.TakeDamage(this);
                 Instantiate(correctBulletHit, transform.position, quaternion.identity);
             }
             else

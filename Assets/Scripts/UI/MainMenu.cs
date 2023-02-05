@@ -75,6 +75,7 @@ public class MainMenu : MonoBehaviour
         if (PlayerPrefs.HasKey(LeaderboardHandler.USERNAME_PREF))
         {
             LeaderboardHandler.Instance.PlayerData.username = PlayerPrefs.GetString(LeaderboardHandler.USERNAME_PREF);
+            LeaderboardHandler.Instance.PlayerData.highscore = PlayerPrefs.GetInt(LeaderboardHandler.SCORE_PREF);
             //playerUsernameText.text = LeaderboardHandler.Instance.PlayerData.username;
             if(LeaderboardHandler.Instance.PlayerData.highscore == 0)
             {
@@ -97,6 +98,7 @@ public class MainMenu : MonoBehaviour
                 LeaderboardData item = LeaderboardHandler.Instance.Leaderboard[i];
                 if (item.username == LeaderboardHandler.Instance.PlayerData.username && item.highscore > 0)
                 {
+                    LeaderboardHandler.Instance.PlayerData.highscore = item.highscore;
                     playerScoreText.text = item.highscore.ToString();
                     playerRankText.text = $"{i + 1}";
                 }

@@ -129,7 +129,19 @@ namespace Enemy
             WalkPoint = this.transform.position;
             ChronoHelper.OnChronoEffectStarted += OnChronoEffectStarted;
             ChronoHelper.OnChronoEffectEnded += OnChronoEffectEnded;
+            playerStats.HealthDepleted += DelayAndDie;
         }
+
+        private void DelayAndDie(){
+            PlayerHealthUI.Instance.StartCoroutine(WaitAndDie());
+        }
+
+        IEnumerator WaitAndDie()
+        {
+            yield return new WaitForSeconds(Random.Range(0.5f, 15f));
+            ReturnToPool();
+        }
+
         private void OnChronoEffectStarted(float slowDownPercentage)
         {
             
@@ -160,7 +172,7 @@ namespace Enemy
         {
             if (this.IsPrime) return false; // prime numbers are healths. Can't take damage.
 
-            if (enemyObject is Grenade) return true;
+            if (enemyObject is Grenade || enemyObject is BulletMover) return true;
             // TODO : Can Take Damage for bullets.
 
 
@@ -214,7 +226,7 @@ namespace Enemy
         {
             if (this.CanTakeDamage(obj))
             {
-                if(obj is Grenade)
+                if(obj is Grenade || obj is BulletMover)
                 {
                     // return the enemy to enemy pool.
                     ReturnToPool();
@@ -238,12 +250,31 @@ namespace Enemy
             if (IsPerfectSquare)
             {
                 var sqrt = Value.SquareRoot();
+                if (NumberAlgorithms.IsPrime(sqrt))
+                { 
+                    //Effect / Drop
+                    FindObjectOfType<WaveSpawner>().EnemyDied();
+                    ReturnToPool();
+                    // Instantiate(Resources.Load(sqrt+""), transform.position, transform.rotation);
+                    return;
+                }
+
                 meraBagwhan.CreateEnemyAt(transform.position,sqrt);
                 meraBagwhan.CreateEnemyAt(transform.position,sqrt);
             }
             else if (IsPerfectCube)
             {
                 var cbrt = Value.CubeRoot();
+
+                if (NumberAlgorithms.IsPrime(cbrt))
+                { 
+                    //Effect / Drop
+                    FindObjectOfType<WaveSpawner>().EnemyDied();
+                    ReturnToPool();
+                    // Instantiate(Resources.Load(cbrt+""), transform.position, transform.rotation);
+                    return;
+                }
+
                 meraBagwhan.CreateEnemyAt(transform.position,cbrt);
                 meraBagwhan.CreateEnemyAt(transform.position,cbrt);
                 meraBagwhan.CreateEnemyAt(transform.position,cbrt);
@@ -260,7 +291,7 @@ namespace Enemy
             var player = enteredGameObject.GetComponent<PlayerController>();
             if(player != default)
             {
-                player.TakeDamage(this);
+                playerStats.TakeDamage(Value);
                 // playerStats.IncrementKillValue();
                 FindObjectOfType<WaveSpawner>().EnemyDied();
                 this.ReturnToPool();

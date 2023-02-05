@@ -55,6 +55,7 @@ public class WaveSpawner : MonoBehaviour
 
     private IEnumerator SpawnWave(WaveFormation waveFormation, float delay)
     {
+        var player = FindObjectOfType<PlayerController>();
         yield return new WaitForSeconds(delay);
 
         foreach (var internalWave in waveFormation.InternalWaves)
@@ -68,7 +69,7 @@ public class WaveSpawner : MonoBehaviour
                     activeEnemiesInWave++;
                     var customVec = VARIABLE.Value[i];
                     var pos = new Vector3(customVec.x, customVec.y, customVec.z) * 2;
-                    var enemy = Instantiate(enemyPrefab, pos, Quaternion.identity);
+                    var enemy = Instantiate(enemyPrefab, player.transform.position + pos, Quaternion.identity);
                     enemy.Init(VARIABLE.Key);
                 }
             }
