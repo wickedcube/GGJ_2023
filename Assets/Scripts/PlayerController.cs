@@ -55,7 +55,7 @@ public class PlayerController : MonoBehaviour
 
         verticalInput = Input.GetAxis("Vertical");
         horizontalInput = Input.GetAxis("Horizontal");
-        rb.velocity = verticalInput * movementSpeed * transform.forward + horizontalInput*movementSpeed * transform.right;
+        rb.velocity = verticalInput * movementSpeed * Vector3.forward + horizontalInput*movementSpeed * Vector3.right;
         cameraRef.position = startCameraPosition + transform.position - startPlayerPosition;
         // animatorRef.SetFloat("moveSpeedX", horizontalInput);
         animatorRef.SetFloat("moveSpeedZ", verticalInput);
