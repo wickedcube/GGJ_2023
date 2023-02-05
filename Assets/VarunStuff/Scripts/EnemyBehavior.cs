@@ -55,6 +55,7 @@ namespace Enemy
         public bool IsPerfectCube => NumberAlgorithms.IsPerfectCube(this.Value);
 
         List<IndependentNumber> NumberComponents = new List<IndependentNumber>();
+        private PlayerStats playerStats;
 
 
         /// <summary>
@@ -79,6 +80,7 @@ namespace Enemy
         {
             this.Value = val;
             NumberComponents = creator.CreateNumber(this.Value, NumberHolder);
+            playerStats = FindObjectOfType<PlayerStats>();
         }
 
 
@@ -206,7 +208,6 @@ namespace Enemy
             var player = enteredGameObject.GetComponent<PlayerController>();
             if(player != default)
             {
-                var playerStats = enteredGameObject.GetComponent<PlayerStats>();
                 player.TakeDamage(this);
                 playerStats.IncrementKillValue();
                 FindObjectOfType<WaveSpawner>().EnemyDied();
