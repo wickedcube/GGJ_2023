@@ -63,6 +63,8 @@ namespace Enemy
 
         private EnemySpawner meraBagwhan;
         
+        public float AgenSpeed;
+
         /// <summary>
         /// this is the point that the enemy is usually walking towards.
         /// </summary>
@@ -105,10 +107,12 @@ namespace Enemy
             parametersSet = true;
         }
 
-
-
+        
         protected override void OnReturnedToPool()
         {
+            ChronoHelper.OnChronoEffectEnded -= OnChronoEffectEnded;
+            ChronoHelper.OnChronoEffectStarted -= OnChronoEffectStarted;
+            
             NumberHolder.localPosition = Vector3.zero;
             NumberHolder.localEulerAngles = Vector3.zero;
             NumberHolder.localScale = Vector3.one;
@@ -125,6 +129,7 @@ namespace Enemy
         // Start is called before the first frame update
         void Start()
         {
+            AgenSpeed = RegularSpeed;
             meraBagwhan = FindObjectOfType<EnemySpawner>();
             WalkPoint = this.transform.position;
             ChronoHelper.OnChronoEffectStarted += OnChronoEffectStarted;
@@ -144,15 +149,14 @@ namespace Enemy
 
         private void OnChronoEffectStarted(float slowDownPercentage)
         {
-            
+            AgenSpeed = RegularSpeed * slowDownPercentage;
         }
 
         private void OnChronoEffectEnded()
         {
-            
+            AgenSpeed = RegularSpeed;
         }
-
-
+        
         private void Look()
         {
             var t = (Camera.main.transform.position - transform.position);
@@ -160,6 +164,8 @@ namespace Enemy
         }
         void Update()
         {
+            if (Agent != null)
+                Agent.speed = AgenSpeed;
             if(!parametersSet) return;
 
             if (this.WalkableArea == default) return;

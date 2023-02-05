@@ -10,6 +10,9 @@ public class PlayerHealthUI : MonoBehaviour
     [SerializeField] private List<TMPro.TMP_Text> comboText;
     [SerializeField] private List<TMPro.TMP_Text> scoreText;
 
+    [SerializeField] private GameObject grenadeKeyMap;
+    [SerializeField] private GameObject chronoStasis;
+
     private Coroutine healthbarRoutine;
     private Coroutine combobarRoutine;
     
@@ -57,6 +60,16 @@ public class PlayerHealthUI : MonoBehaviour
     public void SetScoreCounter(int val)
     {
         scoreText[0].text = scoreText[1].text = $"Score: {val}";
+    }
+
+    public void ShowChronoStatisKey(bool show)
+    {
+        chronoStasis.gameObject.SetActive(show);
+    }
+    
+    public void ShowGrenadeKey(bool show)
+    {
+        grenadeKeyMap.gameObject.SetActive(show);
     }
     
     private void AnimateFill(Image img, float number, Coroutine routine)

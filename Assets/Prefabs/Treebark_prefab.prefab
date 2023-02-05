@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3611619767012216168}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Treebark_prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,6 +89,10 @@ PrefabInstance:
       value: Tree_Bark
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d7ae2286ce6e2dc46b58ec0428cef8d2, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d7ae2286ce6e2dc46b58ec0428cef8d2, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -158,8 +162,46 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tree_Bark (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 850cab5b923a4804a8304c481fabbba2, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 850cab5b923a4804a8304c481fabbba2, type: 3}
+--- !u!1 &8176118227810750550 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 850cab5b923a4804a8304c481fabbba2, type: 3}
+  m_PrefabInstance: {fileID: 9058429781251239175}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &5349236925587146847
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8176118227810750550}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.02, y: 0.09119998, z: 0.019999996}
+  m_Center: {x: 0, y: 0, z: 0.009999998}
+--- !u!208 &9139342028150478529
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8176118227810750550}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.010000001, y: 0.046000004, z: 0.010000001}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0.010000001}
+  m_TimeToStationary: 0.5
 --- !u!4 &8808117938649418476 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 850cab5b923a4804a8304c481fabbba2, type: 3}

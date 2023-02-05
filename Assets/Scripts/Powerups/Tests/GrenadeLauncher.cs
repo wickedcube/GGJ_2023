@@ -32,6 +32,8 @@ public class GrenadeLauncher : MonoBehaviour
 
     void Update()
     {
+        PlayerHealthUI.Instance.ShowGrenadeKey(CanThrowGrenade());
+        
         if (KeyMappings.GetGrenadeKeyDown() && CanThrowGrenade())
         {
             Debug.Log("EL GRENADO!!");

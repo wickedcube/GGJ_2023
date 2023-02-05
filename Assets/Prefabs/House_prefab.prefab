@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1229065233775657723}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: House_prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,6 +92,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: House (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e3dddab1e46d9024788fd94b4b1842c0, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3dddab1e46d9024788fd94b4b1842c0, type: 3}
 --- !u!4 &110986070889061663 stripped
@@ -99,6 +103,40 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e3dddab1e46d9024788fd94b4b1842c0, type: 3}
   m_PrefabInstance: {fileID: 432614133580872436}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &775073864646100901 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: e3dddab1e46d9024788fd94b4b1842c0, type: 3}
+  m_PrefabInstance: {fileID: 432614133580872436}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &6540246479903217911
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 775073864646100901}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.12839578, y: 0.07668723, z: 0.110455304}
+  m_Center: {x: 0.0000000047683715, y: -0.0000000035762786, z: 0.05522764}
+--- !u!208 &6015216439083636206
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 775073864646100901}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.074, y: 0.051000003, z: 0.055000003}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0.055000003}
+  m_TimeToStationary: 0.5
 --- !u!1001 &1846917035080847363
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -153,6 +191,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c6af1ebc14d5075409a1b54557292ce4, type: 3}
       propertyPath: m_Name
       value: House
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c6af1ebc14d5075409a1b54557292ce4, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c6af1ebc14d5075409a1b54557292ce4, type: 3}
       propertyPath: m_IsActive
