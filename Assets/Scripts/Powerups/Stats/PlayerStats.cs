@@ -58,7 +58,10 @@ public class PlayerStats : MonoBehaviour
         ResetKillCounter();
 
         if (health <= 0)
+        { 
             HealthDepleted?.Invoke();
+            LeaderboardHandler.Instance?.UpdateScore(score);
+        }
 
         PlayerHealthUI.Instance.SetHealthPerc((float)health / maxHealth);
     }

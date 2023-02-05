@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 startPlayerPosition;
     private Vector3 startCameraPosition;
     private Rigidbody rb;
+    private PlayerStats playerStats;
     float verticalInput;
     float horizontalInput;
     float lastLeftShot;
@@ -31,13 +32,20 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        playerStats = GetComponent<PlayerStats>();
         startPlayerPosition = transform.position;
         startCameraPosition = cameraRef.position;
+        playerStats.HealthDepleted = OnGameComplete;
         // Cursor.visible = false;
+    }
+
+    void OnGameComplete() {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
     }
 
     void Update()
     {
+
         cameraRay = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(cameraRay, out cameraRayHit, 1<<7))
         {
@@ -81,7 +89,5 @@ public class PlayerController : MonoBehaviour
             Debug.Log($" Damage Taken !! {eb.gameObject.name}");
 
         }
-
-
     }
 }
