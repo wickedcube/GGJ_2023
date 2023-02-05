@@ -83,7 +83,7 @@ public class WaveSpawner : MonoBehaviour
                 {
                     enemInWave++;
                     var customVec = numericPattern.Value[i];
-                    var pos = new Vector3(customVec.x, customVec.y, customVec.z) * 2;
+                    var pos = player.transform.position + new Vector3(customVec.x, customVec.y, customVec.z) * 2;
                     var t = FindObjectOfType<EnemySpawner>();
                     t.CreateEnemyAt(pos, numericPattern.Key);
                 }
@@ -100,7 +100,6 @@ public class WaveSpawner : MonoBehaviour
     public void EnemyDied()
     {
         activeEnemiesInWave--;
-        Debug.Log($"remaining enemies = {activeEnemiesInWave}");
         if (activeEnemiesInWave == 0)
         {
             OnWaveFinished?.Invoke();
