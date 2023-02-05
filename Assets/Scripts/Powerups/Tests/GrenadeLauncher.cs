@@ -35,10 +35,12 @@ public class GrenadeLauncher : MonoBehaviour
         if (KeyMappings.GetGrenadeKeyDown() && CanThrowGrenade())
         {
             Debug.Log("EL GRENADO!!");
+            stats.ComboMeterLocked = true;
             var go = Instantiate(prefab, spawnPoint.position, quaternion.identity);
             var rb = go.GetComponentInChildren<Rigidbody>();
             rb.AddForce(transform.forward * forceMagnitude);
             stats.ConsumeCombo(PlayerStats.COMBO_STEP);
+            stats.ComboMeterLocked = false;
         }
     }
 }
