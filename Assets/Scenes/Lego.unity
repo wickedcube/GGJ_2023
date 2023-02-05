@@ -1625,8 +1625,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0c6a91c1b1ea046569d3abe8b1e16ff9, type: 2}
   - {fileID: 11400000, guid: 0a7cbf1118a7b41a2a7c6a34577b5a9f, type: 2}
   - {fileID: 11400000, guid: bceac7e73249a42c8b554d9103f2fd33, type: 2}
-  - {fileID: 11400000, guid: c3187e027f298448e852336956e2ba27, type: 2}
-  - {fileID: 11400000, guid: 61822114afb254d58a5779f0d36d32e5, type: 2}
+  - {fileID: 11400000, guid: 15795553d0b03481a871c93175d409e0, type: 2}
+  - {fileID: 11400000, guid: cf85bc038b8fd4afc9bd49b305b5aa3f, type: 2}
+  - {fileID: 11400000, guid: eb7db3a0992cf48e390c9faaf1d37a13, type: 2}
+  - {fileID: 11400000, guid: a99d95baa210c415e86b7a4d3bd80750, type: 2}
+  - {fileID: 11400000, guid: a99d95baa210c415e86b7a4d3bd80750, type: 2}
+  - {fileID: 11400000, guid: d7075270c64e14e1ebcd168834f087de, type: 2}
   enemyPrefab: {fileID: 9037122559093741728, guid: 4c7f52444460845eca63798d774ed82b, type: 3}
 --- !u!4 &1224239967
 Transform:

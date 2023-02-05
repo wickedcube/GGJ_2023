@@ -10,8 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dfd67d21f0ed429bb9c1afaab5673c0c, type: 3}
-  m_Name: Wave_6
+  m_Name: N3
   m_EditorClassIdentifier: 
   InternalWaves:
-  - fileName: diamond1
+  - fileName: circle1
     timeTillNextInternalWave: 5
+  - fileName: circle1
+    timeTillNextInternalWave: 10
+  - fileName: circle3
+    timeTillNextInternalWave: 15
