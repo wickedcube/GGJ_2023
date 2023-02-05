@@ -5368,7 +5368,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f1004ee825d5ac4c9d5490829a6256c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  volume: {fileID: 0}
+  volume: {fileID: 443563309}
   minComboToActivate: 4000
   slowdownTimePerc: 0.1
 --- !u!114 &3063364187143236159
