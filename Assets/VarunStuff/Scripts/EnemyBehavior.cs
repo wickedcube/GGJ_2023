@@ -72,7 +72,7 @@ namespace Enemy
 
         public int Value { private set; get; }
 
-        bool parametersSet { set; get; } = false;
+        [SerializeField] bool parametersSet = false;
 
         public void SetParameters(MeshRenderer meshRenderer,
                                   Transform playerTransform)
@@ -134,7 +134,8 @@ namespace Enemy
             WalkPoint = this.transform.position;
             ChronoHelper.OnChronoEffectStarted += OnChronoEffectStarted;
             ChronoHelper.OnChronoEffectEnded += OnChronoEffectEnded;
-            playerStats.HealthDepleted += DelayAndDie;
+            if(playerStats != null)
+                playerStats.HealthDepleted += DelayAndDie;
         }
 
         private void DelayAndDie(){
@@ -205,6 +206,7 @@ namespace Enemy
 
         private void TryAttackPlayer()
         {
+            if (PlayerTransform == null) return;
             var distanceToEnemy = Vector3.Distance(this.transform.position, PlayerTransform.position);
             if(distanceToEnemy < AttackRadius)
             {
