@@ -84,6 +84,10 @@ public class WaveSpawner : MonoBehaviour
         {
             OnWaveFinished?.Invoke();
         }
+        else
+        {
+            return;
+        }
         
         StartWave(++activeWaveIdx, 5);
     }
