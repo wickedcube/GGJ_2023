@@ -238,7 +238,7 @@ namespace Enemy
             if(player != default)
             {
                 player.TakeDamage(this);
-                playerStats.IncrementKillValue();
+                // playerStats.IncrementKillValue();
                 FindObjectOfType<WaveSpawner>().EnemyDied();
                 this.ReturnToPool();
             }
