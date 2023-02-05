@@ -68,6 +68,7 @@ namespace Powerups.Grenade
             if (enemy != null)
             {
                enemy.TakeDamage(this);
+               FindObjectOfType<WaveSpawner>().EnemyDied();
                stats.IncrementKillValue();
             }
          }

@@ -53,6 +53,7 @@ public class PlayerStats : MonoBehaviour
 
     public void TakeDamage(int dmg)
     {
+        return;
         if (health <= 0) return;
         health -= dmg;
 

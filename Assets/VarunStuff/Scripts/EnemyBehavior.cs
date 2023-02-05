@@ -292,11 +292,12 @@ namespace Enemy
         {
 
             var enteredGameObject = other.collider.gameObject;
-            var player = enteredGameObject.GetComponent<PlayerController>();
+            var player = enteredGameObject.GetComponentInParent<PlayerController>();
             if(player != default)
             {
                 playerStats.TakeDamage(Value);
                 // playerStats.IncrementKillValue();
+                Debug.LogError($"Collided with player");
                 FindObjectOfType<WaveSpawner>().EnemyDied();
                 this.ReturnToPool();
             }

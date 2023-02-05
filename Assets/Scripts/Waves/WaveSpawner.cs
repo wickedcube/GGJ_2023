@@ -21,6 +21,7 @@ public class WaveSpawner : MonoBehaviour
     public Action OnWaveFinished;
     private int activeWaveIdx = 0;
     private int activeEnemiesInWave = 0;
+
     private void Start()
     {
         // var temp = FindObjectsOfType<WavePointTagger>();
@@ -44,6 +45,7 @@ public class WaveSpawner : MonoBehaviour
 
     public void StartWave(int idx, float delay = 0f)
     {
+        Debug.LogError($"Starting a new wave {idx}");
         if (waveSos.Count <= idx)
         {
             // Debug.LogError($"Count is too much");
@@ -63,19 +65,22 @@ public class WaveSpawner : MonoBehaviour
         {
             var temp = internalWave.fileName;
             var fullExportedData = JsonConvert.DeserializeObject<FullExportedData>(Resources.Load<TextAsset>($"{temp}").text);
-            foreach (var VARIABLE in fullExportedData.fullData)
+            foreach (var numericPattern in fullExportedData.fullData)
             {
-                for (int i = 0; i < VARIABLE.Value.Count; i++)
+                for (int i = 0; i < numericPattern.Value.Count; i++)
                 {
                     enemInWave++;
-                    var customVec = VARIABLE.Value[i];
+                    var customVec = numericPattern.Value[i];
                     var pos = new Vector3(customVec.x, customVec.y, customVec.z) * 2;
-                    var enemy = Instantiate(enemyPrefab, player.transform.position + pos, Quaternion.identity);
-                    enemy.Init(VARIABLE.Key);
+                    var t = FindObjectOfType<EnemySpawner>();
+                    t.CreateEnemyAt(pos, numericPattern.Key);
                 }
 
+                Debug.Log($"Adding {enemInWave} to enemy count");
                 activeEnemiesInWave += enemInWave;
+                enemInWave = 0;
             }
+
             yield return new WaitForSeconds(internalWave.timeTillNextInternalWave);
         }
     }
@@ -86,14 +91,14 @@ public class WaveSpawner : MonoBehaviour
         Debug.Log($"remaining enemies = {activeEnemiesInWave}");
         if (activeEnemiesInWave == 0)
         {
-            Debug.LogError($"Starting a new wave!");
             OnWaveFinished?.Invoke();
         }
         else
         {
             return;
         }
-        
+
+        Debug.LogWarning($"Starting a new wave!");
         StartWave(++activeWaveIdx, 5);
     }
 }
