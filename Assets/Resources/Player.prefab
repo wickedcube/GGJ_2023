@@ -814,10 +814,10 @@ MonoBehaviour:
   - {fileID: 2517729156037088553, guid: 7ed8c4dd2d3496548b9b77dbfdabead6, type: 3}
   bulletSpawn1: {fileID: 3063364186085011945}
   bulletSpawn2: {fileID: 3063364187049115550}
-  indicatorTransform: {fileID: 3063364185487956426}
   movementSpeed: 15
   rotationSpeed: 0.5
   timeBetweenShots: 0.1
+  gunShotVFX: {fileID: 100002, guid: a81ef04ac72436744a08ef117fa691b4, type: 3}
 --- !u!65 &3063364185856722055
 BoxCollider:
   m_ObjectHideFlags: 0

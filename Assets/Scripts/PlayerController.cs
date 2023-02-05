@@ -11,10 +11,10 @@ public class PlayerController : MonoBehaviour
     public List<GameObject> bullet2;
     public Transform bulletSpawn1;
     public Transform bulletSpawn2;
-    public Transform indicatorTransform;
     public float movementSpeed;
     public float rotationSpeed;
     public float timeBetweenShots;
+    public GameObject gunShotVFX;
     private Vector3 startPlayerPosition;
     private Vector3 startCameraPosition;
     private Rigidbody rb;
@@ -54,23 +54,27 @@ public class PlayerController : MonoBehaviour
         horizontalInput = Input.GetAxis("Horizontal");
         rb.velocity = verticalInput * movementSpeed * verticalVec + horizontalInput * movementSpeed * horizontalVec;
         cameraRef.position = startCameraPosition + transform.position - startPlayerPosition;
-        // animatorRef.SetFloat("moveSpeedX", horizontalInput);
+        animatorRef.SetFloat("moveSpeedX", horizontalInput);
         animatorRef.SetFloat("moveSpeedZ", verticalInput);
 
 
         if (KeyMappings.GetSquareRootFire() && Time.time > lastLeftShot + timeBetweenShots)
         {
             lastLeftShot = Time.time;
-            var b = Instantiate(bullet1[Random.Range(0, bullet1.Count)], indicatorTransform.position, Quaternion.identity);
-            b.transform.forward = indicatorTransform.forward;
+            var b = Instantiate(bullet1[Random.Range(0, bullet1.Count)], bulletSpawn1.position, Quaternion.identity);
+            b.transform.forward = bulletSpawn1.forward;
             animatorRef.SetBool("isShooting", true);
+            var e = Instantiate(gunShotVFX, bulletSpawn1.position, bulletSpawn1.rotation);
+            e.transform.SetParent(bulletSpawn1);
         }
         else if (KeyMappings.GetCubeRootFire() && Time.time > lastRightShot + timeBetweenShots)
         {
             lastRightShot = Time.time;
-            var b = Instantiate(bullet2[Random.Range(0, bullet1.Count)], indicatorTransform.position, Quaternion.identity);
-            b.transform.forward = indicatorTransform.forward;
+            var b = Instantiate(bullet2[Random.Range(0, bullet1.Count)], bulletSpawn2.position, Quaternion.identity);
+            b.transform.forward = bulletSpawn2.forward;
             animatorRef.SetBool("isShooting", true);
+            var e = Instantiate(gunShotVFX, bulletSpawn2.position, bulletSpawn2.rotation);
+            e.transform.SetParent(bulletSpawn2);
         }
         else
         {

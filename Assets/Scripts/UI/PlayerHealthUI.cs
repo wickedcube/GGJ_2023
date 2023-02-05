@@ -9,6 +9,7 @@ public class PlayerHealthUI : MonoBehaviour
     [SerializeField] private Image comboBar;
     [SerializeField] private List<TMPro.TMP_Text> comboText;
     [SerializeField] private List<TMPro.TMP_Text> scoreText;
+    [SerializeField] private List<TMPro.TMP_Text> waveText;
 
     [SerializeField] private GameObject grenadeKeyMap;
     [SerializeField] private GameObject chronoStasis;
@@ -71,7 +72,28 @@ public class PlayerHealthUI : MonoBehaviour
     {
         grenadeKeyMap.gameObject.SetActive(show);
     }
-    
+
+    public void ShowWaveIncomingText() 
+    {
+        StartCoroutine(WaveIncomingText());
+    }
+
+    IEnumerator WaveIncomingText() 
+    {
+        waveText[0].gameObject.SetActive(true);
+        waveText[0].gameObject.SetActive(true);
+
+        for (int i = 0; i < 3; i++)
+        {
+            int k = i;
+            waveText[0].text = waveText[1].text = " Wave incoming \n in  <size=120>"+ (3 - k).ToString() +"</size>...";
+            yield return new WaitForSeconds(1f);
+        }
+
+        waveText[0].gameObject.SetActive(false);
+        waveText[1].gameObject.SetActive(false);
+    }
+
     private void AnimateFill(Image img, float number, Coroutine routine)
     {
         if(routine != null)

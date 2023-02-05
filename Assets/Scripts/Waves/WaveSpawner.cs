@@ -58,7 +58,19 @@ public class WaveSpawner : MonoBehaviour
     private IEnumerator SpawnWave(WaveFormation waveFormation, float delay)
     {
         var player = FindObjectOfType<PlayerController>();
-        yield return new WaitForSeconds(delay);
+
+        if (delay > 3)
+        {
+            yield return new WaitForSeconds(delay - 3f);
+            PlayerHealthUI.Instance.ShowWaveIncomingText();
+            yield return new WaitForSeconds(3f);
+        }
+        else
+        { 
+            yield return new WaitForSeconds(delay);
+        }
+
+
 
         var enemInWave = 0;
         foreach (var internalWave in waveFormation.InternalWaves)
