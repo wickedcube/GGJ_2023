@@ -54,7 +54,7 @@ public class EnemyNumberCreator : MonoBehaviour
 
             cumulativeX += boundsSizeX / 2;
             newNumber.transform.parent = parent;
-            newNumber.transform.localPosition = new Vector3(cumulativeX, 0, 0);
+            newNumber.transform.localPosition = new Vector3(cumulativeX, -0.3f, 0);
             cumulativeX += boundsSizeX / 2;
             newNumber.transform.localRotation = Quaternion.identity;
             numberHolders.Add(newNumber);

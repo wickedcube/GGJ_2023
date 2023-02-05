@@ -40,7 +40,7 @@ public class BulletMover : MonoBehaviour
             return;
         
         var enteredGameObject = other.collider.gameObject;
-        var enemy = enteredGameObject.GetComponent<EnemyBehavior>();
+        var enemy = enteredGameObject.GetComponentInParent<EnemyBehavior>();
         if(enemy != default)
         {
             if ((isCubeRootBullet && enemy.IsPerfectCube)  || (isSquareRootBullet && enemy.IsPerfectSquare))

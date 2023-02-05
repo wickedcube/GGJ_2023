@@ -53,6 +53,7 @@ public class EnemySpawner : MonoBehaviour
 
             ebh.SetValue(value, enemyNumberCreator);
         }
-        poolable.transform.position = position + new Vector3(0, poolable.transform.localScale.y / 2, 0);
+
+        poolable.transform.position = position;
     }
 }
