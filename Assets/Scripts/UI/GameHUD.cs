@@ -13,7 +13,7 @@ public class GameHUD : MonoBehaviour
     [SerializeField] private GameObject playerUI;
 
 
-    [SerializeField] private TMP_Text playerRankText;
+    [SerializeField] private TMP_Text highScoreText;
     [SerializeField] private TMP_Text playerScoreText;
 
     private static GameHUD instance;
@@ -63,20 +63,7 @@ public class GameHUD : MonoBehaviour
         pauseMenu.SetActive(false);
         playerUI.SetActive(false);
 
-        LeaderboardHandler.Instance?.UpdateLeaderboardUI(() =>
-        {
-            playerScoreText.text = $"{score}";
-            playerRankText.text = "-";
-            
-            for (int i = 0; i < LeaderboardHandler.Instance.Leaderboard.Count; i++)
-            {
-                LeaderboardData item = LeaderboardHandler.Instance.Leaderboard[i];
-                if (item.username == LeaderboardHandler.Instance.PlayerData.username && item.highscore > 0)
-                {
-                    playerScoreText.text = item.highscore.ToString();
-                    playerRankText.text = $"{i + 1}";
-                }
-            }
-        });
+        playerScoreText.text = $"{score}";
+        highScoreText.text = $"{PlayerPrefs.GetInt(LeaderboardHandler.SCORE_PREF)}";
     }
 }

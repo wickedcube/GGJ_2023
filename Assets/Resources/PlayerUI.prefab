@@ -1306,7 +1306,7 @@ MonoBehaviour:
   gameOverMenu: {fileID: 789211079}
   back: {fileID: 3075956016845269117}
   playerUI: {fileID: 2055497522709885220}
-  playerRankText: {fileID: 7703894600010092465}
+  highScoreText: {fileID: 7703894600010092465}
   playerScoreText: {fileID: 1026912908684963472}
 --- !u!1 &2055497523284196548
 GameObject:
@@ -3174,7 +3174,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3587834778049449449, guid: c241eed717ce4384e949c81cfad687a0, type: 3}
       propertyPath: m_text
-      value: Your Score
+      value: Current Score
+      objectReference: {fileID: 0}
+    - target: {fileID: 3587834778049449449, guid: c241eed717ce4384e949c81cfad687a0, type: 3}
+      propertyPath: m_fontSize
+      value: 29.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 3587834778227634180, guid: c241eed717ce4384e949c81cfad687a0, type: 3}
+      propertyPath: m_Name
+      value: score
       objectReference: {fileID: 0}
     - target: {fileID: 3587834778227634181, guid: c241eed717ce4384e949c81cfad687a0, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -3183,6 +3191,14 @@ PrefabInstance:
     - target: {fileID: 3587834778227634181, guid: c241eed717ce4384e949c81cfad687a0, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3587834778227634182, guid: c241eed717ce4384e949c81cfad687a0, type: 3}
+      propertyPath: m_text
+      value: '-'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3587834778227634182, guid: c241eed717ce4384e949c81cfad687a0, type: 3}
+      propertyPath: m_fontSize
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 3587834778345521424, guid: c241eed717ce4384e949c81cfad687a0, type: 3}
       propertyPath: m_IsActive
@@ -3574,7 +3590,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3587834778049449449, guid: c241eed717ce4384e949c81cfad687a0, type: 3}
       propertyPath: m_text
-      value: Your Rank
+      value: High Score
       objectReference: {fileID: 0}
     - target: {fileID: 3587834778227634181, guid: c241eed717ce4384e949c81cfad687a0, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -3583,6 +3599,14 @@ PrefabInstance:
     - target: {fileID: 3587834778227634181, guid: c241eed717ce4384e949c81cfad687a0, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3587834778227634182, guid: c241eed717ce4384e949c81cfad687a0, type: 3}
+      propertyPath: m_text
+      value: '-'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3587834778227634182, guid: c241eed717ce4384e949c81cfad687a0, type: 3}
+      propertyPath: m_fontSize
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 3587834778345521424, guid: c241eed717ce4384e949c81cfad687a0, type: 3}
       propertyPath: m_IsActive
