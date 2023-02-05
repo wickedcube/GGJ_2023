@@ -53,6 +53,7 @@ public class PlayerStats : MonoBehaviour
 
     public void TakeDamage(int dmg)
     {
+        if (health <= 0) return;
         health -= dmg;
 
         ResetKillCounter();
@@ -61,6 +62,7 @@ public class PlayerStats : MonoBehaviour
         { 
             HealthDepleted?.Invoke();
             LeaderboardHandler.Instance?.UpdateScore(score);
+            GameHUD.Instance?.ShowGameOverMenu(score);
         }
 
         PlayerHealthUI.Instance.SetHealthPerc((float)health / maxHealth);
