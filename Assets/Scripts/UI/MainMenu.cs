@@ -11,6 +11,8 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private GameObject menu;
     [SerializeField] private GameObject firstFlowMenu;
     [SerializeField] private Button playButton;
+    [SerializeField] private Button creditButton;
+    [SerializeField] private Button controlsButton;
 
 
     [SerializeField] private TMP_Text playerRankText;
@@ -65,6 +67,8 @@ public class MainMenu : MonoBehaviour
     {
         firstFlowMenu.SetActive(true);
         playButton.gameObject.SetActive(false);
+        creditButton.gameObject.SetActive(false);
+        controlsButton.gameObject.SetActive(false);
     }
 
     public void SetupGame()
@@ -72,6 +76,8 @@ public class MainMenu : MonoBehaviour
         firstFlowMenu.SetActive(false);
         menu.SetActive(true);
         playButton.gameObject.SetActive(true);
+        creditButton.gameObject.SetActive(true);
+        controlsButton.gameObject.SetActive(true);
         if (PlayerPrefs.HasKey(LeaderboardHandler.USERNAME_PREF))
         {
             LeaderboardHandler.Instance.PlayerData.username = PlayerPrefs.GetString(LeaderboardHandler.USERNAME_PREF);
