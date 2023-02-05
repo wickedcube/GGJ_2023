@@ -65,8 +65,11 @@ namespace Powerups.Grenade
          foreach (var collider in colliders)
          {
             var enemy = collider.GetComponentInChildren<INumberEnemy>();
-            enemy.TakeDamage(this);
-            stats.IncrementKillValue();
+            if (enemy != null)
+            {
+               enemy.TakeDamage(this);
+               stats.IncrementKillValue();
+            }
          }
       }
 
