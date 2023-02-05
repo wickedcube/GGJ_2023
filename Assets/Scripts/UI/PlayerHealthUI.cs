@@ -81,7 +81,7 @@ public class PlayerHealthUI : MonoBehaviour
     IEnumerator WaveIncomingText() 
     {
         waveText[0].gameObject.SetActive(true);
-        waveText[0].gameObject.SetActive(true);
+        waveText[1].gameObject.SetActive(true);
 
         for (int i = 0; i < 3; i++)
         {
