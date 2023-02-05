@@ -63,10 +63,10 @@ public class PlayerStats : MonoBehaviour
         PlayerHealthUI.Instance.SetHealthPerc((float)health / maxHealth);
     }
 
-    public void ConsumeCombo(float amt)
+    public void ConsumeCombo(float amt, bool animate=false)
     {
         comboMeter = Mathf.Clamp(comboMeter - amt, 0, MAX_COMBO_METER);
-        PlayerHealthUI.Instance.SetComboMeterF(comboMeter / MAX_COMBO_METER);
+        PlayerHealthUI.Instance.SetComboMeterF(comboMeter / MAX_COMBO_METER, animate);
     }
 
     public void AddToCombo(float amt)
@@ -87,18 +87,19 @@ public class PlayerStats : MonoBehaviour
             if (killCount > comboKillThresholds[currentComboIndex + 1])
             {
                 currentComboIndex++;
+                PlayerHealthUI.Instance.SetComboCounter(comboMulitplierVals[currentComboIndex]);
                 //UpdateComboIncHere
             }
         }
 
         AddToCombo(comboMulitplierVals[currentComboIndex]);
+        PlayerHealthUI.Instance.SetScoreCounter(score);
     }
 
     public void ResetKillCounter()
     {
-
         killCount = 0;
         currentComboIndex = 0;
-        //UpdateComboDecHere
+        PlayerHealthUI.Instance.SetComboCounter(killCount);
     }
 }

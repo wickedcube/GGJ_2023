@@ -463,6 +463,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1841682577971376526, guid: f0f88d28010e7fb45b09e4b46a879c8a, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1841682577971376526, guid: f0f88d28010e7fb45b09e4b46a879c8a, type: 3}
+      propertyPath: m_fontSize
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 2055497522732905572, guid: f0f88d28010e7fb45b09e4b46a879c8a, type: 3}
       propertyPath: m_Name
       value: PlayerUI
@@ -550,6 +558,14 @@ PrefabInstance:
     - target: {fileID: 2055497522732905592, guid: f0f88d28010e7fb45b09e4b46a879c8a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3700243978989332891, guid: f0f88d28010e7fb45b09e4b46a879c8a, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3700243978989332891, guid: f0f88d28010e7fb45b09e4b46a879c8a, type: 3}
+      propertyPath: m_fontSize
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0f88d28010e7fb45b09e4b46a879c8a, type: 3}
@@ -2337,15 +2353,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3063364185856722050, guid: 0965159253ec9e3429357a3d7625b08f, type: 3}
       propertyPath: comboMulitplierVals.Array.data[0]
-      value: 100
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3063364185856722050, guid: 0965159253ec9e3429357a3d7625b08f, type: 3}
       propertyPath: comboMulitplierVals.Array.data[1]
-      value: 200
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3063364185856722050, guid: 0965159253ec9e3429357a3d7625b08f, type: 3}
       propertyPath: comboMulitplierVals.Array.data[2]
-      value: 800
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3063364185856722050, guid: 0965159253ec9e3429357a3d7625b08f, type: 3}
       propertyPath: comboMulitplierVals.Array.data[3]

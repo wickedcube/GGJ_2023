@@ -57,7 +57,8 @@ namespace Enemy
         List<IndependentNumber> NumberComponents = new List<IndependentNumber>();
         private PlayerStats playerStats;
 
-
+        private EnemySpawner meraBagwhan;
+        
         /// <summary>
         /// this is the point that the enemy is usually walking towards.
         /// </summary>
@@ -103,6 +104,7 @@ namespace Enemy
         // Start is called before the first frame update
         void Start()
         {
+            meraBagwhan = FindObjectOfType<EnemySpawner>();
             WalkPoint = this.transform.position;
             ChronoHelper.OnChronoEffectStarted += OnChronoEffectStarted;
             ChronoHelper.OnChronoEffectEnded += OnChronoEffectEnded;
@@ -201,6 +203,33 @@ namespace Enemy
             return false;
         }
 
+        public void HandleEnemyDeath()
+        {
+            if (Value == 1 || IsPrime)
+            {
+                FindObjectOfType<WaveSpawner>().EnemyDied();
+                ReturnToPool();
+                return;
+            }
+            
+            if (IsPerfectSquare)
+            {
+                var sqrt = Value.SquareRoot();
+                meraBagwhan.CreateEnemyAt(transform.position,sqrt);
+                meraBagwhan.CreateEnemyAt(transform.position,sqrt);
+            }
+            else if (IsPerfectCube)
+            {
+                var cbrt = Value.CubeRoot();
+                meraBagwhan.CreateEnemyAt(transform.position,cbrt);
+                meraBagwhan.CreateEnemyAt(transform.position,cbrt);
+                meraBagwhan.CreateEnemyAt(transform.position,cbrt);
+            }
+            
+            FindObjectOfType<WaveSpawner>().EnemyDied();
+            ReturnToPool();
+        }
+        
         private void OnCollisionEnter(Collision other)
         {
 

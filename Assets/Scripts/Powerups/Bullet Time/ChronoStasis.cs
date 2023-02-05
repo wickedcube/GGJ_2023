@@ -45,7 +45,7 @@ public class ChronoStasis : MonoBehaviour
         while (timeStep <= 1)
         {
             timeStep += Time.deltaTime / minComboToActivate;
-            stats.ConsumeCombo(Time.deltaTime * PlayerStats.COMBO_STEP);
+            stats.ConsumeCombo(Time.deltaTime * PlayerStats.COMBO_STEP, true);
             yield return new WaitForEndOfFrame();
         }
 

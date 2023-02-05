@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,7 +8,9 @@ public class PlayerHealthUI : MonoBehaviour
 
     [SerializeField] private Image healthBar;
     [SerializeField] private Image comboBar;
-    
+    [SerializeField] private List<TMPro.TMP_Text> comboText;
+    [SerializeField] private List<TMPro.TMP_Text> scoreText;
+
     private Coroutine healthbarRoutine;
     private Coroutine combobarRoutine;
     
@@ -31,12 +34,30 @@ public class PlayerHealthUI : MonoBehaviour
         AnimateFill(healthBar, perc, healthbarRoutine);
     }
 
-    public void SetComboMeterF(float perc)
+    public void SetComboMeterF(float perc, bool animate = false)
     {
         if(combobarRoutine != null)
             StopCoroutine(combobarRoutine);
         
-        AnimateFill(comboBar, perc, combobarRoutine);
+        if(animate)
+            AnimateFill(comboBar, perc, combobarRoutine);
+        else
+        {
+            comboBar.fillAmount = perc;
+        }
+    }
+
+    public void SetComboCounter(int val)
+    {
+        comboText[0].gameObject.SetActive(val != 0);
+        comboText[1].gameObject.SetActive(val != 0);
+        
+        comboText[0].text = comboText[1].text = $"x{val}";
+    }
+    
+    public void SetScoreCounter(int val)
+    {
+        scoreText[0].text = scoreText[1].text = $"Score: {val}";
     }
     
     private void AnimateFill(Image img, float number, Coroutine routine)

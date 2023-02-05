@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Interfaces;
 using Unity.Mathematics;
@@ -15,9 +16,15 @@ namespace Powerups.Grenade
       
       [Range(0f,1f)]
       [SerializeField] private float explosionScale = 1;
-      
-      private bool timerActive = false;
 
+      private PlayerStats stats;
+
+      private void Start()
+      {
+         stats = FindObjectOfType<PlayerStats>();
+      }
+
+      private bool timerActive = false;
       private void OnTriggerEnter(Collider other)
       {
          var enemy = other.GetComponent<INumberEnemy>();
@@ -59,6 +66,7 @@ namespace Powerups.Grenade
          {
             var enemy = collider.GetComponentInChildren<INumberEnemy>();
             enemy.TakeDamage(this);
+            stats.IncrementKillValue();
          }
       }
 

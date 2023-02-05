@@ -127,5 +127,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90e678f5419ba1047a8897419738cd15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  correctBulletHit: {fileID: 2708598583397607911, guid: 6398d43fe79ea0140913dc5530c646af, type: 3}
+  wrongBulletHit: {fileID: 4021103657954561961, guid: 5c755f9bc5253ea418e919994537dcc7, type: 3}
+  regularBulletHit: {fileID: 9127653965126434405, guid: 3c6022ac1a1cc7b438777188ae54da0e, type: 3}
   isSquareRootBullet: 0
   isCubeRootBullet: 1
