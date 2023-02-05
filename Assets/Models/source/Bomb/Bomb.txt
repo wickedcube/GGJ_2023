@@ -1,0 +1,3 @@
+Stroke . Fast Brush X: 0.1 Y: 0.1
+Volume . Solid
+Stroke . Fast Brush X: 0.1 Y: 0.1

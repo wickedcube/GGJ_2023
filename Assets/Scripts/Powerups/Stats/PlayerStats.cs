@@ -45,15 +45,16 @@ public class PlayerStats : MonoBehaviour
 
     private void Update()
     {
+        #if UNITY_EDITOR
         if (Input.GetButtonDown("Jump"))
             AddToCombo(100f);
 
         AddToCombo(Time.deltaTime * MAX_COMBO_METER / 30f);
+        #endif
     }
 
     public void TakeDamage(int dmg)
     {
-        return;
         if (health <= 0) return;
         health -= dmg;
 
