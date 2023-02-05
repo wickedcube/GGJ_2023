@@ -191,6 +191,7 @@ namespace Enemy
                 {
                     // return the enemy to enemy pool.
                     ReturnToPool();
+                    playerStats.IncrementKillValue();
                     return true;
                 }
             }

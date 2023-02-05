@@ -32,6 +32,7 @@ public class PlayerStats : MonoBehaviour
     private int currentComboIndex;
     private int killCount;
     private int currentMeter;
+    private int score;
 
     private void Start()
     {
@@ -80,11 +81,13 @@ public class PlayerStats : MonoBehaviour
     public void IncrementKillValue()
     {
         killCount++;
-        if (currentComboIndex < comboKillThresholds.Count)
+        score += UnityEngine.Random.Range(85, 123);
+        if (currentComboIndex < comboKillThresholds.Count - 1)
         {
             if (killCount > comboKillThresholds[currentComboIndex + 1])
             {
                 currentComboIndex++;
+                //UpdateComboIncHere
             }
         }
 
@@ -96,5 +99,6 @@ public class PlayerStats : MonoBehaviour
 
         killCount = 0;
         currentComboIndex = 0;
+        //UpdateComboDecHere
     }
 }
