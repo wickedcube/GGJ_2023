@@ -19,3 +19,9 @@ MonoBehaviour:
     timeTillNextInternalWave: 3
   - fileName: test_3
     timeTillNextInternalWave: 3
+  - fileName: test_4
+    timeTillNextInternalWave: 3
+  - fileName: test_5
+    timeTillNextInternalWave: 3
+  - fileName: test_6
+    timeTillNextInternalWave: 3

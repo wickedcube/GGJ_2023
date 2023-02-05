@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1614504754179684694}
   - component: {fileID: 1614504754179684689}
   - component: {fileID: 1614504754179684690}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: El Grenado
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,7 +103,7 @@ MonoBehaviour:
   detectionLayer:
     serializedVersion: 2
     m_Bits: 64
-  explosionRef: {fileID: 7618812902749017273, guid: 98a9c4f61105fca4da3b91de5c3ce267, type: 3}
+  explosionRef: {fileID: 9010849596890224403, guid: e528427daa147834a9cc58aaf27ec7c2, type: 3}
   defaultFuseTime: 1
   aoe: 10
   explosionScale: 0.328

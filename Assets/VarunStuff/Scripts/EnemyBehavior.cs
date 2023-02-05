@@ -14,8 +14,6 @@ namespace Enemy
         public static int CubeRoot(this int value) => (int)Mathf.Pow(value, (1 / 3f));
     }
 
-    
-
     public enum PlaceHolderAttackType
     {
         SqrtBullet = 0,
@@ -48,7 +46,8 @@ namespace Enemy
 
         [SerializeField]
         private Transform NumberHolder;
-         [SerializeField]
+
+        [SerializeField]
         private GameObject DestroyFX;
 
         private bool IsPrime => NumberAlgorithms.IsPrime(this.Value);
@@ -108,12 +107,12 @@ namespace Enemy
         }
         private void OnChronoEffectStarted(float slowDownPercentage)
         {
-            // TODO : Implement the Chrono slowdown
+            
         }
 
         private void OnChronoEffectEnded()
         {
-            // TODO : Implement the Chrono slowdown.
+            
         }
         
 
@@ -200,7 +199,9 @@ namespace Enemy
             var player = enteredGameObject.GetComponent<PlayerController>();
             if(player != default)
             {
+                var playerStats = enteredGameObject.GetComponent<PlayerStats>();
                 player.TakeDamage(this);
+                playerStats.IncrementKillValue();
                 FindObjectOfType<WaveSpawner>().EnemyDied();
                 this.ReturnToPool();
             }
