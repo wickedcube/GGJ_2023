@@ -121,6 +121,18 @@ namespace Coherence.Generated
 
 			return (val, mask, 0);
 		}
+		public static (GenericScale, uint, uint?) DeserializeArchetypePlayer_0965159253ec9e3429357a3d7625b08f_GenericScale_LOD0(InProtocolBitStream bitStream)
+		{
+			var mask = (uint)0;
+			var val = new GenericScale();
+			if (bitStream.ReadMask())
+			{
+				val.value = (bitStream.ReadVector3(FloatMeta.NoCompression())).ToUnityVector3();
+				mask |= 0b00000000000000000000000000000001;
+			}
+
+			return (val, mask, 0);
+		}
 
 		/// <summary>
 		/// Resets byte array references to the local array instance that is kept in the lastSentData.

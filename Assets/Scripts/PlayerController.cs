@@ -2,6 +2,8 @@ using Enemy;
 using Interfaces;
 using System.Collections.Generic;
 using UnityEngine;
+using Coherence.Connection;
+using Coherence.Toolkit;
 
 public class PlayerController : MonoBehaviour
 {
@@ -23,8 +25,10 @@ public class PlayerController : MonoBehaviour
     float horizontalInput;
     float lastLeftShot;
     float lastRightShot;
+	public List<TMPro.TMP_Text> playerNameText;
+	public CoherenceMonoBridge MonoBridge;
 
-    Ray cameraRay;                // The ray that is cast from the camera to the mouse position
+	Ray cameraRay;                // The ray that is cast from the camera to the mouse position
     RaycastHit cameraRayHit;
 
     private Vector3 verticalVec;
@@ -39,6 +43,9 @@ public class PlayerController : MonoBehaviour
         startCameraPosition = cameraRef.position;
         verticalVec = -(Vector3.right + Vector3.back).normalized;
         horizontalVec = (Vector3.forward + Vector3.right).normalized;
+
+		playerNameText[0].text=LeaderboardHandler.Instance.PlayerData.username;
+		playerNameText[1].text=LeaderboardHandler.Instance.PlayerData.username;
     }
 
     void Update()
@@ -47,6 +54,7 @@ public class PlayerController : MonoBehaviour
         if (Physics.Raycast(cameraRay, out cameraRayHit, 1<<7))
         {
             Vector3 targetPosition = new Vector3(cameraRayHit.point.x, transform.position.y, cameraRayHit.point.z);
+            if(Vector3.Distance(targetPosition, transform.position) > 0.5f)
             transform.LookAt(targetPosition);
         }
 

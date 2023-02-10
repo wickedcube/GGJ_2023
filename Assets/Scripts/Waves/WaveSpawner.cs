@@ -9,7 +9,7 @@ using Coherence.Toolkit;
 
 public class WaveSpawner : MonoBehaviour
 {
-     public CoherenceSync cSync;
+    public CoherenceSync cSync;
     public List<WaveFormation> waveSos;
     public Action OnWaveFinished;
     private int activeWaveIdx = 0;
