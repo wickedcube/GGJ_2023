@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1123448716774178548}
   - component: {fileID: 4313243963654099615}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Number (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,6 +55,10 @@ PrefabInstance:
     - target: {fileID: 3076447111680797807, guid: b27ab2f60a1379f44be6d0b85f7ee433, type: 3}
       propertyPath: m_Name
       value: Number 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3076447111680797807, guid: b27ab2f60a1379f44be6d0b85f7ee433, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7692480371397426485, guid: b27ab2f60a1379f44be6d0b85f7ee433, type: 3}
       propertyPath: m_RootOrder

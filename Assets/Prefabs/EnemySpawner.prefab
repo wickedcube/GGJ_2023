@@ -246,6 +246,7 @@ GameObject:
   - component: {fileID: 4023776600029978576}
   - component: {fileID: 4023776600029978577}
   - component: {fileID: 4023776600029978578}
+  - component: {fileID: 1019161990}
   m_Layer: 0
   m_Name: EnemySpawner
   m_TagString: Untagged
@@ -322,6 +323,29 @@ MonoBehaviour:
   - {fileID: 4023776600195273656}
   - {fileID: 4023776600386890255}
   - {fileID: 4023776600590293507}
+--- !u!114 &1019161990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4023776600029978583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4428488eb418b49ee87708c133033116, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waveSos:
+  - {fileID: 11400000, guid: 738a5f54c214a4f2b82bbb578a5ef0ff, type: 2}
+  - {fileID: 11400000, guid: 0c6a91c1b1ea046569d3abe8b1e16ff9, type: 2}
+  - {fileID: 11400000, guid: 0a7cbf1118a7b41a2a7c6a34577b5a9f, type: 2}
+  - {fileID: 11400000, guid: bceac7e73249a42c8b554d9103f2fd33, type: 2}
+  - {fileID: 11400000, guid: 15795553d0b03481a871c93175d409e0, type: 2}
+  - {fileID: 11400000, guid: cf85bc038b8fd4afc9bd49b305b5aa3f, type: 2}
+  - {fileID: 11400000, guid: eb7db3a0992cf48e390c9faaf1d37a13, type: 2}
+  - {fileID: 11400000, guid: a99d95baa210c415e86b7a4d3bd80750, type: 2}
+  - {fileID: 11400000, guid: a99d95baa210c415e86b7a4d3bd80750, type: 2}
+  - {fileID: 11400000, guid: d7075270c64e14e1ebcd168834f087de, type: 2}
 --- !u!1 &4023776600151225365
 GameObject:
   m_ObjectHideFlags: 0

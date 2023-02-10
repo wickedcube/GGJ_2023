@@ -59,7 +59,7 @@ namespace Enemy
         public bool IsPerfectCube => NumberAlgorithms.IsPerfectCube(this.Value);
 
         List<IndependentNumber> NumberComponents = new List<IndependentNumber>();
-        private PlayerStats playerStats;
+        // private PlayerStats playerStats;
 
         private EnemySpawner meraBagwhan;
         
@@ -74,11 +74,22 @@ namespace Enemy
 
         [SerializeField] bool parametersSet = false;
 
-        public void SetParameters(MeshRenderer meshRenderer,
-                                  Transform playerTransform)
+        public void SetParameters(MeshRenderer meshRenderer)
         {
             this.WalkableArea = meshRenderer;
-            this.PlayerTransform = playerTransform;
+            PlayerController[] players = FindObjectsOfType<PlayerController>();
+            var dist = Mathf.Infinity;
+            Transform closestPlayer = null;
+            foreach(var p in players)
+            {
+                float calcDist = Vector3.Distance(p.transform.position, this.transform.position);
+                if(calcDist < dist)
+                {
+                    dist = calcDist;
+                    closestPlayer = p.transform;
+                }
+            }
+            this.PlayerTransform = closestPlayer;
         }
 
 
@@ -101,7 +112,6 @@ namespace Enemy
         {
             this.Value = val;
             NumberComponents = creator.CreateNumber(this.Value, NumberHolder);
-            playerStats = FindObjectOfType<PlayerStats>();
             RecalculateBounds();
             
             parametersSet = true;
@@ -134,8 +144,8 @@ namespace Enemy
             WalkPoint = this.transform.position;
             ChronoHelper.OnChronoEffectStarted += OnChronoEffectStarted;
             ChronoHelper.OnChronoEffectEnded += OnChronoEffectEnded;
-            if(playerStats != null)
-                playerStats.HealthDepleted += DelayAndDie;
+            // if(playerStats != null)
+            //     playerStats.HealthDepleted += DelayAndDie;
         }
 
         private void DelayAndDie(){
@@ -238,7 +248,7 @@ namespace Enemy
                 {
                     // return the enemy to enemy pool.
                     ReturnToPool();
-                    playerStats.IncrementKillValue();
+                    FindObjectOfType<PlayerStats>().IncrementKillValue();
                     return true;
                 }
             }
@@ -294,12 +304,11 @@ namespace Enemy
         
         private void OnCollisionEnter(Collision other)
         {
-
             var enteredGameObject = other.collider.gameObject;
             var player = enteredGameObject.GetComponentInParent<PlayerController>();
             if(player != default)
             {
-                playerStats.TakeDamage(Value);
+                enteredGameObject.GetComponentInParent<PlayerStats>().TakeDamage(Value);
                 // playerStats.IncrementKillValue();
                 Debug.LogError($"Collided with player");
                 FindObjectOfType<WaveSpawner>().EnemyDied();
