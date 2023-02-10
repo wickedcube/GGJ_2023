@@ -22,7 +22,7 @@ namespace Coherence.Generated
 	using Logger = Coherence.Log.Logger;
 	using UnityEngine.Scripting;
 
-	public class Binding_62c26d239a795ba4eb3243cd969e8671_cd50857d_f6f4_4ed5_ac69_9ffd378e192f : Vector3Binding
+	public class Binding_0965159253ec9e3429357a3d7625b08f_cd50857d_f6f4_4ed5_ac69_9ffd378e192f : Vector3Binding
 	{
 		private UnityEngine.Rigidbody CastedUnityComponent;		
 
@@ -30,7 +30,7 @@ namespace Coherence.Generated
 		{
 			CastedUnityComponent = (UnityEngine.Rigidbody)UnityComponent;
 		}
-		public override string CoherenceComponentName => "Player__char_32_1_UnityEngine__char_46_Rigidbody_6402874779665503713";
+		public override string CoherenceComponentName => "Player_UnityEngine__char_46_Rigidbody_7375439971787109930";
 
 		public override uint FieldMask => 0b00000000000000000000000000000001;
 
@@ -42,24 +42,24 @@ namespace Coherence.Generated
 
 		protected override Vector3 ReadComponentData(ICoherenceComponentData coherenceComponent)
 		{
-			var update = (Player__char_32_1_UnityEngine__char_46_Rigidbody_6402874779665503713)coherenceComponent;
+			var update = (Player_UnityEngine__char_46_Rigidbody_7375439971787109930)coherenceComponent;
 			return update.velocity;
 		}
 		
 		public override ICoherenceComponentData WriteComponentData(ICoherenceComponentData coherenceComponent)
 		{
-			var update = (Player__char_32_1_UnityEngine__char_46_Rigidbody_6402874779665503713)coherenceComponent;
+			var update = (Player_UnityEngine__char_46_Rigidbody_7375439971787109930)coherenceComponent;
 			update.velocity = Value;
 			return update;
 		}
 
 		public override ICoherenceComponentData CreateComponentData()
 		{
-			return new Player__char_32_1_UnityEngine__char_46_Rigidbody_6402874779665503713();
+			return new Player_UnityEngine__char_46_Rigidbody_7375439971787109930();
 		}
 	}
 
-	public class Binding_62c26d239a795ba4eb3243cd969e8671_60c3a288_cc2e_422e_ac67_bb3a0875fd71 : Vector3Binding
+	public class Binding_0965159253ec9e3429357a3d7625b08f_60c3a288_cc2e_422e_ac67_bb3a0875fd71 : Vector3Binding
 	{
 		private UnityEngine.Rigidbody CastedUnityComponent;		
 
@@ -67,7 +67,7 @@ namespace Coherence.Generated
 		{
 			CastedUnityComponent = (UnityEngine.Rigidbody)UnityComponent;
 		}
-		public override string CoherenceComponentName => "Player__char_32_1_UnityEngine__char_46_Rigidbody_6402874779665503713";
+		public override string CoherenceComponentName => "Player_UnityEngine__char_46_Rigidbody_7375439971787109930";
 
 		public override uint FieldMask => 0b00000000000000000000000000000010;
 
@@ -79,28 +79,28 @@ namespace Coherence.Generated
 
 		protected override Vector3 ReadComponentData(ICoherenceComponentData coherenceComponent)
 		{
-			var update = (Player__char_32_1_UnityEngine__char_46_Rigidbody_6402874779665503713)coherenceComponent;
+			var update = (Player_UnityEngine__char_46_Rigidbody_7375439971787109930)coherenceComponent;
 			return update.angularVelocity;
 		}
 		
 		public override ICoherenceComponentData WriteComponentData(ICoherenceComponentData coherenceComponent)
 		{
-			var update = (Player__char_32_1_UnityEngine__char_46_Rigidbody_6402874779665503713)coherenceComponent;
+			var update = (Player_UnityEngine__char_46_Rigidbody_7375439971787109930)coherenceComponent;
 			update.angularVelocity = Value;
 			return update;
 		}
 
 		public override ICoherenceComponentData CreateComponentData()
 		{
-			return new Player__char_32_1_UnityEngine__char_46_Rigidbody_6402874779665503713();
+			return new Player_UnityEngine__char_46_Rigidbody_7375439971787109930();
 		}
 	}
 
 
 	[Preserve]
-	[AddComponentMenu("coherence/Baked/Baked 'Player 1' (auto assigned)")]
+	[AddComponentMenu("coherence/Baked/Baked 'Player' (auto assigned)")]
 	[RequireComponent(typeof(CoherenceSync))]
-	public class CoherenceSyncPlayer__char_32_1 : CoherenceSyncBaked
+	public class CoherenceSyncPlayer : CoherenceSyncBaked
 	{
 		private CoherenceSync coherenceSync;
 		private Logger logger;
@@ -115,22 +115,22 @@ namespace Coherence.Generated
 			coherenceSync = GetComponent<CoherenceSync>();
 			coherenceSync.usingReflection = false;
 
-			logger = coherenceSync.logger.With<CoherenceSyncPlayer__char_32_1>();
-			if (coherenceSync.TryGetBindingByGuid("cd50857d-f6f4-4ed5-ac69-9ffd378e192f", "velocity", out Binding InternalPlayer__char_32_1_UnityEngine__char_46_Rigidbody_6402874779665503713_Player__char_32_1_UnityEngine__char_46_Rigidbody_6402874779665503713_velocity))
+			logger = coherenceSync.logger.With<CoherenceSyncPlayer>();
+			if (coherenceSync.TryGetBindingByGuid("cd50857d-f6f4-4ed5-ac69-9ffd378e192f", "velocity", out Binding InternalPlayer_UnityEngine__char_46_Rigidbody_7375439971787109930_Player_UnityEngine__char_46_Rigidbody_7375439971787109930_velocity))
 			{
-				var clone = new Binding_62c26d239a795ba4eb3243cd969e8671_cd50857d_f6f4_4ed5_ac69_9ffd378e192f();
-				InternalPlayer__char_32_1_UnityEngine__char_46_Rigidbody_6402874779665503713_Player__char_32_1_UnityEngine__char_46_Rigidbody_6402874779665503713_velocity.CloneTo(clone);
-				coherenceSync.Bindings[coherenceSync.Bindings.IndexOf(InternalPlayer__char_32_1_UnityEngine__char_46_Rigidbody_6402874779665503713_Player__char_32_1_UnityEngine__char_46_Rigidbody_6402874779665503713_velocity)] = clone;
+				var clone = new Binding_0965159253ec9e3429357a3d7625b08f_cd50857d_f6f4_4ed5_ac69_9ffd378e192f();
+				InternalPlayer_UnityEngine__char_46_Rigidbody_7375439971787109930_Player_UnityEngine__char_46_Rigidbody_7375439971787109930_velocity.CloneTo(clone);
+				coherenceSync.Bindings[coherenceSync.Bindings.IndexOf(InternalPlayer_UnityEngine__char_46_Rigidbody_7375439971787109930_Player_UnityEngine__char_46_Rigidbody_7375439971787109930_velocity)] = clone;
 			}
 			else
 			{
 				logger.Error("Couldn't find binding (UnityEngine.Rigidbody).velocity");
 			}
-			if (coherenceSync.TryGetBindingByGuid("60c3a288-cc2e-422e-ac67-bb3a0875fd71", "angularVelocity", out Binding InternalPlayer__char_32_1_UnityEngine__char_46_Rigidbody_6402874779665503713_Player__char_32_1_UnityEngine__char_46_Rigidbody_6402874779665503713_angularVelocity))
+			if (coherenceSync.TryGetBindingByGuid("60c3a288-cc2e-422e-ac67-bb3a0875fd71", "angularVelocity", out Binding InternalPlayer_UnityEngine__char_46_Rigidbody_7375439971787109930_Player_UnityEngine__char_46_Rigidbody_7375439971787109930_angularVelocity))
 			{
-				var clone = new Binding_62c26d239a795ba4eb3243cd969e8671_60c3a288_cc2e_422e_ac67_bb3a0875fd71();
-				InternalPlayer__char_32_1_UnityEngine__char_46_Rigidbody_6402874779665503713_Player__char_32_1_UnityEngine__char_46_Rigidbody_6402874779665503713_angularVelocity.CloneTo(clone);
-				coherenceSync.Bindings[coherenceSync.Bindings.IndexOf(InternalPlayer__char_32_1_UnityEngine__char_46_Rigidbody_6402874779665503713_Player__char_32_1_UnityEngine__char_46_Rigidbody_6402874779665503713_angularVelocity)] = clone;
+				var clone = new Binding_0965159253ec9e3429357a3d7625b08f_60c3a288_cc2e_422e_ac67_bb3a0875fd71();
+				InternalPlayer_UnityEngine__char_46_Rigidbody_7375439971787109930_Player_UnityEngine__char_46_Rigidbody_7375439971787109930_angularVelocity.CloneTo(clone);
+				coherenceSync.Bindings[coherenceSync.Bindings.IndexOf(InternalPlayer_UnityEngine__char_46_Rigidbody_7375439971787109930_Player_UnityEngine__char_46_Rigidbody_7375439971787109930_angularVelocity)] = clone;
 			}
 			else
 			{
@@ -174,7 +174,7 @@ namespace Coherence.Generated
 			switch(command)
 			{
 				default:
-					logger.Warning($"[CoherenceSyncPlayer__char_32_1] Unhandled command: {command.GetType()}.");
+					logger.Warning($"[CoherenceSyncPlayer] Unhandled command: {command.GetType()}.");
 					break;
 			}
 		}

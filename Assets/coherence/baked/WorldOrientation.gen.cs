@@ -145,7 +145,7 @@ namespace Coherence.Generated
 
 			return (val, mask, 0);
 		}
-		public static (WorldOrientation, uint, uint?) DeserializeArchetypePlayer__char_32_1_62c26d239a795ba4eb3243cd969e8671_WorldOrientation_LOD0(InProtocolBitStream bitStream)
+		public static (WorldOrientation, uint, uint?) DeserializeArchetypePlayer_0965159253ec9e3429357a3d7625b08f_WorldOrientation_LOD0(InProtocolBitStream bitStream)
 		{
 			var mask = (uint)0;
 			var val = new WorldOrientation();

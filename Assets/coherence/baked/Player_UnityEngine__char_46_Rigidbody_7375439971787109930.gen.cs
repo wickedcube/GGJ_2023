@@ -15,17 +15,17 @@ namespace Coherence.Generated
 	using Coherence.Toolkit;
 	using UnityEngine;
 
-	public struct Player__char_32_1_UnityEngine__char_46_Rigidbody_6402874779665503713 : ICoherenceComponentData
+	public struct Player_UnityEngine__char_46_Rigidbody_7375439971787109930 : ICoherenceComponentData
 	{
 		public Vector3 velocity;
 		public Vector3 angularVelocity;
 
 		public override string ToString()
 		{
-			return $"Player__char_32_1_UnityEngine__char_46_Rigidbody_6402874779665503713(velocity: {velocity}, angularVelocity: {angularVelocity})";
+			return $"Player_UnityEngine__char_46_Rigidbody_7375439971787109930(velocity: {velocity}, angularVelocity: {angularVelocity})";
 		}
 
-		public uint GetComponentType() => Definition.InternalPlayer__char_32_1_UnityEngine__char_46_Rigidbody_6402874779665503713;
+		public uint GetComponentType() => Definition.InternalPlayer_UnityEngine__char_46_Rigidbody_7375439971787109930;
 
 		public const int order = 0;
 
@@ -43,7 +43,7 @@ namespace Coherence.Generated
 
 		public ICoherenceComponentData MergeWith(ICoherenceComponentData data, uint mask)
 		{
-			var other = (Player__char_32_1_UnityEngine__char_46_Rigidbody_6402874779665503713)data;
+			var other = (Player_UnityEngine__char_46_Rigidbody_7375439971787109930)data;
 			if ((mask & 0x01) != 0)
 			{
 				Frame = other.Frame;
@@ -59,7 +59,7 @@ namespace Coherence.Generated
 			return this;
 		}
 
-		public static void Serialize(Player__char_32_1_UnityEngine__char_46_Rigidbody_6402874779665503713 data, uint mask, IOutProtocolBitStream bitStream)
+		public static void Serialize(Player_UnityEngine__char_46_Rigidbody_7375439971787109930 data, uint mask, IOutProtocolBitStream bitStream)
 		{
 			if (bitStream.WriteMask((mask & 0x01) != 0))
 			{
@@ -73,10 +73,10 @@ namespace Coherence.Generated
 			mask >>= 1;
 		}
 
-		public static (Player__char_32_1_UnityEngine__char_46_Rigidbody_6402874779665503713, uint, uint?) Deserialize(InProtocolBitStream bitStream)
+		public static (Player_UnityEngine__char_46_Rigidbody_7375439971787109930, uint, uint?) Deserialize(InProtocolBitStream bitStream)
 		{
 			var mask = (uint)0;
-			var val = new Player__char_32_1_UnityEngine__char_46_Rigidbody_6402874779665503713();
+			var val = new Player_UnityEngine__char_46_Rigidbody_7375439971787109930();
 	
 			if (bitStream.ReadMask())
 			{
@@ -90,10 +90,10 @@ namespace Coherence.Generated
 			}
 			return (val, mask, null);
 		}
-		public static (Player__char_32_1_UnityEngine__char_46_Rigidbody_6402874779665503713, uint, uint?) DeserializeArchetypePlayer__char_32_1_62c26d239a795ba4eb3243cd969e8671_Player__char_32_1_UnityEngine__char_46_Rigidbody_6402874779665503713_LOD0(InProtocolBitStream bitStream)
+		public static (Player_UnityEngine__char_46_Rigidbody_7375439971787109930, uint, uint?) DeserializeArchetypePlayer_0965159253ec9e3429357a3d7625b08f_Player_UnityEngine__char_46_Rigidbody_7375439971787109930_LOD0(InProtocolBitStream bitStream)
 		{
 			var mask = (uint)0;
-			var val = new Player__char_32_1_UnityEngine__char_46_Rigidbody_6402874779665503713();
+			var val = new Player_UnityEngine__char_46_Rigidbody_7375439971787109930();
 			if (bitStream.ReadMask())
 			{
 				val.velocity = (bitStream.ReadVector3(FloatMeta.NoCompression())).ToUnityVector3();
@@ -117,7 +117,7 @@ namespace Coherence.Generated
 		/// </summary>
 		public void ResetByteArrays(ICoherenceComponentData lastSent, uint mask)
 		{
-			var last = lastSent as Player__char_32_1_UnityEngine__char_46_Rigidbody_6402874779665503713?;
+			var last = lastSent as Player_UnityEngine__char_46_Rigidbody_7375439971787109930?;
 	
 		}
 	}
