@@ -1,9 +1,5 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.Mathematics;
 using UnityEngine;
-using Random = UnityEngine.Random;
+using Unity.Mathematics;
 
 public class GrenadeLauncher : MonoBehaviour
 {
@@ -36,13 +32,18 @@ public class GrenadeLauncher : MonoBehaviour
         
         if (KeyMappings.GetGrenadeKeyDown() && CanThrowGrenade())
         {
-            Debug.Log("EL GRENADO!!");
-            stats.ComboMeterLocked = true;
-            var go = Instantiate(prefab, spawnPoint.position, quaternion.identity);
-            var rb = go.GetComponentInChildren<Rigidbody>();
-            rb.AddForce(transform.forward * forceMagnitude);
-            stats.ConsumeCombo(PlayerStats.COMBO_STEP);
-            stats.ComboMeterLocked = false;
+            ThrowGrenade();
         }
     }
+
+    public void ThrowGrenade() 
+    {
+		Debug.Log("EL GRENADO!!");
+		stats.ComboMeterLocked=true;
+		var go = Instantiate(prefab, spawnPoint.position, quaternion.identity);
+		var rb = go.GetComponentInChildren<Rigidbody>();
+		rb.AddForce(transform.forward*forceMagnitude);
+		stats.ConsumeCombo(PlayerStats.COMBO_STEP);
+		stats.ComboMeterLocked=false;
+	}
 }

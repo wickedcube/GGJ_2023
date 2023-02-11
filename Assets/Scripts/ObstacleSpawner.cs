@@ -11,11 +11,11 @@ public class ObstacleSpawner : MonoBehaviour
     private int chunkSize = 45;
     private HashSet<Vector2> spawnedChunkedCoOrds = new HashSet<Vector2>();
     int xCoOrd, zCoOrd;
-    WaitForSeconds waitTime = new WaitForSeconds(0.05f);
+    WaitForSeconds waitTime = new WaitForSeconds(0.01f);
 
     void Start()
     {
-        Random.InitState(42);
+        //Random.InitState(42);
         StartCoroutine(FillUpWorld());
     }
 

@@ -39,10 +39,9 @@ public class ChronoStasis : MonoBehaviour
             Debug.Log("Here we go");
             RunChronoStasis();
         }
-
     }
 
-    private void RunChronoStasis()
+    public void RunChronoStasis()
     {
         chronoSFX.Play();
         StartCoroutine(ChronoStatis());
