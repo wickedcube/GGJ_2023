@@ -2,8 +2,6 @@ using Enemy;
 using Interfaces;
 using System.Collections.Generic;
 using UnityEngine;
-using Coherence.Connection;
-using Coherence.Toolkit;
 
 public class PlayerController : MonoBehaviour
 {
@@ -26,7 +24,7 @@ public class PlayerController : MonoBehaviour
     float lastLeftShot;
     float lastRightShot;
 	public List<TMPro.TMP_Text> playerNameText;
-	public CoherenceMonoBridge MonoBridge;
+	//public CoherenceMonoBridge MonoBridge;
 
 	Ray cameraRay;                // The ray that is cast from the camera to the mouse position
     RaycastHit cameraRayHit;

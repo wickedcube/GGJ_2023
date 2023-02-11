@@ -4,18 +4,14 @@ using System.Collections.Generic;
 using Newtonsoft.Json;
 using UnityEngine;
 using Waves;
-using Coherence.Connection;
-using Coherence.Toolkit;
 
 public class WaveSpawner : MonoBehaviour
 {
-    public CoherenceSync cSync;
     public List<WaveFormation> waveSos;
     public Action OnWaveFinished;
     private int activeWaveIdx = 0;
     private int activeEnemiesInWave = 0;
     private EnemySpawner enemySpawner;
-    public CoherenceMonoBridge MonoBridge;
     int maxPlayerCount = 2;
     int currentPlayerCount = 0;
     bool isFirstClient = false;
@@ -23,12 +19,7 @@ public class WaveSpawner : MonoBehaviour
     private void Start()
     {
         enemySpawner = GetComponent<EnemySpawner>();
-        MonoBridge.ClientConnections.OnCreated += connection =>
-        {
-            currentPlayerCount++;
-            if (currentPlayerCount == maxPlayerCount && cSync.HasStateAuthority)
-                StartWave(activeWaveIdx);
-        };
+		StartWave(activeWaveIdx);
     }
 
 
