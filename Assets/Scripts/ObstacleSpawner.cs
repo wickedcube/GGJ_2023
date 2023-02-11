@@ -8,7 +8,7 @@ public class ObstacleSpawner : MonoBehaviour
     // public Transform playerRef;
     private int currentCellX = -1;
     private int currentCellY = -1;
-    private int chunkSize = 45;
+    private int chunkSize = 47;
     private HashSet<Vector2> spawnedChunkedCoOrds = new HashSet<Vector2>();
     int xCoOrd, zCoOrd;
     WaitForSeconds waitTime = new WaitForSeconds(0.01f);

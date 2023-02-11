@@ -12,4 +12,10 @@ public class LoadScene : MonoBehaviour
         yield return new WaitForSeconds(20.5f);
         UnityEngine.SceneManagement.SceneManager.LoadScene(sceneId);
     }
+
+    public void Skip()
+    {
+        StopAllCoroutines();
+        UnityEngine.SceneManagement.SceneManager.LoadScene(sceneId);
+    }
 }
