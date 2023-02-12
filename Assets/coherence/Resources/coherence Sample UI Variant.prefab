@@ -20,9 +20,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 12800000, guid: 9f53869196ee9e24085e1b32421f7130, type: 3}
     - target: {fileID: 1208439840, guid: 356df2fdc05054d879bcdd9ae0534951, type: 3}
+      propertyPath: m_Text
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1208439840, guid: 356df2fdc05054d879bcdd9ae0534951, type: 3}
       propertyPath: m_FontData.m_Font
       value: 
       objectReference: {fileID: 12800000, guid: 9f53869196ee9e24085e1b32421f7130, type: 3}
+    - target: {fileID: 1258857836, guid: 356df2fdc05054d879bcdd9ae0534951, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1258857837, guid: 356df2fdc05054d879bcdd9ae0534951, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1748109755, guid: 356df2fdc05054d879bcdd9ae0534951, type: 3}
       propertyPath: m_FontData.m_Font
       value: 
