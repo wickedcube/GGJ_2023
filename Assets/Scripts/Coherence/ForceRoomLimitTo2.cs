@@ -23,7 +23,10 @@ public class ForceRoomLimitTo2 : MonoBehaviour
         if (x != null)
         {
             var t = GetComponentInChildren<RoomsConnectDialog>();
-            x.SetValue(t, 2);
+            if (t != null)
+            {
+                x.SetValue(t, 2);
+            }
         }
     }
 }

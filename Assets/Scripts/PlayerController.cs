@@ -36,6 +36,15 @@ public class PlayerController : MonoBehaviour
 
     // Start is called before the first frame update
 
+
+    public void OnNetworkedEntitySpawned(CoherenceSync sync)
+    {
+        if (sync.GetComponent<PlayerTag>() && !sync.HasInputAuthority)
+        {
+            Debug.LogError($"Other player has spawnedd!!");
+            PlayerHealthUI.Instance.SetWaitingTextStatus(false);
+        }
+    }
     public void Init(CoherenceMonoBridge monoBridge,Transform cam)
     {
         cameraRef = cam;

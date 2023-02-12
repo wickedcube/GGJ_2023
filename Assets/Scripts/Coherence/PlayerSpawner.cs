@@ -26,6 +26,19 @@ namespace Source
                 instantiatedPlayer.GetComponent<PlayerController>().Init(GetComponent<CoherenceMonoBridge>(), cam);
                 instantiatedPlayer.transform.position = startPositions[Random.Range(0, startPositions.Length)].position;
                 // instantiatedPlayer.layer = LayerMask.NameToLayer("LocalPlayer");
+
+                var monoBridhe = GetComponent<CoherenceMonoBridge>();
+                monoBridhe.ClientConnections.OnSynced += manager =>
+                {
+                    if (manager.ClientConnectionCount == 1)
+                    {
+                        instantiatedPlayer.GetComponentInChildren<PlayerHealthUI>().SetWaitingTextStatus(true);
+                    }
+                    else
+                    {
+                        instantiatedPlayer.GetComponentInChildren<PlayerHealthUI>().SetWaitingTextStatus(false);
+                    }
+                };
             }
         }
 

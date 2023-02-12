@@ -17,17 +17,41 @@ public class WaveSpawner : MonoBehaviour
     private EnemySpawner enemySpawner;
     public CoherenceMonoBridge MonoBridge;
     int maxPlayerCount = 2;
-    int currentPlayerCount = 0;
     bool isFirstClient = false;
 
+    private bool gameStarted = false;
     private void Start()
     {
         enemySpawner = GetComponent<EnemySpawner>();
-        MonoBridge.ClientConnections.OnCreated += connection =>
+        // MonoBridge.ClientConnections.OnCreated += connection =>
+        // {
+        //     currentPlayerCount++;
+        //     if (currentPlayerCount == maxPlayerCount && cSync.HasStateAuthority)
+        //         StartWave(activeWaveIdx);
+        //     else
+        //     {
+        //         
+        //     }
+        // };
+
+        MonoBridge.ClientConnections.OnSynced += manager =>
         {
-            currentPlayerCount++;
-            if (currentPlayerCount == maxPlayerCount && cSync.HasStateAuthority)
+            if (gameStarted)
+            {
+                return;
+            }
+
+            gameStarted = true;
+            if (MonoBridge.ClientConnections.ClientConnectionCount == maxPlayerCount && cSync.HasStateAuthority)
                 StartWave(activeWaveIdx);
+            else
+            {
+                MonoBridge.ClientConnections.OnCreated += conn =>
+                {
+                    if (MonoBridge.ClientConnections.ClientConnectionCount == maxPlayerCount && cSync.HasStateAuthority)
+                        StartWave(activeWaveIdx);
+                };
+            }
         };
     }
 

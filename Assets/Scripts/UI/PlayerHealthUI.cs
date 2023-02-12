@@ -14,6 +14,8 @@ public class PlayerHealthUI : MonoBehaviour
     [SerializeField] private GameObject grenadeKeyMap;
     [SerializeField] private GameObject chronoStasis;
 
+    [SerializeField] private GameObject waitingForOtherPlayer;
+    
     private Coroutine healthbarRoutine;
     private Coroutine combobarRoutine;
     
@@ -76,6 +78,14 @@ public class PlayerHealthUI : MonoBehaviour
     public void ShowWaveIncomingText() 
     {
         StartCoroutine(WaveIncomingText());
+    }
+
+    public void SetWaitingTextStatus(bool toSet)
+    {
+        if (waitingForOtherPlayer != null)
+        {
+            waitingForOtherPlayer.SetActive(toSet);
+        }
     }
 
     IEnumerator WaveIncomingText() 
