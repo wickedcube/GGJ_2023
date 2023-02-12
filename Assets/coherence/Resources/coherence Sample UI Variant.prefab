@@ -28,11 +28,19 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 12800000, guid: 9f53869196ee9e24085e1b32421f7130, type: 3}
     - target: {fileID: 1258857836, guid: 356df2fdc05054d879bcdd9ae0534951, type: 3}
+      propertyPath: m_Text
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1258857836, guid: 356df2fdc05054d879bcdd9ae0534951, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1258857837, guid: 356df2fdc05054d879bcdd9ae0534951, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1258857837, guid: 356df2fdc05054d879bcdd9ae0534951, type: 3}
-      propertyPath: m_Enabled
+      propertyPath: m_RaycastTarget
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1748109755, guid: 356df2fdc05054d879bcdd9ae0534951, type: 3}
@@ -203,6 +211,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2254534859026918331, guid: 356df2fdc05054d879bcdd9ae0534951, type: 3}
+      propertyPath: roomsRefreshInterval
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 2254534859133600523, guid: 356df2fdc05054d879bcdd9ae0534951, type: 3}
       propertyPath: m_FontData.m_Font
       value: 
@@ -338,7 +350,7 @@ PrefabInstance:
     - target: {fileID: 5560654289486513847, guid: 356df2fdc05054d879bcdd9ae0534951, type: 3}
       propertyPath: m_FontData.m_Font
       value: 
-      objectReference: {fileID: 12800000, guid: 9f53869196ee9e24085e1b32421f7130, type: 3}
+      objectReference: {fileID: 12800000, guid: 4f09c1cdfe1d168448d3a77c56bbbaf0, type: 3}
     - target: {fileID: 6112631960598034198, guid: 356df2fdc05054d879bcdd9ae0534951, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -498,7 +510,7 @@ PrefabInstance:
     - target: {fileID: 8218194902004443327, guid: 356df2fdc05054d879bcdd9ae0534951, type: 3}
       propertyPath: m_FontData.m_Font
       value: 
-      objectReference: {fileID: 12800000, guid: 9f53869196ee9e24085e1b32421f7130, type: 3}
+      objectReference: {fileID: 12800000, guid: 4f09c1cdfe1d168448d3a77c56bbbaf0, type: 3}
     - target: {fileID: 8699015864403543453, guid: 356df2fdc05054d879bcdd9ae0534951, type: 3}
       propertyPath: m_FontData.m_Font
       value: 
@@ -565,3 +577,32 @@ PrefabInstance:
       objectReference: {fileID: 12800000, guid: 9f53869196ee9e24085e1b32421f7130, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 356df2fdc05054d879bcdd9ae0534951, type: 3}
+--- !u!1 &4585364341273692371 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7410436684582398122, guid: 356df2fdc05054d879bcdd9ae0534951, type: 3}
+  m_PrefabInstance: {fileID: 6446151307170553977}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &367237509994908490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4585364341273692371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c95796bc9519848c19a949e37f5f131a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomLimitInputField: {fileID: 6446151306281911573}
+--- !u!114 &6446151306281911573 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1258857836, guid: 356df2fdc05054d879bcdd9ae0534951, type: 3}
+  m_PrefabInstance: {fileID: 6446151307170553977}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d199490a83bb2b844b9695cbf13b01ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
