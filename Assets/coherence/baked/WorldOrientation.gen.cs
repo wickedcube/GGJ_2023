@@ -157,6 +157,18 @@ namespace Coherence.Generated
 
 			return (val, mask, 0);
 		}
+		public static (WorldOrientation, uint, uint?) DeserializeArchetypePlayer__char_32_Variant_24e6855a167684cebb53a6b9290676e0_WorldOrientation_LOD0(InProtocolBitStream bitStream)
+		{
+			var mask = (uint)0;
+			var val = new WorldOrientation();
+			if (bitStream.ReadMask())
+			{
+				val.value = (bitStream.ReadQuaternion(32)).ToUnityQuaternion();
+				mask |= 0b00000000000000000000000000000001;
+			}
+
+			return (val, mask, 0);
+		}
 
 		/// <summary>
 		/// Resets byte array references to the local array instance that is kept in the lastSentData.

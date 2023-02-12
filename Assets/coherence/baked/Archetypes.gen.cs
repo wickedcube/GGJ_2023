@@ -18,6 +18,7 @@ namespace Coherence.Generated
 		public const int Enemy_a112f92c18af08a4cb206e6b4611b41fIndex = 5;
 		public const int El__char_32_Grenado_d2d154794ac855841a82a46b05bb7869Index = 6;
 		public const int Player_0965159253ec9e3429357a3d7625b08fIndex = 7;
+		public const int Player__char_32_Variant_24e6855a167684cebb53a6b9290676e0Index = 8;
 
 		public static Dictionary<string, int> IndexForName = new Dictionary<string, int>() {
 			{ "Bullet1_a15f0809f29cbf74c99418d4581ffc2c", 0 },
@@ -35,6 +36,8 @@ namespace Coherence.Generated
 			{ "El__char_32_Grenado_d2d154794ac855841a82a46b05bb7869", 6 },
 
 			{ "Player_0965159253ec9e3429357a3d7625b08f", 7 },
+
+			{ "Player__char_32_Variant_24e6855a167684cebb53a6b9290676e0", 8 },
 
 		};
 	}

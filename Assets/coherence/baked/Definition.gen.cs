@@ -16,7 +16,7 @@ namespace Coherence.Generated
 
 	public class Definition : IDefinition
 	{
-		public const string schemaId = "66ab6ae7570decf88e0f86ad76040cd2ba819f04";
+		public const string schemaId = "bd42534fe54067749cc1c7dc354e7d663bcbe292";
 		public const uint InternalWorldPosition = 0;
 		public const uint InternalWorldOrientation = 1;
 		public const uint InternalLocalUser = 2;
@@ -120,27 +120,32 @@ namespace Coherence.Generated
 		public const uint InternalGenericFieldColor0 = 100;
 		public const uint InternalGenericFieldColor1 = 101;
 		public const uint InternalPlayer_UnityEngine__char_46_Rigidbody_2358891834408612276 = 102;
-		public const uint InternalArchetypeBullet1_a15f0809f29cbf74c99418d4581ffc2c_WorldPosition_LOD0 = 103;
-		public const uint InternalArchetypeBullet1_a15f0809f29cbf74c99418d4581ffc2c_WorldOrientation_LOD0 = 104;
-		public const uint InternalArchetypeBullet2_7ed8c4dd2d3496548b9b77dbfdabead6_WorldPosition_LOD0 = 105;
-		public const uint InternalArchetypeBullet2_7ed8c4dd2d3496548b9b77dbfdabead6_WorldOrientation_LOD0 = 106;
-		public const uint InternalArchetypeCFX_Flash_a81ef04ac72436744a08ef117fa691b4_WorldPosition_LOD0 = 107;
-		public const uint InternalArchetypeCFX_Flash_a81ef04ac72436744a08ef117fa691b4_WorldOrientation_LOD0 = 108;
-		public const uint InternalArchetypeCFX_Flash_a81ef04ac72436744a08ef117fa691b4_GenericScale_LOD0 = 109;
-		public const uint InternalArchetypeCFXR__char_32_Explosion__char_32_3__char_32___char_43___char_32_Text__char_32_1_e528427daa147834a9cc58aaf27ec7c2_WorldPosition_LOD0 = 110;
-		public const uint InternalArchetypeCFXR__char_32_Explosion__char_32_3__char_32___char_43___char_32_Text__char_32_1_e528427daa147834a9cc58aaf27ec7c2_GenericScale_LOD0 = 111;
-		public const uint InternalArchetypeCFXR__char_32_Explosion__char_32_3__char_32___char_43___char_32_Text__char_32_1_e528427daa147834a9cc58aaf27ec7c2_WorldOrientation_LOD0 = 112;
-		public const uint InternalArchetypeEnemySpawner_deb987f02f3b9c5438adee8e7657523e_WorldPosition_LOD0 = 113;
-		public const uint InternalArchetypeEnemy_a112f92c18af08a4cb206e6b4611b41f_WorldPosition_LOD0 = 114;
-		public const uint InternalArchetypeEnemy_a112f92c18af08a4cb206e6b4611b41f_WorldOrientation_LOD0 = 115;
-		public const uint InternalArchetypeEnemy_a112f92c18af08a4cb206e6b4611b41f_GenericScale_LOD0 = 116;
-		public const uint InternalArchetypeEl__char_32_Grenado_d2d154794ac855841a82a46b05bb7869_WorldPosition_LOD0 = 117;
-		public const uint InternalArchetypeEl__char_32_Grenado_d2d154794ac855841a82a46b05bb7869_WorldOrientation_LOD0 = 118;
-		public const uint InternalArchetypeEl__char_32_Grenado_d2d154794ac855841a82a46b05bb7869_GenericScale_LOD0 = 119;
-		public const uint InternalArchetypePlayer_0965159253ec9e3429357a3d7625b08f_WorldPosition_LOD0 = 120;
-		public const uint InternalArchetypePlayer_0965159253ec9e3429357a3d7625b08f_WorldOrientation_LOD0 = 121;
-		public const uint InternalArchetypePlayer_0965159253ec9e3429357a3d7625b08f_GenericScale_LOD0 = 122;
-		public const uint InternalArchetypePlayer_0965159253ec9e3429357a3d7625b08f_Player_UnityEngine__char_46_Rigidbody_2358891834408612276_LOD0 = 123;
+		public const uint InternalPlayer__char_32_Variant_UnityEngine__char_46_Rigidbody_89933201532567856 = 103;
+		public const uint InternalArchetypeBullet1_a15f0809f29cbf74c99418d4581ffc2c_WorldPosition_LOD0 = 104;
+		public const uint InternalArchetypeBullet1_a15f0809f29cbf74c99418d4581ffc2c_WorldOrientation_LOD0 = 105;
+		public const uint InternalArchetypeBullet2_7ed8c4dd2d3496548b9b77dbfdabead6_WorldPosition_LOD0 = 106;
+		public const uint InternalArchetypeBullet2_7ed8c4dd2d3496548b9b77dbfdabead6_WorldOrientation_LOD0 = 107;
+		public const uint InternalArchetypeCFX_Flash_a81ef04ac72436744a08ef117fa691b4_WorldPosition_LOD0 = 108;
+		public const uint InternalArchetypeCFX_Flash_a81ef04ac72436744a08ef117fa691b4_WorldOrientation_LOD0 = 109;
+		public const uint InternalArchetypeCFX_Flash_a81ef04ac72436744a08ef117fa691b4_GenericScale_LOD0 = 110;
+		public const uint InternalArchetypeCFXR__char_32_Explosion__char_32_3__char_32___char_43___char_32_Text__char_32_1_e528427daa147834a9cc58aaf27ec7c2_WorldPosition_LOD0 = 111;
+		public const uint InternalArchetypeCFXR__char_32_Explosion__char_32_3__char_32___char_43___char_32_Text__char_32_1_e528427daa147834a9cc58aaf27ec7c2_GenericScale_LOD0 = 112;
+		public const uint InternalArchetypeCFXR__char_32_Explosion__char_32_3__char_32___char_43___char_32_Text__char_32_1_e528427daa147834a9cc58aaf27ec7c2_WorldOrientation_LOD0 = 113;
+		public const uint InternalArchetypeEnemySpawner_deb987f02f3b9c5438adee8e7657523e_WorldPosition_LOD0 = 114;
+		public const uint InternalArchetypeEnemy_a112f92c18af08a4cb206e6b4611b41f_WorldPosition_LOD0 = 115;
+		public const uint InternalArchetypeEnemy_a112f92c18af08a4cb206e6b4611b41f_WorldOrientation_LOD0 = 116;
+		public const uint InternalArchetypeEnemy_a112f92c18af08a4cb206e6b4611b41f_GenericScale_LOD0 = 117;
+		public const uint InternalArchetypeEl__char_32_Grenado_d2d154794ac855841a82a46b05bb7869_WorldPosition_LOD0 = 118;
+		public const uint InternalArchetypeEl__char_32_Grenado_d2d154794ac855841a82a46b05bb7869_WorldOrientation_LOD0 = 119;
+		public const uint InternalArchetypeEl__char_32_Grenado_d2d154794ac855841a82a46b05bb7869_GenericScale_LOD0 = 120;
+		public const uint InternalArchetypePlayer_0965159253ec9e3429357a3d7625b08f_WorldPosition_LOD0 = 121;
+		public const uint InternalArchetypePlayer_0965159253ec9e3429357a3d7625b08f_WorldOrientation_LOD0 = 122;
+		public const uint InternalArchetypePlayer_0965159253ec9e3429357a3d7625b08f_GenericScale_LOD0 = 123;
+		public const uint InternalArchetypePlayer_0965159253ec9e3429357a3d7625b08f_Player_UnityEngine__char_46_Rigidbody_2358891834408612276_LOD0 = 124;
+		public const uint InternalArchetypePlayer__char_32_Variant_24e6855a167684cebb53a6b9290676e0_WorldPosition_LOD0 = 125;
+		public const uint InternalArchetypePlayer__char_32_Variant_24e6855a167684cebb53a6b9290676e0_WorldOrientation_LOD0 = 126;
+		public const uint InternalArchetypePlayer__char_32_Variant_24e6855a167684cebb53a6b9290676e0_GenericScale_LOD0 = 127;
+		public const uint InternalArchetypePlayer__char_32_Variant_24e6855a167684cebb53a6b9290676e0_Player__char_32_Variant_UnityEngine__char_46_Rigidbody_89933201532567856_LOD0 = 128;
 		public const uint InternalAuthorityRequest = 0;
 		public const uint InternalAuthorityTransfer = 1;
 		public const uint InternalQuerySynced = 2;
@@ -252,27 +257,32 @@ namespace Coherence.Generated
 			{ 100, "GenericFieldColor0" },
 			{ 101, "GenericFieldColor1" },
 			{ 102, "Player_UnityEngine__char_46_Rigidbody_2358891834408612276" },
-			{ 103, "ArchetypeBullet1_a15f0809f29cbf74c99418d4581ffc2c_WorldPosition_LOD0" },
-			{ 104, "ArchetypeBullet1_a15f0809f29cbf74c99418d4581ffc2c_WorldOrientation_LOD0" },
-			{ 105, "ArchetypeBullet2_7ed8c4dd2d3496548b9b77dbfdabead6_WorldPosition_LOD0" },
-			{ 106, "ArchetypeBullet2_7ed8c4dd2d3496548b9b77dbfdabead6_WorldOrientation_LOD0" },
-			{ 107, "ArchetypeCFX_Flash_a81ef04ac72436744a08ef117fa691b4_WorldPosition_LOD0" },
-			{ 108, "ArchetypeCFX_Flash_a81ef04ac72436744a08ef117fa691b4_WorldOrientation_LOD0" },
-			{ 109, "ArchetypeCFX_Flash_a81ef04ac72436744a08ef117fa691b4_GenericScale_LOD0" },
-			{ 110, "ArchetypeCFXR__char_32_Explosion__char_32_3__char_32___char_43___char_32_Text__char_32_1_e528427daa147834a9cc58aaf27ec7c2_WorldPosition_LOD0" },
-			{ 111, "ArchetypeCFXR__char_32_Explosion__char_32_3__char_32___char_43___char_32_Text__char_32_1_e528427daa147834a9cc58aaf27ec7c2_GenericScale_LOD0" },
-			{ 112, "ArchetypeCFXR__char_32_Explosion__char_32_3__char_32___char_43___char_32_Text__char_32_1_e528427daa147834a9cc58aaf27ec7c2_WorldOrientation_LOD0" },
-			{ 113, "ArchetypeEnemySpawner_deb987f02f3b9c5438adee8e7657523e_WorldPosition_LOD0" },
-			{ 114, "ArchetypeEnemy_a112f92c18af08a4cb206e6b4611b41f_WorldPosition_LOD0" },
-			{ 115, "ArchetypeEnemy_a112f92c18af08a4cb206e6b4611b41f_WorldOrientation_LOD0" },
-			{ 116, "ArchetypeEnemy_a112f92c18af08a4cb206e6b4611b41f_GenericScale_LOD0" },
-			{ 117, "ArchetypeEl__char_32_Grenado_d2d154794ac855841a82a46b05bb7869_WorldPosition_LOD0" },
-			{ 118, "ArchetypeEl__char_32_Grenado_d2d154794ac855841a82a46b05bb7869_WorldOrientation_LOD0" },
-			{ 119, "ArchetypeEl__char_32_Grenado_d2d154794ac855841a82a46b05bb7869_GenericScale_LOD0" },
-			{ 120, "ArchetypePlayer_0965159253ec9e3429357a3d7625b08f_WorldPosition_LOD0" },
-			{ 121, "ArchetypePlayer_0965159253ec9e3429357a3d7625b08f_WorldOrientation_LOD0" },
-			{ 122, "ArchetypePlayer_0965159253ec9e3429357a3d7625b08f_GenericScale_LOD0" },
-			{ 123, "ArchetypePlayer_0965159253ec9e3429357a3d7625b08f_Player_UnityEngine__char_46_Rigidbody_2358891834408612276_LOD0" },
+			{ 103, "Player__char_32_Variant_UnityEngine__char_46_Rigidbody_89933201532567856" },
+			{ 104, "ArchetypeBullet1_a15f0809f29cbf74c99418d4581ffc2c_WorldPosition_LOD0" },
+			{ 105, "ArchetypeBullet1_a15f0809f29cbf74c99418d4581ffc2c_WorldOrientation_LOD0" },
+			{ 106, "ArchetypeBullet2_7ed8c4dd2d3496548b9b77dbfdabead6_WorldPosition_LOD0" },
+			{ 107, "ArchetypeBullet2_7ed8c4dd2d3496548b9b77dbfdabead6_WorldOrientation_LOD0" },
+			{ 108, "ArchetypeCFX_Flash_a81ef04ac72436744a08ef117fa691b4_WorldPosition_LOD0" },
+			{ 109, "ArchetypeCFX_Flash_a81ef04ac72436744a08ef117fa691b4_WorldOrientation_LOD0" },
+			{ 110, "ArchetypeCFX_Flash_a81ef04ac72436744a08ef117fa691b4_GenericScale_LOD0" },
+			{ 111, "ArchetypeCFXR__char_32_Explosion__char_32_3__char_32___char_43___char_32_Text__char_32_1_e528427daa147834a9cc58aaf27ec7c2_WorldPosition_LOD0" },
+			{ 112, "ArchetypeCFXR__char_32_Explosion__char_32_3__char_32___char_43___char_32_Text__char_32_1_e528427daa147834a9cc58aaf27ec7c2_GenericScale_LOD0" },
+			{ 113, "ArchetypeCFXR__char_32_Explosion__char_32_3__char_32___char_43___char_32_Text__char_32_1_e528427daa147834a9cc58aaf27ec7c2_WorldOrientation_LOD0" },
+			{ 114, "ArchetypeEnemySpawner_deb987f02f3b9c5438adee8e7657523e_WorldPosition_LOD0" },
+			{ 115, "ArchetypeEnemy_a112f92c18af08a4cb206e6b4611b41f_WorldPosition_LOD0" },
+			{ 116, "ArchetypeEnemy_a112f92c18af08a4cb206e6b4611b41f_WorldOrientation_LOD0" },
+			{ 117, "ArchetypeEnemy_a112f92c18af08a4cb206e6b4611b41f_GenericScale_LOD0" },
+			{ 118, "ArchetypeEl__char_32_Grenado_d2d154794ac855841a82a46b05bb7869_WorldPosition_LOD0" },
+			{ 119, "ArchetypeEl__char_32_Grenado_d2d154794ac855841a82a46b05bb7869_WorldOrientation_LOD0" },
+			{ 120, "ArchetypeEl__char_32_Grenado_d2d154794ac855841a82a46b05bb7869_GenericScale_LOD0" },
+			{ 121, "ArchetypePlayer_0965159253ec9e3429357a3d7625b08f_WorldPosition_LOD0" },
+			{ 122, "ArchetypePlayer_0965159253ec9e3429357a3d7625b08f_WorldOrientation_LOD0" },
+			{ 123, "ArchetypePlayer_0965159253ec9e3429357a3d7625b08f_GenericScale_LOD0" },
+			{ 124, "ArchetypePlayer_0965159253ec9e3429357a3d7625b08f_Player_UnityEngine__char_46_Rigidbody_2358891834408612276_LOD0" },
+			{ 125, "ArchetypePlayer__char_32_Variant_24e6855a167684cebb53a6b9290676e0_WorldPosition_LOD0" },
+			{ 126, "ArchetypePlayer__char_32_Variant_24e6855a167684cebb53a6b9290676e0_WorldOrientation_LOD0" },
+			{ 127, "ArchetypePlayer__char_32_Variant_24e6855a167684cebb53a6b9290676e0_GenericScale_LOD0" },
+			{ 128, "ArchetypePlayer__char_32_Variant_24e6855a167684cebb53a6b9290676e0_Player__char_32_Variant_UnityEngine__char_46_Rigidbody_89933201532567856_LOD0" },
 		};
 
 		public static string ComponentNameForTypeId(uint typeId)
@@ -500,6 +510,8 @@ namespace Coherence.Generated
 					return GenericFieldColor1.Deserialize(inProtocolStream);
 				case InternalPlayer_UnityEngine__char_46_Rigidbody_2358891834408612276:
 					return Player_UnityEngine__char_46_Rigidbody_2358891834408612276.Deserialize(inProtocolStream);
+				case InternalPlayer__char_32_Variant_UnityEngine__char_46_Rigidbody_89933201532567856:
+					return Player__char_32_Variant_UnityEngine__char_46_Rigidbody_89933201532567856.Deserialize(inProtocolStream);
 				case InternalArchetypeBullet1_a15f0809f29cbf74c99418d4581ffc2c_WorldPosition_LOD0:
 					return WorldPosition.DeserializeArchetypeBullet1_a15f0809f29cbf74c99418d4581ffc2c_WorldPosition_LOD0(inProtocolStream);
 				case InternalArchetypeBullet1_a15f0809f29cbf74c99418d4581ffc2c_WorldOrientation_LOD0:
@@ -542,6 +554,14 @@ namespace Coherence.Generated
 					return GenericScale.DeserializeArchetypePlayer_0965159253ec9e3429357a3d7625b08f_GenericScale_LOD0(inProtocolStream);
 				case InternalArchetypePlayer_0965159253ec9e3429357a3d7625b08f_Player_UnityEngine__char_46_Rigidbody_2358891834408612276_LOD0:
 					return Player_UnityEngine__char_46_Rigidbody_2358891834408612276.DeserializeArchetypePlayer_0965159253ec9e3429357a3d7625b08f_Player_UnityEngine__char_46_Rigidbody_2358891834408612276_LOD0(inProtocolStream);
+				case InternalArchetypePlayer__char_32_Variant_24e6855a167684cebb53a6b9290676e0_WorldPosition_LOD0:
+					return WorldPosition.DeserializeArchetypePlayer__char_32_Variant_24e6855a167684cebb53a6b9290676e0_WorldPosition_LOD0(inProtocolStream);
+				case InternalArchetypePlayer__char_32_Variant_24e6855a167684cebb53a6b9290676e0_WorldOrientation_LOD0:
+					return WorldOrientation.DeserializeArchetypePlayer__char_32_Variant_24e6855a167684cebb53a6b9290676e0_WorldOrientation_LOD0(inProtocolStream);
+				case InternalArchetypePlayer__char_32_Variant_24e6855a167684cebb53a6b9290676e0_GenericScale_LOD0:
+					return GenericScale.DeserializeArchetypePlayer__char_32_Variant_24e6855a167684cebb53a6b9290676e0_GenericScale_LOD0(inProtocolStream);
+				case InternalArchetypePlayer__char_32_Variant_24e6855a167684cebb53a6b9290676e0_Player__char_32_Variant_UnityEngine__char_46_Rigidbody_89933201532567856_LOD0:
+					return Player__char_32_Variant_UnityEngine__char_46_Rigidbody_89933201532567856.DeserializeArchetypePlayer__char_32_Variant_24e6855a167684cebb53a6b9290676e0_Player__char_32_Variant_UnityEngine__char_46_Rigidbody_89933201532567856_LOD0(inProtocolStream);
 				default:
 					return (null, 0, 0);
 			}
@@ -860,6 +880,9 @@ namespace Coherence.Generated
 					break;
 				case InternalPlayer_UnityEngine__char_46_Rigidbody_2358891834408612276:
 					Player_UnityEngine__char_46_Rigidbody_2358891834408612276.Serialize((Player_UnityEngine__char_46_Rigidbody_2358891834408612276)data, mask, protocolStream);
+					break;
+				case InternalPlayer__char_32_Variant_UnityEngine__char_46_Rigidbody_89933201532567856:
+					Player__char_32_Variant_UnityEngine__char_46_Rigidbody_89933201532567856.Serialize((Player__char_32_Variant_UnityEngine__char_46_Rigidbody_89933201532567856)data, mask, protocolStream);
 					break;
 			}
 		}

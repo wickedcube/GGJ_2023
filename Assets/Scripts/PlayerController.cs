@@ -35,6 +35,11 @@ public class PlayerController : MonoBehaviour
     private Vector3 horizontalVec;
 
     // Start is called before the first frame update
+
+    public void Init(Transform cam)
+    {
+        cameraRef = cam;
+    }
     void Start()
     {
         rb = GetComponent<Rigidbody>();
