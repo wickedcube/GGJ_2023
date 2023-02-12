@@ -54,6 +54,12 @@ public class GameHUD : MonoBehaviour
     {
         //Time.timeScale = 1.0f;
         SceneManager.LoadScene(1);
+
+        var player = GetComponentInParent<PlayerController>();
+        if (player != null && player.MonoBridge != null)
+        {
+            player.MonoBridge.Disconnect();
+        }
     }
 
 

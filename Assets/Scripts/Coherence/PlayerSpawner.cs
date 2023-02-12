@@ -1,5 +1,6 @@
 using System;
 using Coherence;
+using Coherence.Toolkit;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -22,7 +23,7 @@ namespace Source
             {
                 Debug.Log($"MonoBridge :: Client is connected");
                 instantiatedPlayer = Instantiate(PlayerPrefab);
-                instantiatedPlayer.GetComponent<PlayerController>().Init(cam);
+                instantiatedPlayer.GetComponent<PlayerController>().Init(GetComponent<CoherenceMonoBridge>(), cam);
                 instantiatedPlayer.transform.position = startPositions[Random.Range(0, startPositions.Length)].position;
                 // instantiatedPlayer.layer = LayerMask.NameToLayer("LocalPlayer");
             }

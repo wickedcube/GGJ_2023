@@ -36,9 +36,10 @@ public class PlayerController : MonoBehaviour
 
     // Start is called before the first frame update
 
-    public void Init(Transform cam)
+    public void Init(CoherenceMonoBridge monoBridge,Transform cam)
     {
         cameraRef = cam;
+        this.MonoBridge = monoBridge;
     }
     void Start()
     {

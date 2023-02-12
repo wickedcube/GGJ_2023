@@ -160,7 +160,8 @@ public class MainMenu : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("LegoOffline");
+        SceneManager.LoadScene("LegoOffline" +
+                               "");
     }
 
     public void StartGameOnline()

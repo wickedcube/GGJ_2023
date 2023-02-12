@@ -16,7 +16,7 @@ public class WaveSpawner : MonoBehaviour
     private int activeEnemiesInWave = 0;
     private EnemySpawner enemySpawner;
     public CoherenceMonoBridge MonoBridge;
-    int maxPlayerCount = 1;
+    int maxPlayerCount = 2;
     int currentPlayerCount = 0;
     bool isFirstClient = false;
 
