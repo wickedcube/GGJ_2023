@@ -15,22 +15,22 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField]
     private MeshRenderer walkableArea;
     
-    private EnemyNumberCreator enemyNumberCreator;
+
 
     int counter = 0;
 
     void Start() {
-        enemyNumberCreator = GetComponent<EnemyNumberCreator>();
     }
 
     public void CreateEnemyAt(Vector3 position, int value)
     {
+        Debug.LogError($"Sid :: Step 1 : Creating Enemy");
         var poolable = pool.GetObject();
         if (poolable is EnemyBehavior ebh)
         {
             ebh.SetParameters(walkableArea);
 
-            ebh.SetValue(value, enemyNumberCreator);
+            ebh.SetValue(value, true);
         }
 
         poolable.transform.position = position;

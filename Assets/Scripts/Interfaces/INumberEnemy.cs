@@ -7,7 +7,7 @@ namespace Interfaces
     public interface INumberEnemy
     {
         int Value { get; }
-        void SetValue(int val, EnemyNumberCreator creator);
+        void SetValue(int val, bool t);
 
         bool TakeDamage(object obj);
     }

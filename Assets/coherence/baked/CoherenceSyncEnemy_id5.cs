@@ -31,7 +31,8 @@ namespace Coherence.Generated
 		private CoherenceSync coherenceSync;
 		private Logger logger;
 
-		// Cached targets for commands
+		// Cached targets for commands		
+		private Enemy.EnemyBehavior Enemy_id5_Enemy__char_46_EnemyBehavior__char_46_SetValue_3348272d_be70_4d5b_b481_9b8126faac39_CommandTarget;
 
 		private IClient client;
 		private CoherenceMonoBridge monoBridge => coherenceSync.MonoBridge;
@@ -42,6 +43,16 @@ namespace Coherence.Generated
 			coherenceSync.usingReflection = false;
 
 			logger = coherenceSync.logger.With<CoherenceSyncEnemy_id5>();
+			if (coherenceSync.TryGetBindingByGuid("3348272d-be70-4d5b-b481-9b8126faac39", "SetValue", out Binding Enemy_id5_Enemy__char_46_EnemyBehavior__char_46_SetValue_3348272d_be70_4d5b_b481_9b8126faac39))
+			{
+				Enemy_id5_Enemy__char_46_EnemyBehavior__char_46_SetValue_3348272d_be70_4d5b_b481_9b8126faac39_CommandTarget = (Enemy.EnemyBehavior)Enemy_id5_Enemy__char_46_EnemyBehavior__char_46_SetValue_3348272d_be70_4d5b_b481_9b8126faac39.UnityComponent;
+				coherenceSync.AddCommandRequestDelegate("Enemy.EnemyBehavior.SetValue", "(System.Int32System.Boolean)",
+				SendCommand_Enemy_id5_Enemy__char_46_EnemyBehavior__char_46_SetValue_3348272d_be70_4d5b_b481_9b8126faac39, ReceiveLocalCommand_Enemy_id5_Enemy__char_46_EnemyBehavior__char_46_SetValue_3348272d_be70_4d5b_b481_9b8126faac39, MessageTarget.All, Enemy_id5_Enemy__char_46_EnemyBehavior__char_46_SetValue_3348272d_be70_4d5b_b481_9b8126faac39_CommandTarget,false);
+			}
+			else
+			{
+				logger.Error("Couldn't find command binding (SetValue)");
+			}
 		}
 
 		public override List<ICoherenceComponentData> CreateEntity()
@@ -74,11 +85,37 @@ namespace Coherence.Generated
 			}
 			this.client = client;
 		}
+		void SendCommand_Enemy_id5_Enemy__char_46_EnemyBehavior__char_46_SetValue_3348272d_be70_4d5b_b481_9b8126faac39(MessageTarget target, object[] args)
+		{
+			var command = new Enemy_id5_Enemy__char_46_EnemyBehavior__char_46_SetValue_3348272d_be70_4d5b_b481_9b8126faac39();
+			int i = 0;
+			command.val = (int)((System.Int32)args[i++]);
+			command.auth = (bool)((System.Boolean)args[i++]);
+			client.SendCommand(command, target, coherenceSync.EntityID);
+		}
+
+		void ReceiveLocalCommand_Enemy_id5_Enemy__char_46_EnemyBehavior__char_46_SetValue_3348272d_be70_4d5b_b481_9b8126faac39(MessageTarget target, object[] args)
+		{
+			var command = new Enemy_id5_Enemy__char_46_EnemyBehavior__char_46_SetValue_3348272d_be70_4d5b_b481_9b8126faac39();
+			int i = 0;
+			command.val = (int)((System.Int32)args[i++]);
+			command.auth = (bool)((System.Boolean)args[i++]);
+			ReceiveCommand_Enemy_id5_Enemy__char_46_EnemyBehavior__char_46_SetValue_3348272d_be70_4d5b_b481_9b8126faac39(command);
+		}
+
+		void ReceiveCommand_Enemy_id5_Enemy__char_46_EnemyBehavior__char_46_SetValue_3348272d_be70_4d5b_b481_9b8126faac39(Enemy_id5_Enemy__char_46_EnemyBehavior__char_46_SetValue_3348272d_be70_4d5b_b481_9b8126faac39 command)
+		{
+			var target = Enemy_id5_Enemy__char_46_EnemyBehavior__char_46_SetValue_3348272d_be70_4d5b_b481_9b8126faac39_CommandTarget;
+			target.SetValue((System.Int32)(command.val),(System.Boolean)(command.auth));
+		}
 
 		public override void ReceiveCommand(IEntityCommand command)
 		{
 			switch(command)
 			{
+				case Enemy_id5_Enemy__char_46_EnemyBehavior__char_46_SetValue_3348272d_be70_4d5b_b481_9b8126faac39 castedCommand:
+					ReceiveCommand_Enemy_id5_Enemy__char_46_EnemyBehavior__char_46_SetValue_3348272d_be70_4d5b_b481_9b8126faac39(castedCommand);
+					break;
 				default:
 					logger.Warning($"[CoherenceSyncEnemy_id5] Unhandled command: {command.GetType()}.");
 					break;

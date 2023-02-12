@@ -12,7 +12,7 @@ public class ElTestEnemy : MonoBehaviour, INumberEnemy
         throw new System.NotImplementedException();
     }
 
-    public void SetValue(int val, EnemyNumberCreator creator)
+    public void SetValue(int val, bool f)
     {
         throw new System.NotImplementedException();
     }

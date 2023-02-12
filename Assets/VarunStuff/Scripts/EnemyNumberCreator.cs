@@ -43,6 +43,7 @@ public class EnemyNumberCreator : MonoBehaviour
     }
     public List<IndependentNumber> CreateNumber(int value, Transform parent)
     {
+        Debug.LogError($"Sid :: Step 4: Creating numberrr");
         List < IndependentNumber > numberHolders = new List < IndependentNumber >();
 
         var individualNumbers = GetIndividualNumbers(value);

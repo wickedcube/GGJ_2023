@@ -6,6 +6,8 @@ using Interfaces;
 using Powerups.Grenade;
 using ObjectPooling;
 using System.Linq;
+using Coherence;
+using Coherence.Toolkit;
 
 namespace Enemy
 {
@@ -108,12 +110,18 @@ namespace Enemy
             else this.Agent.radius = BoxCollider.size.x/2;
         }
 
-        public void SetValue(int val, EnemyNumberCreator creator)
+
+        public void SetValue(int val, bool auth)
         {
+            var cSync = GetComponent<CoherenceSync>();
+            if (cSync != null && auth)
+            {
+                Debug.LogError($"Sid :: Step 3 :: DOING STUFF");
+                cSync.SendCommand<EnemyBehavior>(nameof(SetValue), MessageTarget.Other, val, false);
+            }
             this.Value = val;
-            NumberComponents = creator.CreateNumber(this.Value, NumberHolder);
+            NumberComponents = FindObjectOfType<EnemyNumberCreator>().CreateNumber(this.Value, NumberHolder);
             RecalculateBounds();
-            
             parametersSet = true;
         }
 

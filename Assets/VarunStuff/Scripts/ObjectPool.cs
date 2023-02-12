@@ -55,6 +55,7 @@ namespace ObjectPooling
 
         public Poolable GetObject()
         {
+            Debug.LogError($"Sid :: Step 2 : GetObject");
             var badPoolables = poolables.Where(x => x == default);
             if (badPoolables.Any())
             {
