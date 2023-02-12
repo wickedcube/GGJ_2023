@@ -1245,6 +1245,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4256434849088911113, guid: 8f051b3f289e34decbd3339defbf9f3b, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4256434849088911113, guid: 8f051b3f289e34decbd3339defbf9f3b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4256434849088911113, guid: 8f051b3f289e34decbd3339defbf9f3b, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4585364341273692371, guid: 8f051b3f289e34decbd3339defbf9f3b, type: 3}
       propertyPath: m_Name
       value: coherence Sample UI

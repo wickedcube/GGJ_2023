@@ -348,9 +348,37 @@ PrefabInstance:
       value: Player Variant
       objectReference: {fileID: 0}
     - target: {fileID: 7203580627989587312, guid: 0965159253ec9e3429357a3d7625b08f, type: 3}
+      propertyPath: componentActions.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7203580627989587312, guid: 0965159253ec9e3429357a3d7625b08f, type: 3}
+      propertyPath: componentActions.Array.data[4]
+      value: 6048421447068024840
+      objectReference: {fileID: 0}
+    - target: {fileID: 7203580627989587312, guid: 0965159253ec9e3429357a3d7625b08f, type: 3}
+      propertyPath: componentActions.Array.data[5]
+      value: 6048421447068024841
+      objectReference: {fileID: 0}
+    - target: {fileID: 7203580627989587312, guid: 0965159253ec9e3429357a3d7625b08f, type: 3}
       propertyPath: archetype.boundComponents.Array.size
       value: 153
       objectReference: {fileID: 0}
+    - target: {fileID: 7203580627989587312, guid: 0965159253ec9e3429357a3d7625b08f, type: 3}
+      propertyPath: managedReferences[6048421447068024840]
+      value: Coherence.Toolkit Coherence.Toolkit.ComponentActions.DisableBehaviourComponentAction
+      objectReference: {fileID: 0}
+    - target: {fileID: 7203580627989587312, guid: 0965159253ec9e3429357a3d7625b08f, type: 3}
+      propertyPath: managedReferences[6048421447068024841]
+      value: Coherence.Toolkit Coherence.Toolkit.ComponentActions.DisableBehaviourComponentAction
+      objectReference: {fileID: 0}
+    - target: {fileID: 7203580627989587312, guid: 0965159253ec9e3429357a3d7625b08f, type: 3}
+      propertyPath: managedReferences[6048421447068024840].component
+      value: 
+      objectReference: {fileID: 3979590671102366789}
+    - target: {fileID: 7203580627989587312, guid: 0965159253ec9e3429357a3d7625b08f, type: 3}
+      propertyPath: managedReferences[6048421447068024841].component
+      value: 
+      objectReference: {fileID: 7797377802394362722}
     - target: {fileID: 7203580627989587312, guid: 0965159253ec9e3429357a3d7625b08f, type: 3}
       propertyPath: archetype.boundComponents.Array.data[148].component
       value: 
@@ -454,3 +482,25 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1637532097455432896, guid: 0965159253ec9e3429357a3d7625b08f, type: 3}
   m_PrefabInstance: {fileID: 2415044739652022404}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3979590671102366789 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1637532097455432897, guid: 0965159253ec9e3429357a3d7625b08f, type: 3}
+  m_PrefabInstance: {fileID: 2415044739652022404}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e017f520e1576b6489d52e98df522089, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7797377802394362722 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5599715592339264486, guid: 0965159253ec9e3429357a3d7625b08f, type: 3}
+  m_PrefabInstance: {fileID: 2415044739652022404}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b651af12484c21042b3057b4adf8a2ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
