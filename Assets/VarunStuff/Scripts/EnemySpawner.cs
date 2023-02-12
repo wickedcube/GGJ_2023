@@ -19,7 +19,7 @@ public class EnemySpawner : MonoBehaviour
 
     int counter = 0;
 
-    void Start() {
+    void Awake() {
         enemyNumberCreator = GetComponent<EnemyNumberCreator>();
     }
 

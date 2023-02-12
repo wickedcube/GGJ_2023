@@ -16,7 +16,7 @@ namespace Coherence.Generated
 
 	public class Definition : IDefinition
 	{
-		public const string schemaId = "66ab6ae7570decf88e0f86ad76040cd2ba819f04";
+		public const string schemaId = "ab93b79431cf402366d85ee0b04c55b9115fb685";
 		public const uint InternalWorldPosition = 0;
 		public const uint InternalWorldOrientation = 1;
 		public const uint InternalLocalUser = 2;
@@ -147,6 +147,13 @@ namespace Coherence.Generated
 		public const uint InternalAdoptOrphan = 3;
 		public const uint InternalPersistenceReady = 4;
 		public const uint InternalGenericCommand = 5;
+		public const uint InternalPlayer_PlayerHealthUI__char_46_SetHealthPerc_3423dc07_9f81_4726_82b9_9f0cdcad84cf = 6;
+		public const uint InternalPlayer_PlayerHealthUI__char_46_SetComboMeterF_43f3d8ae_2c11_4a8a_972f_1c89f31d8f86 = 7;
+		public const uint InternalPlayer_PlayerHealthUI__char_46_SetComboCounter_69d3d9cb_6a0b_4b66_825c_e5ba201eccac = 8;
+		public const uint InternalPlayer_PlayerHealthUI__char_46_SetScoreCounter_2e74d780_b93f_4184_ac85_dca720aac870 = 9;
+		public const uint InternalPlayer_PlayerHealthUI__char_46_ShowChronoStatisKey_77eb4f99_86da_4989_8faa_de4dd4bd6189 = 10;
+		public const uint InternalPlayer_PlayerHealthUI__char_46_ShowGrenadeKey_2c49cf3f_2ada_40d2_a08e_e94f1a8811fc = 11;
+		public const uint InternalPlayer_PlayerHealthUI__char_46_ShowWaveIncomingText_25df724b_bc98_4af5_8ddd_3ee81431235d = 12;
 
 		private static readonly Dictionary<uint, string> componentNamesForTypeIds = new Dictionary<uint, string>() {
 			{ 0, "WorldPosition" },
@@ -880,6 +887,20 @@ namespace Coherence.Generated
 					return PersistenceReady.Deserialize(bitStream);
 				case Definition.InternalGenericCommand:
 					return GenericCommand.Deserialize(bitStream);
+				case Definition.InternalPlayer_PlayerHealthUI__char_46_SetHealthPerc_3423dc07_9f81_4726_82b9_9f0cdcad84cf:
+					return Player_PlayerHealthUI__char_46_SetHealthPerc_3423dc07_9f81_4726_82b9_9f0cdcad84cf.Deserialize(bitStream);
+				case Definition.InternalPlayer_PlayerHealthUI__char_46_SetComboMeterF_43f3d8ae_2c11_4a8a_972f_1c89f31d8f86:
+					return Player_PlayerHealthUI__char_46_SetComboMeterF_43f3d8ae_2c11_4a8a_972f_1c89f31d8f86.Deserialize(bitStream);
+				case Definition.InternalPlayer_PlayerHealthUI__char_46_SetComboCounter_69d3d9cb_6a0b_4b66_825c_e5ba201eccac:
+					return Player_PlayerHealthUI__char_46_SetComboCounter_69d3d9cb_6a0b_4b66_825c_e5ba201eccac.Deserialize(bitStream);
+				case Definition.InternalPlayer_PlayerHealthUI__char_46_SetScoreCounter_2e74d780_b93f_4184_ac85_dca720aac870:
+					return Player_PlayerHealthUI__char_46_SetScoreCounter_2e74d780_b93f_4184_ac85_dca720aac870.Deserialize(bitStream);
+				case Definition.InternalPlayer_PlayerHealthUI__char_46_ShowChronoStatisKey_77eb4f99_86da_4989_8faa_de4dd4bd6189:
+					return Player_PlayerHealthUI__char_46_ShowChronoStatisKey_77eb4f99_86da_4989_8faa_de4dd4bd6189.Deserialize(bitStream);
+				case Definition.InternalPlayer_PlayerHealthUI__char_46_ShowGrenadeKey_2c49cf3f_2ada_40d2_a08e_e94f1a8811fc:
+					return Player_PlayerHealthUI__char_46_ShowGrenadeKey_2c49cf3f_2ada_40d2_a08e_e94f1a8811fc.Deserialize(bitStream);
+				case Definition.InternalPlayer_PlayerHealthUI__char_46_ShowWaveIncomingText_25df724b_bc98_4af5_8ddd_3ee81431235d:
+					return Player_PlayerHealthUI__char_46_ShowWaveIncomingText_25df724b_bc98_4af5_8ddd_3ee81431235d.Deserialize(bitStream);
 				default:
 					break;
 			}
@@ -958,6 +979,27 @@ namespace Coherence.Generated
 					break;
 				case Definition.InternalGenericCommand:
 					GenericCommand.Serialize((GenericCommand)data, bitStream);
+					break;
+				case Definition.InternalPlayer_PlayerHealthUI__char_46_SetHealthPerc_3423dc07_9f81_4726_82b9_9f0cdcad84cf:
+					Player_PlayerHealthUI__char_46_SetHealthPerc_3423dc07_9f81_4726_82b9_9f0cdcad84cf.Serialize((Player_PlayerHealthUI__char_46_SetHealthPerc_3423dc07_9f81_4726_82b9_9f0cdcad84cf)data, bitStream);
+					break;
+				case Definition.InternalPlayer_PlayerHealthUI__char_46_SetComboMeterF_43f3d8ae_2c11_4a8a_972f_1c89f31d8f86:
+					Player_PlayerHealthUI__char_46_SetComboMeterF_43f3d8ae_2c11_4a8a_972f_1c89f31d8f86.Serialize((Player_PlayerHealthUI__char_46_SetComboMeterF_43f3d8ae_2c11_4a8a_972f_1c89f31d8f86)data, bitStream);
+					break;
+				case Definition.InternalPlayer_PlayerHealthUI__char_46_SetComboCounter_69d3d9cb_6a0b_4b66_825c_e5ba201eccac:
+					Player_PlayerHealthUI__char_46_SetComboCounter_69d3d9cb_6a0b_4b66_825c_e5ba201eccac.Serialize((Player_PlayerHealthUI__char_46_SetComboCounter_69d3d9cb_6a0b_4b66_825c_e5ba201eccac)data, bitStream);
+					break;
+				case Definition.InternalPlayer_PlayerHealthUI__char_46_SetScoreCounter_2e74d780_b93f_4184_ac85_dca720aac870:
+					Player_PlayerHealthUI__char_46_SetScoreCounter_2e74d780_b93f_4184_ac85_dca720aac870.Serialize((Player_PlayerHealthUI__char_46_SetScoreCounter_2e74d780_b93f_4184_ac85_dca720aac870)data, bitStream);
+					break;
+				case Definition.InternalPlayer_PlayerHealthUI__char_46_ShowChronoStatisKey_77eb4f99_86da_4989_8faa_de4dd4bd6189:
+					Player_PlayerHealthUI__char_46_ShowChronoStatisKey_77eb4f99_86da_4989_8faa_de4dd4bd6189.Serialize((Player_PlayerHealthUI__char_46_ShowChronoStatisKey_77eb4f99_86da_4989_8faa_de4dd4bd6189)data, bitStream);
+					break;
+				case Definition.InternalPlayer_PlayerHealthUI__char_46_ShowGrenadeKey_2c49cf3f_2ada_40d2_a08e_e94f1a8811fc:
+					Player_PlayerHealthUI__char_46_ShowGrenadeKey_2c49cf3f_2ada_40d2_a08e_e94f1a8811fc.Serialize((Player_PlayerHealthUI__char_46_ShowGrenadeKey_2c49cf3f_2ada_40d2_a08e_e94f1a8811fc)data, bitStream);
+					break;
+				case Definition.InternalPlayer_PlayerHealthUI__char_46_ShowWaveIncomingText_25df724b_bc98_4af5_8ddd_3ee81431235d:
+					Player_PlayerHealthUI__char_46_ShowWaveIncomingText_25df724b_bc98_4af5_8ddd_3ee81431235d.Serialize((Player_PlayerHealthUI__char_46_ShowWaveIncomingText_25df724b_bc98_4af5_8ddd_3ee81431235d)data, bitStream);
 					break;
 				default:
 					break;

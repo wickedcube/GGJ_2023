@@ -23,12 +23,22 @@ public class WaveSpawner : MonoBehaviour
     private void Start()
     {
         enemySpawner = GetComponent<EnemySpawner>();
-        MonoBridge.ClientConnections.OnCreated += connection =>
+        
+
+
+        if (MonoBridge != null)
         {
-            currentPlayerCount++;
-            if (currentPlayerCount == maxPlayerCount && cSync.HasStateAuthority)
-                StartWave(activeWaveIdx);
-        };
+            MonoBridge.ClientConnections.OnCreated += connection =>
+            {
+                currentPlayerCount++;
+                if (currentPlayerCount == maxPlayerCount && cSync.HasStateAuthority)
+                    StartWave(activeWaveIdx);
+            };
+        }
+        else
+        {
+            StartWave(activeWaveIdx);
+        }
     }
 
 

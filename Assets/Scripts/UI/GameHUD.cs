@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Coherence.Toolkit;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -52,6 +53,11 @@ public class GameHUD : MonoBehaviour
 
     public void LoadMainMenu()
     {
+        var temp = FindObjectOfType<CoherenceMonoBridge>();
+        if (temp != null)
+        {
+            temp.Disconnect();
+        }
         //Time.timeScale = 1.0f;
         SceneManager.LoadScene(1);
     }

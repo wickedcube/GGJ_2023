@@ -7426,6 +7426,13 @@ MonoBehaviour:
   - rid: 3925640460211847172
   - rid: 3925640466622840838
   - rid: 3925640479492014090
+  - rid: 3925640532061323317
+  - rid: 3925640532061323318
+  - rid: 3925640532061323319
+  - rid: 3925640532061323320
+  - rid: 3925640532061323321
+  - rid: 3925640532061323322
+  - rid: 3925640532061323323
   onNetworkedInstantiation:
     m_PersistentCalls:
       m_Calls: []
@@ -7445,6 +7452,11 @@ MonoBehaviour:
   - rid: 3925640479492014098
   - rid: 3925640479492014099
   - rid: 3925640479492014100
+  - rid: 3925640532061323331
+  - rid: 3925640532061323332
+  - rid: 3925640532061323333
+  - rid: 3925640532061323334
+  - rid: 3925640532061323335
   references:
     version: 2
     RefIds:
@@ -7696,6 +7708,313 @@ MonoBehaviour:
       type: {class: DisableBehaviourComponentAction, ns: Coherence.Toolkit.ComponentActions, asm: Coherence.Toolkit}
       data:
         component: {fileID: 2358891834408612274}
+    - rid: 3925640532061323317
+      type: {class: CommandBinding, ns: Coherence.Toolkit.Bindings, asm: Coherence.Toolkit}
+      data:
+        descriptor:
+          rid: 3925640532061323324
+        routing: 0
+        isPredicted: 0
+        defaultInterpolationPath: 
+        guid: 3423dc07-9f81-4726-82b9-9f0cdcad84cf
+        archetypeData:
+          type: 0
+          minRange: 0
+          maxRange: 0
+          sampleRate: 0
+          floatCompression: 0
+          fields: []
+          sharedBinding: {fileID: 0}
+        unityComponent: {fileID: 1637532097455432897}
+        coherenceSync: {fileID: 0}
+        interpolationSettings: {fileID: 11400000, guid: ae4419d1d9a8643709bf5f6b90c584a5, type: 2}
+    - rid: 3925640532061323318
+      type: {class: CommandBinding, ns: Coherence.Toolkit.Bindings, asm: Coherence.Toolkit}
+      data:
+        descriptor:
+          rid: 3925640532061323325
+        routing: 0
+        isPredicted: 0
+        defaultInterpolationPath: 
+        guid: 43f3d8ae-2c11-4a8a-972f-1c89f31d8f86
+        archetypeData:
+          type: 0
+          minRange: 0
+          maxRange: 0
+          sampleRate: 0
+          floatCompression: 0
+          fields: []
+          sharedBinding: {fileID: 0}
+        unityComponent: {fileID: 1637532097455432897}
+        coherenceSync: {fileID: 0}
+        interpolationSettings: {fileID: 11400000, guid: ae4419d1d9a8643709bf5f6b90c584a5, type: 2}
+    - rid: 3925640532061323319
+      type: {class: CommandBinding, ns: Coherence.Toolkit.Bindings, asm: Coherence.Toolkit}
+      data:
+        descriptor:
+          rid: 3925640532061323326
+        routing: 0
+        isPredicted: 0
+        defaultInterpolationPath: 
+        guid: 69d3d9cb-6a0b-4b66-825c-e5ba201eccac
+        archetypeData:
+          type: 0
+          minRange: 0
+          maxRange: 0
+          sampleRate: 0
+          floatCompression: 0
+          fields: []
+          sharedBinding: {fileID: 0}
+        unityComponent: {fileID: 1637532097455432897}
+        coherenceSync: {fileID: 0}
+        interpolationSettings: {fileID: 11400000, guid: ae4419d1d9a8643709bf5f6b90c584a5, type: 2}
+    - rid: 3925640532061323320
+      type: {class: CommandBinding, ns: Coherence.Toolkit.Bindings, asm: Coherence.Toolkit}
+      data:
+        descriptor:
+          rid: 3925640532061323327
+        routing: 0
+        isPredicted: 0
+        defaultInterpolationPath: 
+        guid: 2e74d780-b93f-4184-ac85-dca720aac870
+        archetypeData:
+          type: 0
+          minRange: 0
+          maxRange: 0
+          sampleRate: 0
+          floatCompression: 0
+          fields: []
+          sharedBinding: {fileID: 0}
+        unityComponent: {fileID: 1637532097455432897}
+        coherenceSync: {fileID: 0}
+        interpolationSettings: {fileID: 11400000, guid: ae4419d1d9a8643709bf5f6b90c584a5, type: 2}
+    - rid: 3925640532061323321
+      type: {class: CommandBinding, ns: Coherence.Toolkit.Bindings, asm: Coherence.Toolkit}
+      data:
+        descriptor:
+          rid: 3925640532061323328
+        routing: 0
+        isPredicted: 0
+        defaultInterpolationPath: 
+        guid: 77eb4f99-86da-4989-8faa-de4dd4bd6189
+        archetypeData:
+          type: 0
+          minRange: 0
+          maxRange: 0
+          sampleRate: 0
+          floatCompression: 0
+          fields: []
+          sharedBinding: {fileID: 0}
+        unityComponent: {fileID: 1637532097455432897}
+        coherenceSync: {fileID: 0}
+        interpolationSettings: {fileID: 11400000, guid: ae4419d1d9a8643709bf5f6b90c584a5, type: 2}
+    - rid: 3925640532061323322
+      type: {class: CommandBinding, ns: Coherence.Toolkit.Bindings, asm: Coherence.Toolkit}
+      data:
+        descriptor:
+          rid: 3925640532061323329
+        routing: 0
+        isPredicted: 0
+        defaultInterpolationPath: 
+        guid: 2c49cf3f-2ada-40d2-a08e-e94f1a8811fc
+        archetypeData:
+          type: 0
+          minRange: 0
+          maxRange: 0
+          sampleRate: 0
+          floatCompression: 0
+          fields: []
+          sharedBinding: {fileID: 0}
+        unityComponent: {fileID: 1637532097455432897}
+        coherenceSync: {fileID: 0}
+        interpolationSettings: {fileID: 11400000, guid: ae4419d1d9a8643709bf5f6b90c584a5, type: 2}
+    - rid: 3925640532061323323
+      type: {class: CommandBinding, ns: Coherence.Toolkit.Bindings, asm: Coherence.Toolkit}
+      data:
+        descriptor:
+          rid: 3925640532061323330
+        routing: 0
+        isPredicted: 0
+        defaultInterpolationPath: 
+        guid: 25df724b-bc98-4af5-8ddd-3ee81431235d
+        archetypeData:
+          type: 0
+          minRange: 0
+          maxRange: 0
+          sampleRate: 0
+          floatCompression: 0
+          fields: []
+          sharedBinding: {fileID: 0}
+        unityComponent: {fileID: 1637532097455432897}
+        coherenceSync: {fileID: 0}
+        interpolationSettings: {fileID: 11400000, guid: ae4419d1d9a8643709bf5f6b90c584a5, type: 2}
+    - rid: 3925640532061323324
+      type: {class: Descriptor, ns: Coherence.Toolkit.Bindings, asm: Coherence.Toolkit}
+      data:
+        name: SetHealthPerc
+        monoAssemblyType: 
+        required: 0
+        enforcesLODingWhenFieldsOverriden: 0
+        valueSyncCallbackName: 
+        memberType: 8
+        parameterAssemblyTypes:
+        - System.Single, mscorlib
+        ownerType:
+          assemblyQualifiedName: PlayerHealthUI, Assembly-CSharp, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        CustomData:
+          rid: -2
+        bindingType:
+          assemblyQualifiedName: Coherence.Toolkit.Bindings.CommandBinding, Coherence.Toolkit,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        oldName: 
+        oldParameterAssemblyTypes: []
+    - rid: 3925640532061323325
+      type: {class: Descriptor, ns: Coherence.Toolkit.Bindings, asm: Coherence.Toolkit}
+      data:
+        name: SetComboMeterF
+        monoAssemblyType: 
+        required: 0
+        enforcesLODingWhenFieldsOverriden: 0
+        valueSyncCallbackName: 
+        memberType: 8
+        parameterAssemblyTypes:
+        - System.Single, mscorlib
+        - System.Boolean, mscorlib
+        ownerType:
+          assemblyQualifiedName: PlayerHealthUI, Assembly-CSharp, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        CustomData:
+          rid: -2
+        bindingType:
+          assemblyQualifiedName: Coherence.Toolkit.Bindings.CommandBinding, Coherence.Toolkit,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        oldName: 
+        oldParameterAssemblyTypes: []
+    - rid: 3925640532061323326
+      type: {class: Descriptor, ns: Coherence.Toolkit.Bindings, asm: Coherence.Toolkit}
+      data:
+        name: SetComboCounter
+        monoAssemblyType: 
+        required: 0
+        enforcesLODingWhenFieldsOverriden: 0
+        valueSyncCallbackName: 
+        memberType: 8
+        parameterAssemblyTypes:
+        - System.Int32, mscorlib
+        ownerType:
+          assemblyQualifiedName: PlayerHealthUI, Assembly-CSharp, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        CustomData:
+          rid: -2
+        bindingType:
+          assemblyQualifiedName: Coherence.Toolkit.Bindings.CommandBinding, Coherence.Toolkit,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        oldName: 
+        oldParameterAssemblyTypes: []
+    - rid: 3925640532061323327
+      type: {class: Descriptor, ns: Coherence.Toolkit.Bindings, asm: Coherence.Toolkit}
+      data:
+        name: SetScoreCounter
+        monoAssemblyType: 
+        required: 0
+        enforcesLODingWhenFieldsOverriden: 0
+        valueSyncCallbackName: 
+        memberType: 8
+        parameterAssemblyTypes:
+        - System.Int32, mscorlib
+        ownerType:
+          assemblyQualifiedName: PlayerHealthUI, Assembly-CSharp, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        CustomData:
+          rid: -2
+        bindingType:
+          assemblyQualifiedName: Coherence.Toolkit.Bindings.CommandBinding, Coherence.Toolkit,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        oldName: 
+        oldParameterAssemblyTypes: []
+    - rid: 3925640532061323328
+      type: {class: Descriptor, ns: Coherence.Toolkit.Bindings, asm: Coherence.Toolkit}
+      data:
+        name: ShowChronoStatisKey
+        monoAssemblyType: 
+        required: 0
+        enforcesLODingWhenFieldsOverriden: 0
+        valueSyncCallbackName: 
+        memberType: 8
+        parameterAssemblyTypes:
+        - System.Boolean, mscorlib
+        ownerType:
+          assemblyQualifiedName: PlayerHealthUI, Assembly-CSharp, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        CustomData:
+          rid: -2
+        bindingType:
+          assemblyQualifiedName: Coherence.Toolkit.Bindings.CommandBinding, Coherence.Toolkit,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        oldName: 
+        oldParameterAssemblyTypes: []
+    - rid: 3925640532061323329
+      type: {class: Descriptor, ns: Coherence.Toolkit.Bindings, asm: Coherence.Toolkit}
+      data:
+        name: ShowGrenadeKey
+        monoAssemblyType: 
+        required: 0
+        enforcesLODingWhenFieldsOverriden: 0
+        valueSyncCallbackName: 
+        memberType: 8
+        parameterAssemblyTypes:
+        - System.Boolean, mscorlib
+        ownerType:
+          assemblyQualifiedName: PlayerHealthUI, Assembly-CSharp, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        CustomData:
+          rid: -2
+        bindingType:
+          assemblyQualifiedName: Coherence.Toolkit.Bindings.CommandBinding, Coherence.Toolkit,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        oldName: 
+        oldParameterAssemblyTypes: []
+    - rid: 3925640532061323330
+      type: {class: Descriptor, ns: Coherence.Toolkit.Bindings, asm: Coherence.Toolkit}
+      data:
+        name: ShowWaveIncomingText
+        monoAssemblyType: 
+        required: 0
+        enforcesLODingWhenFieldsOverriden: 0
+        valueSyncCallbackName: 
+        memberType: 8
+        parameterAssemblyTypes: []
+        ownerType:
+          assemblyQualifiedName: PlayerHealthUI, Assembly-CSharp, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+        CustomData:
+          rid: -2
+        bindingType:
+          assemblyQualifiedName: Coherence.Toolkit.Bindings.CommandBinding, Coherence.Toolkit,
+            Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+        oldName: 
+        oldParameterAssemblyTypes: []
+    - rid: 3925640532061323331
+      type: {class: DisableBehaviourComponentAction, ns: Coherence.Toolkit.ComponentActions, asm: Coherence.Toolkit}
+      data:
+        component: {fileID: 1637532097455432897}
+    - rid: 3925640532061323332
+      type: {class: DisableBehaviourComponentAction, ns: Coherence.Toolkit.ComponentActions, asm: Coherence.Toolkit}
+      data:
+        component: {fileID: 5599715592339264486}
+    - rid: 3925640532061323333
+      type: {class: DisableBehaviourComponentAction, ns: Coherence.Toolkit.ComponentActions, asm: Coherence.Toolkit}
+      data:
+        component: {fileID: 1637532097455432925}
+    - rid: 3925640532061323334
+      type: {class: DisableBehaviourComponentAction, ns: Coherence.Toolkit.ComponentActions, asm: Coherence.Toolkit}
+      data:
+        component: {fileID: 1637532097455432898}
+    - rid: 3925640532061323335
+      type: {class: DisableBehaviourComponentAction, ns: Coherence.Toolkit.ComponentActions, asm: Coherence.Toolkit}
+      data:
+        component: {fileID: 1637532097455432899}
 --- !u!82 &738369196778409825
 AudioSource:
   m_ObjectHideFlags: 0

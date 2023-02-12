@@ -334,6 +334,7 @@ MonoBehaviour:
   - rid: 3925640462472314890
   - rid: 3925640462472314891
   - rid: 3925640462472314892
+  - rid: 3925640532061323316
   references:
     version: 2
     RefIds:
@@ -397,6 +398,10 @@ MonoBehaviour:
       type: {class: DisableBehaviourComponentAction, ns: Coherence.Toolkit.ComponentActions, asm: Coherence.Toolkit}
       data:
         component: {fileID: 1316234873770175936}
+    - rid: 3925640532061323316
+      type: {class: DisableBehaviourComponentAction, ns: Coherence.Toolkit.ComponentActions, asm: Coherence.Toolkit}
+      data:
+        component: {fileID: 2707621992164809285}
 --- !u!114 &2707621992699436948 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4023776600029978578, guid: 20f62748a762227489afb472c03a1345, type: 3}

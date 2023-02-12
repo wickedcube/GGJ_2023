@@ -105,7 +105,14 @@ namespace Coherence.Generated
 		private CoherenceSync coherenceSync;
 		private Logger logger;
 
-		// Cached targets for commands
+		// Cached targets for commands		
+		private PlayerHealthUI Player_PlayerHealthUI__char_46_SetHealthPerc_3423dc07_9f81_4726_82b9_9f0cdcad84cf_CommandTarget;		
+		private PlayerHealthUI Player_PlayerHealthUI__char_46_SetComboMeterF_43f3d8ae_2c11_4a8a_972f_1c89f31d8f86_CommandTarget;		
+		private PlayerHealthUI Player_PlayerHealthUI__char_46_SetComboCounter_69d3d9cb_6a0b_4b66_825c_e5ba201eccac_CommandTarget;		
+		private PlayerHealthUI Player_PlayerHealthUI__char_46_SetScoreCounter_2e74d780_b93f_4184_ac85_dca720aac870_CommandTarget;		
+		private PlayerHealthUI Player_PlayerHealthUI__char_46_ShowChronoStatisKey_77eb4f99_86da_4989_8faa_de4dd4bd6189_CommandTarget;		
+		private PlayerHealthUI Player_PlayerHealthUI__char_46_ShowGrenadeKey_2c49cf3f_2ada_40d2_a08e_e94f1a8811fc_CommandTarget;		
+		private PlayerHealthUI Player_PlayerHealthUI__char_46_ShowWaveIncomingText_25df724b_bc98_4af5_8ddd_3ee81431235d_CommandTarget;
 
 		private IClient client;
 		private CoherenceMonoBridge monoBridge => coherenceSync.MonoBridge;
@@ -116,6 +123,76 @@ namespace Coherence.Generated
 			coherenceSync.usingReflection = false;
 
 			logger = coherenceSync.logger.With<CoherenceSyncPlayer>();
+			if (coherenceSync.TryGetBindingByGuid("3423dc07-9f81-4726-82b9-9f0cdcad84cf", "SetHealthPerc", out Binding Player_PlayerHealthUI__char_46_SetHealthPerc_3423dc07_9f81_4726_82b9_9f0cdcad84cf))
+			{
+				Player_PlayerHealthUI__char_46_SetHealthPerc_3423dc07_9f81_4726_82b9_9f0cdcad84cf_CommandTarget = (PlayerHealthUI)Player_PlayerHealthUI__char_46_SetHealthPerc_3423dc07_9f81_4726_82b9_9f0cdcad84cf.UnityComponent;
+				coherenceSync.AddCommandRequestDelegate("PlayerHealthUI.SetHealthPerc", "(System.Single)",
+				SendCommand_Player_PlayerHealthUI__char_46_SetHealthPerc_3423dc07_9f81_4726_82b9_9f0cdcad84cf, ReceiveLocalCommand_Player_PlayerHealthUI__char_46_SetHealthPerc_3423dc07_9f81_4726_82b9_9f0cdcad84cf, MessageTarget.AuthorityOnly, Player_PlayerHealthUI__char_46_SetHealthPerc_3423dc07_9f81_4726_82b9_9f0cdcad84cf_CommandTarget,false);
+			}
+			else
+			{
+				logger.Error("Couldn't find command binding (SetHealthPerc)");
+			}
+			if (coherenceSync.TryGetBindingByGuid("43f3d8ae-2c11-4a8a-972f-1c89f31d8f86", "SetComboMeterF", out Binding Player_PlayerHealthUI__char_46_SetComboMeterF_43f3d8ae_2c11_4a8a_972f_1c89f31d8f86))
+			{
+				Player_PlayerHealthUI__char_46_SetComboMeterF_43f3d8ae_2c11_4a8a_972f_1c89f31d8f86_CommandTarget = (PlayerHealthUI)Player_PlayerHealthUI__char_46_SetComboMeterF_43f3d8ae_2c11_4a8a_972f_1c89f31d8f86.UnityComponent;
+				coherenceSync.AddCommandRequestDelegate("PlayerHealthUI.SetComboMeterF", "(System.SingleSystem.Boolean)",
+				SendCommand_Player_PlayerHealthUI__char_46_SetComboMeterF_43f3d8ae_2c11_4a8a_972f_1c89f31d8f86, ReceiveLocalCommand_Player_PlayerHealthUI__char_46_SetComboMeterF_43f3d8ae_2c11_4a8a_972f_1c89f31d8f86, MessageTarget.AuthorityOnly, Player_PlayerHealthUI__char_46_SetComboMeterF_43f3d8ae_2c11_4a8a_972f_1c89f31d8f86_CommandTarget,false);
+			}
+			else
+			{
+				logger.Error("Couldn't find command binding (SetComboMeterF)");
+			}
+			if (coherenceSync.TryGetBindingByGuid("69d3d9cb-6a0b-4b66-825c-e5ba201eccac", "SetComboCounter", out Binding Player_PlayerHealthUI__char_46_SetComboCounter_69d3d9cb_6a0b_4b66_825c_e5ba201eccac))
+			{
+				Player_PlayerHealthUI__char_46_SetComboCounter_69d3d9cb_6a0b_4b66_825c_e5ba201eccac_CommandTarget = (PlayerHealthUI)Player_PlayerHealthUI__char_46_SetComboCounter_69d3d9cb_6a0b_4b66_825c_e5ba201eccac.UnityComponent;
+				coherenceSync.AddCommandRequestDelegate("PlayerHealthUI.SetComboCounter", "(System.Int32)",
+				SendCommand_Player_PlayerHealthUI__char_46_SetComboCounter_69d3d9cb_6a0b_4b66_825c_e5ba201eccac, ReceiveLocalCommand_Player_PlayerHealthUI__char_46_SetComboCounter_69d3d9cb_6a0b_4b66_825c_e5ba201eccac, MessageTarget.AuthorityOnly, Player_PlayerHealthUI__char_46_SetComboCounter_69d3d9cb_6a0b_4b66_825c_e5ba201eccac_CommandTarget,false);
+			}
+			else
+			{
+				logger.Error("Couldn't find command binding (SetComboCounter)");
+			}
+			if (coherenceSync.TryGetBindingByGuid("2e74d780-b93f-4184-ac85-dca720aac870", "SetScoreCounter", out Binding Player_PlayerHealthUI__char_46_SetScoreCounter_2e74d780_b93f_4184_ac85_dca720aac870))
+			{
+				Player_PlayerHealthUI__char_46_SetScoreCounter_2e74d780_b93f_4184_ac85_dca720aac870_CommandTarget = (PlayerHealthUI)Player_PlayerHealthUI__char_46_SetScoreCounter_2e74d780_b93f_4184_ac85_dca720aac870.UnityComponent;
+				coherenceSync.AddCommandRequestDelegate("PlayerHealthUI.SetScoreCounter", "(System.Int32)",
+				SendCommand_Player_PlayerHealthUI__char_46_SetScoreCounter_2e74d780_b93f_4184_ac85_dca720aac870, ReceiveLocalCommand_Player_PlayerHealthUI__char_46_SetScoreCounter_2e74d780_b93f_4184_ac85_dca720aac870, MessageTarget.AuthorityOnly, Player_PlayerHealthUI__char_46_SetScoreCounter_2e74d780_b93f_4184_ac85_dca720aac870_CommandTarget,false);
+			}
+			else
+			{
+				logger.Error("Couldn't find command binding (SetScoreCounter)");
+			}
+			if (coherenceSync.TryGetBindingByGuid("77eb4f99-86da-4989-8faa-de4dd4bd6189", "ShowChronoStatisKey", out Binding Player_PlayerHealthUI__char_46_ShowChronoStatisKey_77eb4f99_86da_4989_8faa_de4dd4bd6189))
+			{
+				Player_PlayerHealthUI__char_46_ShowChronoStatisKey_77eb4f99_86da_4989_8faa_de4dd4bd6189_CommandTarget = (PlayerHealthUI)Player_PlayerHealthUI__char_46_ShowChronoStatisKey_77eb4f99_86da_4989_8faa_de4dd4bd6189.UnityComponent;
+				coherenceSync.AddCommandRequestDelegate("PlayerHealthUI.ShowChronoStatisKey", "(System.Boolean)",
+				SendCommand_Player_PlayerHealthUI__char_46_ShowChronoStatisKey_77eb4f99_86da_4989_8faa_de4dd4bd6189, ReceiveLocalCommand_Player_PlayerHealthUI__char_46_ShowChronoStatisKey_77eb4f99_86da_4989_8faa_de4dd4bd6189, MessageTarget.AuthorityOnly, Player_PlayerHealthUI__char_46_ShowChronoStatisKey_77eb4f99_86da_4989_8faa_de4dd4bd6189_CommandTarget,false);
+			}
+			else
+			{
+				logger.Error("Couldn't find command binding (ShowChronoStatisKey)");
+			}
+			if (coherenceSync.TryGetBindingByGuid("2c49cf3f-2ada-40d2-a08e-e94f1a8811fc", "ShowGrenadeKey", out Binding Player_PlayerHealthUI__char_46_ShowGrenadeKey_2c49cf3f_2ada_40d2_a08e_e94f1a8811fc))
+			{
+				Player_PlayerHealthUI__char_46_ShowGrenadeKey_2c49cf3f_2ada_40d2_a08e_e94f1a8811fc_CommandTarget = (PlayerHealthUI)Player_PlayerHealthUI__char_46_ShowGrenadeKey_2c49cf3f_2ada_40d2_a08e_e94f1a8811fc.UnityComponent;
+				coherenceSync.AddCommandRequestDelegate("PlayerHealthUI.ShowGrenadeKey", "(System.Boolean)",
+				SendCommand_Player_PlayerHealthUI__char_46_ShowGrenadeKey_2c49cf3f_2ada_40d2_a08e_e94f1a8811fc, ReceiveLocalCommand_Player_PlayerHealthUI__char_46_ShowGrenadeKey_2c49cf3f_2ada_40d2_a08e_e94f1a8811fc, MessageTarget.AuthorityOnly, Player_PlayerHealthUI__char_46_ShowGrenadeKey_2c49cf3f_2ada_40d2_a08e_e94f1a8811fc_CommandTarget,false);
+			}
+			else
+			{
+				logger.Error("Couldn't find command binding (ShowGrenadeKey)");
+			}
+			if (coherenceSync.TryGetBindingByGuid("25df724b-bc98-4af5-8ddd-3ee81431235d", "ShowWaveIncomingText", out Binding Player_PlayerHealthUI__char_46_ShowWaveIncomingText_25df724b_bc98_4af5_8ddd_3ee81431235d))
+			{
+				Player_PlayerHealthUI__char_46_ShowWaveIncomingText_25df724b_bc98_4af5_8ddd_3ee81431235d_CommandTarget = (PlayerHealthUI)Player_PlayerHealthUI__char_46_ShowWaveIncomingText_25df724b_bc98_4af5_8ddd_3ee81431235d.UnityComponent;
+				coherenceSync.AddCommandRequestDelegate("PlayerHealthUI.ShowWaveIncomingText", "()",
+				SendCommand_Player_PlayerHealthUI__char_46_ShowWaveIncomingText_25df724b_bc98_4af5_8ddd_3ee81431235d, ReceiveLocalCommand_Player_PlayerHealthUI__char_46_ShowWaveIncomingText_25df724b_bc98_4af5_8ddd_3ee81431235d, MessageTarget.AuthorityOnly, Player_PlayerHealthUI__char_46_ShowWaveIncomingText_25df724b_bc98_4af5_8ddd_3ee81431235d_CommandTarget,false);
+			}
+			else
+			{
+				logger.Error("Couldn't find command binding (ShowWaveIncomingText)");
+			}
 			if (coherenceSync.TryGetBindingByGuid("cd50857d-f6f4-4ed5-ac69-9ffd378e192f", "velocity", out Binding InternalPlayer_UnityEngine__char_46_Rigidbody_2358891834408612276_Player_UnityEngine__char_46_Rigidbody_2358891834408612276_velocity))
 			{
 				var clone = new Binding_0965159253ec9e3429357a3d7625b08f_cd50857d_f6f4_4ed5_ac69_9ffd378e192f();
@@ -168,11 +245,177 @@ namespace Coherence.Generated
 			}
 			this.client = client;
 		}
+		void SendCommand_Player_PlayerHealthUI__char_46_SetHealthPerc_3423dc07_9f81_4726_82b9_9f0cdcad84cf(MessageTarget target, object[] args)
+		{
+			var command = new Player_PlayerHealthUI__char_46_SetHealthPerc_3423dc07_9f81_4726_82b9_9f0cdcad84cf();
+			int i = 0;
+			command.perc = (float)((System.Single)args[i++]);
+			client.SendCommand(command, target, coherenceSync.EntityID);
+		}
+
+		void ReceiveLocalCommand_Player_PlayerHealthUI__char_46_SetHealthPerc_3423dc07_9f81_4726_82b9_9f0cdcad84cf(MessageTarget target, object[] args)
+		{
+			var command = new Player_PlayerHealthUI__char_46_SetHealthPerc_3423dc07_9f81_4726_82b9_9f0cdcad84cf();
+			int i = 0;
+			command.perc = (float)((System.Single)args[i++]);
+			ReceiveCommand_Player_PlayerHealthUI__char_46_SetHealthPerc_3423dc07_9f81_4726_82b9_9f0cdcad84cf(command);
+		}
+
+		void ReceiveCommand_Player_PlayerHealthUI__char_46_SetHealthPerc_3423dc07_9f81_4726_82b9_9f0cdcad84cf(Player_PlayerHealthUI__char_46_SetHealthPerc_3423dc07_9f81_4726_82b9_9f0cdcad84cf command)
+		{
+			var target = Player_PlayerHealthUI__char_46_SetHealthPerc_3423dc07_9f81_4726_82b9_9f0cdcad84cf_CommandTarget;
+			target.SetHealthPerc((System.Single)(command.perc));
+		}
+		void SendCommand_Player_PlayerHealthUI__char_46_SetComboMeterF_43f3d8ae_2c11_4a8a_972f_1c89f31d8f86(MessageTarget target, object[] args)
+		{
+			var command = new Player_PlayerHealthUI__char_46_SetComboMeterF_43f3d8ae_2c11_4a8a_972f_1c89f31d8f86();
+			int i = 0;
+			command.perc = (float)((System.Single)args[i++]);
+			command.animate = (bool)((System.Boolean)args[i++]);
+			client.SendCommand(command, target, coherenceSync.EntityID);
+		}
+
+		void ReceiveLocalCommand_Player_PlayerHealthUI__char_46_SetComboMeterF_43f3d8ae_2c11_4a8a_972f_1c89f31d8f86(MessageTarget target, object[] args)
+		{
+			var command = new Player_PlayerHealthUI__char_46_SetComboMeterF_43f3d8ae_2c11_4a8a_972f_1c89f31d8f86();
+			int i = 0;
+			command.perc = (float)((System.Single)args[i++]);
+			command.animate = (bool)((System.Boolean)args[i++]);
+			ReceiveCommand_Player_PlayerHealthUI__char_46_SetComboMeterF_43f3d8ae_2c11_4a8a_972f_1c89f31d8f86(command);
+		}
+
+		void ReceiveCommand_Player_PlayerHealthUI__char_46_SetComboMeterF_43f3d8ae_2c11_4a8a_972f_1c89f31d8f86(Player_PlayerHealthUI__char_46_SetComboMeterF_43f3d8ae_2c11_4a8a_972f_1c89f31d8f86 command)
+		{
+			var target = Player_PlayerHealthUI__char_46_SetComboMeterF_43f3d8ae_2c11_4a8a_972f_1c89f31d8f86_CommandTarget;
+			target.SetComboMeterF((System.Single)(command.perc),(System.Boolean)(command.animate));
+		}
+		void SendCommand_Player_PlayerHealthUI__char_46_SetComboCounter_69d3d9cb_6a0b_4b66_825c_e5ba201eccac(MessageTarget target, object[] args)
+		{
+			var command = new Player_PlayerHealthUI__char_46_SetComboCounter_69d3d9cb_6a0b_4b66_825c_e5ba201eccac();
+			int i = 0;
+			command.val = (int)((System.Int32)args[i++]);
+			client.SendCommand(command, target, coherenceSync.EntityID);
+		}
+
+		void ReceiveLocalCommand_Player_PlayerHealthUI__char_46_SetComboCounter_69d3d9cb_6a0b_4b66_825c_e5ba201eccac(MessageTarget target, object[] args)
+		{
+			var command = new Player_PlayerHealthUI__char_46_SetComboCounter_69d3d9cb_6a0b_4b66_825c_e5ba201eccac();
+			int i = 0;
+			command.val = (int)((System.Int32)args[i++]);
+			ReceiveCommand_Player_PlayerHealthUI__char_46_SetComboCounter_69d3d9cb_6a0b_4b66_825c_e5ba201eccac(command);
+		}
+
+		void ReceiveCommand_Player_PlayerHealthUI__char_46_SetComboCounter_69d3d9cb_6a0b_4b66_825c_e5ba201eccac(Player_PlayerHealthUI__char_46_SetComboCounter_69d3d9cb_6a0b_4b66_825c_e5ba201eccac command)
+		{
+			var target = Player_PlayerHealthUI__char_46_SetComboCounter_69d3d9cb_6a0b_4b66_825c_e5ba201eccac_CommandTarget;
+			target.SetComboCounter((System.Int32)(command.val));
+		}
+		void SendCommand_Player_PlayerHealthUI__char_46_SetScoreCounter_2e74d780_b93f_4184_ac85_dca720aac870(MessageTarget target, object[] args)
+		{
+			var command = new Player_PlayerHealthUI__char_46_SetScoreCounter_2e74d780_b93f_4184_ac85_dca720aac870();
+			int i = 0;
+			command.val = (int)((System.Int32)args[i++]);
+			client.SendCommand(command, target, coherenceSync.EntityID);
+		}
+
+		void ReceiveLocalCommand_Player_PlayerHealthUI__char_46_SetScoreCounter_2e74d780_b93f_4184_ac85_dca720aac870(MessageTarget target, object[] args)
+		{
+			var command = new Player_PlayerHealthUI__char_46_SetScoreCounter_2e74d780_b93f_4184_ac85_dca720aac870();
+			int i = 0;
+			command.val = (int)((System.Int32)args[i++]);
+			ReceiveCommand_Player_PlayerHealthUI__char_46_SetScoreCounter_2e74d780_b93f_4184_ac85_dca720aac870(command);
+		}
+
+		void ReceiveCommand_Player_PlayerHealthUI__char_46_SetScoreCounter_2e74d780_b93f_4184_ac85_dca720aac870(Player_PlayerHealthUI__char_46_SetScoreCounter_2e74d780_b93f_4184_ac85_dca720aac870 command)
+		{
+			var target = Player_PlayerHealthUI__char_46_SetScoreCounter_2e74d780_b93f_4184_ac85_dca720aac870_CommandTarget;
+			target.SetScoreCounter((System.Int32)(command.val));
+		}
+		void SendCommand_Player_PlayerHealthUI__char_46_ShowChronoStatisKey_77eb4f99_86da_4989_8faa_de4dd4bd6189(MessageTarget target, object[] args)
+		{
+			var command = new Player_PlayerHealthUI__char_46_ShowChronoStatisKey_77eb4f99_86da_4989_8faa_de4dd4bd6189();
+			int i = 0;
+			command.show = (bool)((System.Boolean)args[i++]);
+			client.SendCommand(command, target, coherenceSync.EntityID);
+		}
+
+		void ReceiveLocalCommand_Player_PlayerHealthUI__char_46_ShowChronoStatisKey_77eb4f99_86da_4989_8faa_de4dd4bd6189(MessageTarget target, object[] args)
+		{
+			var command = new Player_PlayerHealthUI__char_46_ShowChronoStatisKey_77eb4f99_86da_4989_8faa_de4dd4bd6189();
+			int i = 0;
+			command.show = (bool)((System.Boolean)args[i++]);
+			ReceiveCommand_Player_PlayerHealthUI__char_46_ShowChronoStatisKey_77eb4f99_86da_4989_8faa_de4dd4bd6189(command);
+		}
+
+		void ReceiveCommand_Player_PlayerHealthUI__char_46_ShowChronoStatisKey_77eb4f99_86da_4989_8faa_de4dd4bd6189(Player_PlayerHealthUI__char_46_ShowChronoStatisKey_77eb4f99_86da_4989_8faa_de4dd4bd6189 command)
+		{
+			var target = Player_PlayerHealthUI__char_46_ShowChronoStatisKey_77eb4f99_86da_4989_8faa_de4dd4bd6189_CommandTarget;
+			target.ShowChronoStatisKey((System.Boolean)(command.show));
+		}
+		void SendCommand_Player_PlayerHealthUI__char_46_ShowGrenadeKey_2c49cf3f_2ada_40d2_a08e_e94f1a8811fc(MessageTarget target, object[] args)
+		{
+			var command = new Player_PlayerHealthUI__char_46_ShowGrenadeKey_2c49cf3f_2ada_40d2_a08e_e94f1a8811fc();
+			int i = 0;
+			command.show = (bool)((System.Boolean)args[i++]);
+			client.SendCommand(command, target, coherenceSync.EntityID);
+		}
+
+		void ReceiveLocalCommand_Player_PlayerHealthUI__char_46_ShowGrenadeKey_2c49cf3f_2ada_40d2_a08e_e94f1a8811fc(MessageTarget target, object[] args)
+		{
+			var command = new Player_PlayerHealthUI__char_46_ShowGrenadeKey_2c49cf3f_2ada_40d2_a08e_e94f1a8811fc();
+			int i = 0;
+			command.show = (bool)((System.Boolean)args[i++]);
+			ReceiveCommand_Player_PlayerHealthUI__char_46_ShowGrenadeKey_2c49cf3f_2ada_40d2_a08e_e94f1a8811fc(command);
+		}
+
+		void ReceiveCommand_Player_PlayerHealthUI__char_46_ShowGrenadeKey_2c49cf3f_2ada_40d2_a08e_e94f1a8811fc(Player_PlayerHealthUI__char_46_ShowGrenadeKey_2c49cf3f_2ada_40d2_a08e_e94f1a8811fc command)
+		{
+			var target = Player_PlayerHealthUI__char_46_ShowGrenadeKey_2c49cf3f_2ada_40d2_a08e_e94f1a8811fc_CommandTarget;
+			target.ShowGrenadeKey((System.Boolean)(command.show));
+		}
+		void SendCommand_Player_PlayerHealthUI__char_46_ShowWaveIncomingText_25df724b_bc98_4af5_8ddd_3ee81431235d(MessageTarget target, object[] args)
+		{
+			var command = new Player_PlayerHealthUI__char_46_ShowWaveIncomingText_25df724b_bc98_4af5_8ddd_3ee81431235d();
+			client.SendCommand(command, target, coherenceSync.EntityID);
+		}
+
+		void ReceiveLocalCommand_Player_PlayerHealthUI__char_46_ShowWaveIncomingText_25df724b_bc98_4af5_8ddd_3ee81431235d(MessageTarget target, object[] args)
+		{
+			var command = new Player_PlayerHealthUI__char_46_ShowWaveIncomingText_25df724b_bc98_4af5_8ddd_3ee81431235d();
+			ReceiveCommand_Player_PlayerHealthUI__char_46_ShowWaveIncomingText_25df724b_bc98_4af5_8ddd_3ee81431235d(command);
+		}
+
+		void ReceiveCommand_Player_PlayerHealthUI__char_46_ShowWaveIncomingText_25df724b_bc98_4af5_8ddd_3ee81431235d(Player_PlayerHealthUI__char_46_ShowWaveIncomingText_25df724b_bc98_4af5_8ddd_3ee81431235d command)
+		{
+			var target = Player_PlayerHealthUI__char_46_ShowWaveIncomingText_25df724b_bc98_4af5_8ddd_3ee81431235d_CommandTarget;
+			target.ShowWaveIncomingText();
+		}
 
 		public override void ReceiveCommand(IEntityCommand command)
 		{
 			switch(command)
 			{
+				case Player_PlayerHealthUI__char_46_SetHealthPerc_3423dc07_9f81_4726_82b9_9f0cdcad84cf castedCommand:
+					ReceiveCommand_Player_PlayerHealthUI__char_46_SetHealthPerc_3423dc07_9f81_4726_82b9_9f0cdcad84cf(castedCommand);
+					break;
+				case Player_PlayerHealthUI__char_46_SetComboMeterF_43f3d8ae_2c11_4a8a_972f_1c89f31d8f86 castedCommand:
+					ReceiveCommand_Player_PlayerHealthUI__char_46_SetComboMeterF_43f3d8ae_2c11_4a8a_972f_1c89f31d8f86(castedCommand);
+					break;
+				case Player_PlayerHealthUI__char_46_SetComboCounter_69d3d9cb_6a0b_4b66_825c_e5ba201eccac castedCommand:
+					ReceiveCommand_Player_PlayerHealthUI__char_46_SetComboCounter_69d3d9cb_6a0b_4b66_825c_e5ba201eccac(castedCommand);
+					break;
+				case Player_PlayerHealthUI__char_46_SetScoreCounter_2e74d780_b93f_4184_ac85_dca720aac870 castedCommand:
+					ReceiveCommand_Player_PlayerHealthUI__char_46_SetScoreCounter_2e74d780_b93f_4184_ac85_dca720aac870(castedCommand);
+					break;
+				case Player_PlayerHealthUI__char_46_ShowChronoStatisKey_77eb4f99_86da_4989_8faa_de4dd4bd6189 castedCommand:
+					ReceiveCommand_Player_PlayerHealthUI__char_46_ShowChronoStatisKey_77eb4f99_86da_4989_8faa_de4dd4bd6189(castedCommand);
+					break;
+				case Player_PlayerHealthUI__char_46_ShowGrenadeKey_2c49cf3f_2ada_40d2_a08e_e94f1a8811fc castedCommand:
+					ReceiveCommand_Player_PlayerHealthUI__char_46_ShowGrenadeKey_2c49cf3f_2ada_40d2_a08e_e94f1a8811fc(castedCommand);
+					break;
+				case Player_PlayerHealthUI__char_46_ShowWaveIncomingText_25df724b_bc98_4af5_8ddd_3ee81431235d castedCommand:
+					ReceiveCommand_Player_PlayerHealthUI__char_46_ShowWaveIncomingText_25df724b_bc98_4af5_8ddd_3ee81431235d(castedCommand);
+					break;
 				default:
 					logger.Warning($"[CoherenceSyncPlayer] Unhandled command: {command.GetType()}.");
 					break;
