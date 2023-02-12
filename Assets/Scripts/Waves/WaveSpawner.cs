@@ -34,25 +34,33 @@ public class WaveSpawner : MonoBehaviour
         //     }
         // };
 
-        MonoBridge.ClientConnections.OnSynced += manager =>
+        // multiplauer
+        if (MonoBridge != null)
         {
-            if (gameStarted)
+            MonoBridge.ClientConnections.OnSynced += manager =>
             {
-                return;
-            }
-
-            gameStarted = true;
-            if (MonoBridge.ClientConnections.ClientConnectionCount == maxPlayerCount && cSync.HasStateAuthority)
-                StartWave(activeWaveIdx);
-            else
-            {
-                MonoBridge.ClientConnections.OnCreated += conn =>
+                if (gameStarted)
                 {
-                    if (MonoBridge.ClientConnections.ClientConnectionCount == maxPlayerCount && cSync.HasStateAuthority)
-                        StartWave(activeWaveIdx);
-                };
-            }
-        };
+                    return;
+                }
+
+                gameStarted = true;
+                if (MonoBridge.ClientConnections.ClientConnectionCount == maxPlayerCount && cSync.HasStateAuthority)
+                    StartWave(activeWaveIdx);
+                else
+                {
+                    MonoBridge.ClientConnections.OnCreated += conn =>
+                    {
+                        if (MonoBridge.ClientConnections.ClientConnectionCount == maxPlayerCount && cSync.HasStateAuthority)
+                            StartWave(activeWaveIdx);
+                    };
+                }
+            };
+        }
+        else
+        {
+            StartWave(activeWaveIdx);
+        }
     }
 
 
