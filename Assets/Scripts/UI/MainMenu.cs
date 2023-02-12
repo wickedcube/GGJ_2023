@@ -162,4 +162,9 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene("Lego");
     }
+
+    public void StartGameOnline()
+    {
+        SceneManager.LoadScene("Lego");
+    }
 }
