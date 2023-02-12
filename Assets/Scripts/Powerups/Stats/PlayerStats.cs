@@ -11,7 +11,7 @@ public class PlayerStats : MonoBehaviour
 
     [SerializeField] private int maxHealth = 100;
 
-    [SerializeField] private int health;
+    public int health;
     [SerializeField] private float comboMeter;
 
     public float ComboMeterValue => comboMeter;
@@ -64,7 +64,7 @@ public class PlayerStats : MonoBehaviour
         { 
             HealthDepleted?.Invoke();
             LeaderboardHandler.Instance?.UpdateScore(score);
-            GameHUD.Instance?.ShowGameOverMenu(score);
+            GameHUD.Instance.ShowGameOverMenu(score);
         }
 
         PlayerHealthUI.Instance.SetHealthPerc((float)health / maxHealth);

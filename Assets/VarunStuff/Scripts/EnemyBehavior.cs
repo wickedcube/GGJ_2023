@@ -217,10 +217,17 @@ namespace Enemy
         private void TryAttackPlayer()
         {
             if (PlayerTransform == null) return;
-            var distanceToEnemy = Vector3.Distance(this.transform.position, PlayerTransform.position);
+            var temp = FindObjectsOfType<PlayerTag>();
+            if (temp.Length == 0)
+            {
+                return;
+            }
+
+            var enemyToAttack = temp[Random.Range(0, temp.Length)];
+            var distanceToEnemy = Vector3.Distance(this.transform.position, enemyToAttack.transform.position);
             if(distanceToEnemy < AttackRadius)
             {
-                Agent.SetDestination(PlayerTransform.position);
+                Agent.SetDestination(enemyToAttack.transform.position);
             }
         }
 
@@ -310,7 +317,6 @@ namespace Enemy
             {
                 enteredGameObject.GetComponentInParent<PlayerStats>().TakeDamage(Value);
                 // playerStats.IncrementKillValue();
-                Debug.LogError($"Collided with player");
                 FindObjectOfType<WaveSpawner>().EnemyDied();
                 this.ReturnToPool();
             }

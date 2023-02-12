@@ -32,7 +32,7 @@ namespace Source
                 {
                     if (manager.ClientConnectionCount == 1)
                     {
-                        instantiatedPlayer.GetComponentInChildren<PlayerHealthUI>().SetWaitingTextStatus(true);
+                        // instantiatedPlayer.GetComponentInChildren<PlayerHealthUI>().SetWaitingTextStatus(true);
                     }
                     else
                     {
