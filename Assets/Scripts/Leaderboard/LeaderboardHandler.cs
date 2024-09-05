@@ -93,6 +93,7 @@ public class LeaderboardHandler : MonoBehaviour
 
         string userData = JsonUtility.ToJson(playerData);
         byte[] postData = System.Text.Encoding.UTF8.GetBytes(userData);
+        Debug.Log($"sending leaderboard data to {UPDATE_LEADERBOARD_DATA} -> {userData}");
         //using (UnityWebRequest request = UnityWebRequest.Put(UPDATE_LEADERBOARD_DATA, postData))
         using (UnityWebRequest request = UnityWebRequest.Put(UPDATE_LEADERBOARD_DATA, postData))
         {

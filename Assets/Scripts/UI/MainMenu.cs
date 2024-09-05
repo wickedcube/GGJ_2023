@@ -11,6 +11,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private GameObject menu;
     [SerializeField] private GameObject firstFlowMenu;
     [SerializeField] private Button playButton;
+    [SerializeField] private Button playCoopButton;
     [SerializeField] private Button creditButton;
     [SerializeField] private Button controlsButton;
 
@@ -67,6 +68,7 @@ public class MainMenu : MonoBehaviour
     {
         firstFlowMenu.SetActive(true);
         playButton.gameObject.SetActive(false);
+        playCoopButton.gameObject.SetActive(false);
         creditButton.gameObject.SetActive(false);
         controlsButton.gameObject.SetActive(false);
     }
@@ -76,6 +78,7 @@ public class MainMenu : MonoBehaviour
         firstFlowMenu.SetActive(false);
         menu.SetActive(true);
         playButton.gameObject.SetActive(true);
+        playCoopButton.gameObject.SetActive(true);
         creditButton.gameObject.SetActive(true);
         controlsButton.gameObject.SetActive(true);
         if (PlayerPrefs.HasKey(LeaderboardHandler.USERNAME_PREF))
@@ -154,6 +157,8 @@ public class MainMenu : MonoBehaviour
 
     public void Shake(GameObject gameObject)
     {
+        gameObject.transform.DOKill();
+        gameObject.transform.localScale = Vector3.one;
         gameObject.transform.DOPunchScale(new Vector3(-0.1f, -0.1f, -0.1f), 0.5f,5,0.2f);
     }
 

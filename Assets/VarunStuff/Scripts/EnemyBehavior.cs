@@ -310,7 +310,7 @@ namespace Enemy
             {
                 enteredGameObject.GetComponentInParent<PlayerStats>().TakeDamage(Value);
                 // playerStats.IncrementKillValue();
-                Debug.LogError($"Collided with player");
+                // Debug.LogError($"Collided with player");
                 FindObjectOfType<WaveSpawner>().EnemyDied();
                 this.ReturnToPool();
             }

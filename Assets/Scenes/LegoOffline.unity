@@ -411,6 +411,10 @@ PrefabInstance:
       propertyPath: m_fontSize
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 1637532097455432899, guid: 0965159253ec9e3429357a3d7625b08f, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 3142995162099846705}
     - target: {fileID: 2358891834091404689, guid: 0965159253ec9e3429357a3d7625b08f, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0.00073369144
